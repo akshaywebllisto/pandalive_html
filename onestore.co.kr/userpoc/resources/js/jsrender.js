@@ -1,8 +1,8 @@
-/*! JsRender v1.0.0-beta: http://github.com/BorisMoore/jsrender and http://jsviews.com/jsviews */
+/*! JsRender v1.0.0-beta: https://github.com/BorisMoore/jsrender and https://jsviews.com/jsviews */
 /*
 * Optimized version of jQuery Templates, for rendering to string.
 * Does not require jQuery, or HTML DOM
-* Integrates with JsViews (http://jsviews.com/jsviews)
+* Integrates with JsViews (https://jsviews.com/jsviews)
 * Copyright 2013, Boris Moore
 * Released under the MIT License.
 */

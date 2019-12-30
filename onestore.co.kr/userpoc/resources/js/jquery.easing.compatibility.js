@@ -1,11 +1,11 @@
 /*
- * jQuery Easing Compatibility v1 - http://gsgd.co.uk/sandbox/jquery.easing.php
+ * jQuery Easing Compatibility v1 - https://gsgd.co.uk/sandbox/jquery.easing.php
  *
  * Adds compatibility for applications that use the pre 1.2 easing names
  *
  * Copyright (c) 2007 George Smith
  * Licensed under the MIT License:
- *   http://www.opensource.org/licenses/mit-license.php
+ *   https://www.opensource.org/licenses/mit-license.php
  */
 
 jQuery.extend( jQuery.easing,
