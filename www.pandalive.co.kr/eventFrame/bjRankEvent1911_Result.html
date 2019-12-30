@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<!-- Mirrored from www.pandalive.co.kr/eventFrame/bjRankEvent1911_Result by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:32:40 GMT -->
+<head>
+	<title>팬더티비</title>
+
+	<link rel="canonical" href="../index.html">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<meta name="naver-site-verification" content="f53f9ec6b870896e159227b9d6c68ef2613cb537"/>
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="팬더티비">
+	<meta property="og:site_name" content="팬더티비">
+
+			<meta name="og:description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+		
+	<meta property="og:image" content="../../icache.neolive.kr/code_pandatv/apple-icon.png">
+	<meta property="og:url" content="../index.html">
+
+			<meta name="description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+	
+	<meta name="keywords" content="PC/모바일 어디서나 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="팬더티비">
+	<meta name="twitter:site" content="팬더티비">
+	<meta name="twitter:description" content="PC/모바일 어디서도 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+	
+
+	<link rel="shortcut icon" href="../../icache.neolive.kr/code_pandatv/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="../../icache.neolive.kr/code_pandatv/apple-icon.png">
+
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/common.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/sweetalert/sweetalert2.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/jqueryui/jquery-ui.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/loading/loading.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/magnific/magnific-popup.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<!--[if gte IE 9 ]>
+	<link rel="stylesheet" type="text/css" href="/resource/css/web/ie9.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<![endif]-->
+
+	<script>
+		document.domain = "pandalive.co.kr";
+		window.liveData = {};
+		window.liveData.device = {};
+		window.liveData.device.type = "webPc";
+		window.liveData.device.version = "1.0.0";
+
+		window.userInfo = {};
+					window.userInfo.isLogin = false;
+		
+		window.siteMode = {};
+		window.siteMode.showAdult = true;
+		window.siteMode.needAuth = false;
+	window.siteMode.needAuth = true;	</script>
+	
+	<script src="http://www.pandalive.co.kr/resource/js/es6promise/es6-promise.auto.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('62([\'47\'],64(){47.63([38.37(0,15,55,65,17,33,65,14,51,7,56,50,12,24,28,41,46,5,29,58,52,1,20,53,26,29,26,3,25,31,10,10,20,16,49,53,4,48,10,20,21,5,27,41,40,49,57,12,61,10,7,10,55,67,55,54,30,28,18,19,56,9,65,10,8,49,55,10,55,34,15,48,13,68,16,54,6,14,11,6,44,3,6,9,15,66,66,5,17,12,23,22,43,50,58,22,34,5,17,7,32,8,54,26,55,11,21,1,25,19,20,12,55,31,26,16,36,22,4,27,4,7,55,14,56,2,19,9,51,45,25,10,0,16,55,46,6,14,1,59,15,9,27,23,56,67,54,8,17,10,30,7,13,24,55,12,6,28,5,20,18,17,55,19,8,1,16,7,42,6,27,49,56,39,5,2,33,49,13,16,56,25,35,9,8,1,54,31,0,12,35,18,13,24,5,2,33,50,13,16,15,12,6,23,8,49,6,9,52,12,36,5,66,24,56,57,34,5,11,53,32,1,20,19,56,49,21,29,42,21,35,22,13,68,18,28,57,14,0,19,4,9,56,26,56,49,60,3,17,7,27,14,43,24,56,49,4,44,3,31,4,25,30,65,15,50,55,8,17,7,23,22,30,68,32,7,67,5,29,6,36,8,6,39,40,1,6,18,13,21,15,9,67,39,68,0,67,5,3,23,32,9,21,14,56,2,68,18,11,51,40,8,0,65),38.37(1,53,4,53,54,57,53,11,49,1,54,53,2,1,3,3,0,51,2,3,0,56,0,56,57,55,49,52,55,50,56,55,54,4,52,49,51,50,48,2,0,53,0,0,56,48,56,51,0,2,50,2,54,4,0,57,55,0,57,3,50,51,48,11),38.37(2,11,0,3,54,3,50,55,0,0,2,48,50,50,3,50,53,48,53,2,3,0,1,1,50,57,4,11,57,54,52,2,54,49,50,52,0,55,53,52,4,4,4,53,57,56,4,51,56,49,1,57,48,53,50,48,2,3,3,49,2,52,1,1)])});',10,69,'97|99|101|100|102|107|83|90|111|112|115|98|116|114|108|87|70|113|104|81|82|84|120|77|69|110|72|80|103|95|79|119|71|122|121|76|118|fromCharCode|String|73|88|86|78|117|109||105|WebApi|||||||||||75|74|85|89|require|_|function||||'.split('|'),0,{}))
+</script>
+	<script>
+		window.name = "7e87de047ebd77783f213d3d8d08e727f16d4828357b8fb08e6de6e77ed5d5ff";
+		require(['jquery', 'jquery.browser'], function() {
+			if($.browser.name == "msie" && $.browser.versionNumber <= 9) {
+				$.support.cors = true;
+			}
+		});
+		require(['jquery', 'web.media', 'func', 'jquery.ui', 'web.func', 'loading', 'jquery.magnific', 'web.GoUrl']);
+		require(['sweetalert'], function(_swal) {
+			window.swal = _swal;
+			window.swal.setDefaults({
+				confirmButtonText: '확인'
+				, cancelButtonText: '취소'
+				, confirmButtonColor:'#20C9B0'
+			});
+		});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150827960-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', "UA-150827960-1");
+	</script>
+
+
+
+
+
+
+<script>
+	window.onpopstate = function(e) {
+		var state = window['backHistory'];
+		if(e.state) state = e.state;
+		window['backHistory'] = null;
+		if(!state) return;
+		
+		if(state['cookie']) {
+			$.cookie(state['cookie']['key'], state['cookie']['value'], {path:'/', domain:".pandalive.co.kr"});
+		}
+
+		if(state['backUrl']) {
+			//location.href = state['backUrl'];
+			location.replace(state['backUrl']);
+		}
+	}
+</script></head>
+<body id="site_pandatv">
+
+<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/layer.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+<div id="blankFrame" style="display:inline-block;">
+	<style>
+	/* 상하단 */
+	.event_all {width:960px; overflow:hidden; position:relative;}
+	.event_cover, .event_title_01, .event_title_02 {width:100%; position:relative; overflow:hidden;}
+	.event_cover img, .event_title_01 img, .event_title_02 img {width:100%;}
+	.event_box {width:100%; overflow:hidden; position:relative;}
+	.rank_bottom {width:100%; text-align:center; padding:100px 0;}
+	.rank_bottom img {display:inline-block;}
+
+	/* 타이틀 , 단풍 */
+	.rank_title {width:100%; padding-bottom:20px;}
+	.leaves_01 {width:163px; height:179px; position:absolute; right:10%; top:9%; margin-right:-81px; margin-top:-89px; z-index:100;}
+	.leaves_02 {width:121px; height:112px; position:absolute; right:30%; top:6%; margin-right:-60px; margin-top:-56px; z-index:100;}
+	.leaves_03 {width:117px; height:117px; position:absolute; right:10%; top:15%; margin-right:-58px; margin-top:-58px; z-index:100;}
+
+	/* 테이블 공통 사항 */
+	.toprank_list tbody tr:nth-child(even) {background:#f6f7f7;}
+	.toprank_list tbody tr:nth-child(2n+1) {background:#ebebec; }
+	.toprank_list tbody tr:nth-child(2n+1) td .topbjrank_nick {color:#af331b;}
+	.toprank_list {width:100%;}
+	.ranking_number {font-size:20px; color:#2c210c; font-weight:600;}
+	.rank_medal {margin-right:20px;}
+	.topbjrank_nick {padding-right:8px; color:#ff7900;}
+	.topbjrank_id {padding-left:8px; color:#633103;}
+	.rank_gift_01 {color:#c80505; font-weight:600;}
+	.rank_gift_02 {color:#772600; font-weight:600;}
+
+	/* bg_01 (배경_흰색) , bg_02 (배경_쥐색) */
+	.rank_bg_01 {background:#ffffff;}
+	.rank_bg_01 .toprank_list thead tr {border-bottom:10px solid #ffffff;}
+	.rank_bg_01 .toprank_list tbody tr {border-bottom:10px solid #ffffff;}
+	.rank_bg_01 .toprank_list thead tr td {padding:15px 0; font-size:20px; font-weight:800; letter-spacing:2px;}
+	.rank_bg_01 .toprank_list tbody tr td {line-height:50px; text-align:center; font-size:17px; color:#2c210c;}
+
+	.rank_bg_02 {background:#f8f7f0;}
+	.rank_bg_02 .toprank_list thead tr {border-bottom:10px solid #f8f7f0;}
+	.rank_bg_02 .toprank_list tbody tr {border-bottom:10px solid #f8f7f0;}
+	.rank_bg_02 .toprank_list thead tr td {padding:15px 0; color:#ffffff; font-size:20px; font-weight:800; letter-spacing:2px;}
+	.rank_bg_02 .toprank_list tbody tr td {line-height:50px; text-align:center; font-size:17px; color:#2c210c;}
+
+	/* common_01 (5등까지 있는 랭킹), common_02 (3등까지 있는 랭킹) */
+	.rank_common_01, .rank_common_02 {padding:100px 70px; font-size:13px; position:relative; overflow:hidden;}
+
+	.rank_common_01 .toprank_list thead tr td:nth-child(1) {width:10%;}
+	.rank_common_01 .toprank_list thead tr td:nth-child(2) {width:30%;}
+	.rank_common_01 .toprank_list thead tr td:nth-child(3) {width:60%;}
+	.rank_common_01 .toprank_list tbody tr td.rank_gift_td_01 {text-align: left; line-height:20px; letter-spacing:-1px; font-size:16px; padding-left:20px;}
+
+	.rank_common_02 .toprank_list thead tr td:nth-child(1) {width:25%;}
+	.rank_common_02 .toprank_list thead tr td:nth-child(2) {width:40%;}
+	.rank_common_02 .toprank_list thead tr td:nth-child(3) {width:35%;}
+	.rank_common_02 .toprank_list tbody tr td.rank_gift_td_02 {color:#af331b; font-weight:800;}
+
+	/* 시청자 rank_01 */
+	.rank_01 .toprank_list thead {width:100%; background:#f4d357; text-align:center;}
+	.rank_01 .toprank_list thead tr td {color:#2c210c;}
+
+	/* 비제이 rank_02 */
+	.rank_02_01 .toprank_list thead {width:100%; background:#af331b; text-align:center;}
+	.rank_02_01 .toprank_list thead tr td {color:#ffffff;}
+	.rank_02_02 .toprank_list thead {width:100%; background:#b74731; text-align:center;}
+	.rank_02_03 .toprank_list thead {width:100%; background:#c35a44; text-align:center;}
+	.rank_02_03 .toprank_list thead tr td {color:#ffffff;}
+	.rank_02_04 .toprank_list thead {width:100%; background:#eb5135; text-align:center;}
+
+	/* 비제이 rank_03 */
+	.rank_03_01 .toprank_list thead {width:100%; background:#663d2f; text-align:center;}
+	.rank_03_01 .toprank_list thead tr td {color:#ffffff;}
+	.rank_03_01 .rank_heart {letter-spacing:4px;}
+	.rank_03_02 .toprank_list thead {width:100%; background:#823519; text-align:center;}
+
+</style>
+<div class="event_all">
+	<div class="event_cover">
+		<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_cover.jpg">
+	</div>
+
+	<!-- 시청자 랭킹전 -->
+	<div class="event_box">
+		<div class="event_cover"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_title_01.jpg"></div>
+		<div class="rank_common_01 rank_bg_01 rank_01">
+			<div class="leaves_01"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/leaves_01.png"></div>
+			<div class="rank_title"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_01_01.png"></div>
+			<table class="toprank_list">
+				<thead>
+				<tr>
+					<td>순위</td>
+					<td>시청자</td>
+					<td>시상</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td><span class="ranking_number">1</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank1.png"></span><span class="topbjrank_nick">X같아서접는다</span>ㅣ<span class="topbjrank_id ">sexyhot87</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">후원왕 1위 심볼</span> + <span class="rank_gift_02">하트 30,000개</span><br />
+						닉네임꾸미기 30일 (3개) + 방송입장효과 7일 (3개) + 풀방입장권 90일 (3개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">2</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank2.png"></span><span class="topbjrank_nick">사라♥뺑돌이~</span>ㅣ<span class="topbjrank_id ">dark5883</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">후원왕 2위 심볼</span> + <span class="rank_gift_02">하트 20,000개</span><br />
+						닉네임꾸미기 30일 (2개) + 방송입장효과 7일 (2개) + 풀방입장권 90일 (2개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">3</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank3.png"></span><span class="topbjrank_nick">쥴리안</span>ㅣ<span class="topbjrank_id ">khysth</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">후원왕 3위 심볼</span> + <span class="rank_gift_02">하트 10,000개</span><br />
+						닉네임꾸미기 30일 (1개) + 방송입장효과 7일 (1개) + 풀방입장권 90일 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">4</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank4.png"></span><span class="topbjrank_nick">ღ정다올ღ품바</span>ㅣ<span class="topbjrank_id">xkingx</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_02">하트 7,000개</span><br />
+						닉네임꾸미기 15일 (1개) + 방송입장효과 3일 (2개) + 풀방입장권 30일 (2개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">5</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank5.png"></span><span class="topbjrank_nick">미친둥둥</span>ㅣ<span class="topbjrank_id">hikdiabloo</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_02">하트 5,000개</span><br />
+						닉네임꾸미기 15일 (1개) + 방송입장효과 3일 (1개) + 풀방입장권 30일 (1개)</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+	<!-- BJ 랭킹전 -->
+	<div class="event_box">
+		<div class="event_cover"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_title_02.jpg"></div>
+		<div class="rank_common_01 rank_bg_01 rank_02_01">
+			<div class="leaves_02"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/leaves_02.png"></div>
+			<div class="rank_title"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_02_01.png"></div>
+			<table class="toprank_list">
+				<thead>
+				<tr>
+					<td>순위</td>
+					<td>B J</td>
+					<td>시상</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td><span class="ranking_number">1</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank1.png"></span><span class="topbjrank_nick">진리의베이비</span>ㅣ<span class="topbjrank_id ">double101</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 15%</span><br />
+						프리미엄 이용권 (5개) + 커스텀 이모티콘 (3개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">2</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank2.png"></span><span class="topbjrank_nick">ღ정다올ღ</span>ㅣ<span class="topbjrank_id ">qktbejrk1</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 10%</span><br />
+						프리미엄 이용권 (3개) + 커스텀 이모티콘 (2개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">3</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank3.png"></span><span class="topbjrank_nick">98꽃사슴♥</span>ㅣ<span class="topbjrank_id ">deer9898</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 7%</span><br />
+						골드 이용권 (5개) + 커스텀 이모티콘 (2개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">4</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank4.png"></span><span class="topbjrank_nick">[BJ]쭈야♥</span>ㅣ<span class="topbjrank_id">jfairy</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_02">환전금 5%</span><br />
+						골드 이용권 (3개) + 커스텀 이모티콘 (1개) + 팬 PUSH 3회 (2개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">5</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank5.png"></span><span class="topbjrank_nick">사라♥</span>ㅣ<span class="topbjrank_id">annieways777</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_02">환전금 3%</span><br />
+						골드 이용권 (1개) + 커스텀 이모티콘 (1개) + 팬 PUSH 3회 (1개)</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="rank_common_01 rank_bg_02 rank_02_02">
+			<div class="rank_title"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_02_02.png"></div>
+			<table class="toprank_list">
+				<thead>
+				<tr>
+					<td>순위</td>
+					<td>B J</td>
+					<td>시상</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td><span class="ranking_number">1</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank1.png"></span><span class="topbjrank_nick">비탁</span>ㅣ<span class="topbjrank_id ">dnjsgud1698</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 15%</span><br />
+						프리미엄 이용권 (5개) + 커스텀 이모티콘 (3개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">2</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank2.png"></span><span class="topbjrank_nick">JM_문돼</span>ㅣ<span class="topbjrank_id ">kmsari1230</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 10%</span><br />
+						프리미엄 이용권 (3개) + 커스텀 이모티콘 (2개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">3</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank3.png"></span><span class="topbjrank_nick">펀치얖!★</span>ㅣ<span class="topbjrank_id ">youilhae7777</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 7%</span><br />
+						골드 이용권 (5개) + 커스텀 이모티콘 (2개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">4</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank4.png"></span><span class="topbjrank_nick">JM_종자</span>ㅣ<span class="topbjrank_id">dmsrl6257</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_02">환전금 5%</span><br />
+						골드 이용권 (3개) + 커스텀 이모티콘 (1개) + 팬 PUSH 3회 (2개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">5</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank5.png"></span><span class="topbjrank_nick">[ko사단]일천이천</span>ㅣ<span class="topbjrank_id">xkrrn4737</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_02">환전금 3%</span><br />
+						골드 이용권 (1개) + 커스텀 이모티콘 (1개) + 팬 PUSH 3회 (1개)</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+		<div class="rank_common_01 rank_bg_01 rank_02_03">
+			<div class="rank_title"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_02_03.png"></div>
+			<table class="toprank_list">
+				<thead>
+				<tr>
+					<td>순위</td>
+					<td>B J</td>
+					<td>시상</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td><span class="ranking_number">1</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank1.png"></span><span class="topbjrank_nick">날호</span>ㅣ<span class="topbjrank_id ">enghks0815</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 15%</span><br />
+						프리미엄 이용권 (5개) + 커스텀 이모티콘 (3개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">2</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank2.png"></span><span class="topbjrank_nick">악떡사채업자</span>ㅣ<span class="topbjrank_id ">volkl22</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 10%</span><br />
+						프리미엄 이용권 (3개) + 커스텀 이모티콘 (2개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">3</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank3.png"></span><span class="topbjrank_nick">자몽vs김준</span>ㅣ<span class="topbjrank_id ">tant26</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 7%</span><br />
+						골드 이용권 (5개) + 커스텀 이모티콘 (2개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">4</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank4.png"></span><span class="topbjrank_nick">༺ৡۣ꧁P_로또_꧂</span>ㅣ<span class="topbjrank_id">bj6640bj</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_02">환전금 5%</span><br />
+						골드 이용권 (3개) + 커스텀 이모티콘 (1개) + 팬 PUSH 3회 (2개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">5</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank5.png"></span><span class="topbjrank_nick">건빵왕텐프로</span>ㅣ<span class="topbjrank_id">bobo31257</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_02">환전금 3%</span><br />
+						골드 이용권 (1개) + 커스텀 이모티콘 (1개) + 팬 PUSH 3회 (1개)</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="rank_common_01 rank_bg_02 rank_02_04">
+			<div class="rank_title"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_02_04.png"></div>
+			<table class="toprank_list">
+				<thead>
+				<tr>
+					<td>순위</td>
+					<td>B J</td>
+					<td>시상</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td><span class="ranking_number">1</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank1.png"></span><span class="topbjrank_nick">◈기도◈</span>ㅣ<span class="topbjrank_id ">raindrop008</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 15%</span><br />
+						프리미엄 이용권 (5개) + 커스텀 이모티콘 (3개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">2</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank2.png"></span><span class="topbjrank_nick">DJ시인</span>ㅣ<span class="topbjrank_id ">djksmd0309</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 10%</span><br />
+						프리미엄 이용권 (3개) + 커스텀 이모티콘 (2개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">3</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank3.png"></span><span class="topbjrank_nick">꧁ღ착한★공주ღ꧂</span>ㅣ<span class="topbjrank_id ">kimjh0002385</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_01">환전금 7%</span><br />
+						골드 이용권 (5개) + 커스텀 이모티콘 (2개) + 방송자 피규어 제작 (1개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">4</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank4.png"></span><span class="topbjrank_nick">⛧쏘핫⛧</span>ㅣ<span class="topbjrank_id">girl7279</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_02">환전금 5%</span><br />
+						골드 이용권 (3개) + 커스텀 이모티콘 (1개) + 팬 PUSH 3회 (2개)</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">5</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank5.png"></span><span class="topbjrank_nick">너때문에가입</span>ㅣ<span class="topbjrank_id">busan05l</span></td>
+					<td class="rank_gift_td_01"><span class="rank_gift_02">환전금 3%</span><br />
+						골드 이용권 (1개) + 커스텀 이모티콘 (1개) + 팬 PUSH 3회 (1개)</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="rank_common_02 rank_bg_01 rank_03_01">
+			<div class="leaves_03"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/leaves_03.png"></div>
+			<div class="rank_title"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_03_01.png"></div>
+			<table class="toprank_list">
+				<thead>
+				<tr>
+					<td>하트</td>
+					<td>B J</td>
+					<td>시상</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="rank_heart"><span class="ranking_number">1004</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank1.png"></span><span class="topbjrank_nick">진리의베이비</span>ㅣ<span class="topbjrank_id ">double101</span></td>
+					<td class="rank_gift_td_02">상품권 200만원</td>
+				</tr>
+				<tr>
+					<td class="rank_heart"><span class="ranking_number">486</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank1.png"></span><span class="topbjrank_nick">98꽃사슴♥</span>ㅣ<span class="topbjrank_id ">deer9898</span></td>
+					<td class="rank_gift_td_02">상품권 200만원</td>
+				</tr>
+				<tr>
+					<td class="rank_heart"><span class="ranking_number">282</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank1.png"></span><span class="topbjrank_nick">사라♥</span>ㅣ<span class="topbjrank_id ">annieways777</span></td>
+					<td class="rank_gift_td_02">상품권 200만원</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="rank_common_02 rank_bg_02 rank_03_02">
+			<div class="rank_title"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_03_02.png"></div>
+			<table class="toprank_list">
+				<thead>
+				<tr>
+					<td>순위</td>
+					<td>B J</td>
+					<td>시상</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td><span class="ranking_number">1</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank1.png"></span><span class="topbjrank_nick">❤핡❤아키❤</span>ㅣ<span class="topbjrank_id ">khlee102012</span></td>
+					<td class="rank_gift_td_02">상품권 100만원</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">2</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank2.png"></span><span class="topbjrank_nick">bj소정이</span>ㅣ<span class="topbjrank_id ">asaa187</span></td>
+					<td class="rank_gift_td_02">상품권 80만원</td>
+				</tr>
+				<tr>
+					<td><span class="ranking_number">3</span></td>
+					<td><span class="rank_medal"><img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/icon_rank3.png"></span><span class="topbjrank_nick">[BJ]쭈야♥</span>ㅣ<span class="topbjrank_id ">jfairy</span></td>
+					<td class="rank_gift_td_02">상품권 50만원</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="rank_bottom">
+		<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1911/result/rank_bottom.png">
+	</div>
+</div></div>
+<iframe src="http://www.pandalive.co.kr/resource/advert/common" style="display:none;"></iframe>
+</body>
+
+<!-- Mirrored from www.pandalive.co.kr/eventFrame/bjRankEvent1911_Result by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:33:46 GMT -->
+</html>

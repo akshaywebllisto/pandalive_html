@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<!-- Mirrored from www.pandalive.co.kr/charge/item?ygexK9g0oV3-0ZX2DdK1XoaA=guestLive by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:17:33 GMT -->
+<head>
+	<title>팬더티비</title>
+
+	<link rel="canonical" href="../index.html">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<meta name="naver-site-verification" content="f53f9ec6b870896e159227b9d6c68ef2613cb537"/>
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="팬더티비">
+	<meta property="og:site_name" content="팬더티비">
+
+			<meta name="og:description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+		
+	<meta property="og:image" content="../../icache.neolive.kr/code_pandatv/apple-icon.png">
+	<meta property="og:url" content="../index.html">
+
+			<meta name="description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+	
+	<meta name="keywords" content="PC/모바일 어디서나 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="팬더티비">
+	<meta name="twitter:site" content="팬더티비">
+	<meta name="twitter:description" content="PC/모바일 어디서도 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+	
+
+	<link rel="shortcut icon" href="../../icache.neolive.kr/code_pandatv/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="../../icache.neolive.kr/code_pandatv/apple-icon.png">
+
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/common.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/sweetalert/sweetalert2.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/jqueryui/jquery-ui.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/loading/loading.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/magnific/magnific-popup.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<!--[if gte IE 9 ]>
+	<link rel="stylesheet" type="text/css" href="/resource/css/web/ie9.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<![endif]-->
+
+	<script>
+		document.domain = "pandalive.co.kr";
+		window.liveData = {};
+		window.liveData.device = {};
+		window.liveData.device.type = "webPc";
+		window.liveData.device.version = "1.0.0";
+
+		window.userInfo = {};
+					window.userInfo.isLogin = false;
+		
+		window.siteMode = {};
+		window.siteMode.showAdult = true;
+		window.siteMode.needAuth = false;
+	window.siteMode.needAuth = true;	</script>
+	
+	<script src="http://www.pandalive.co.kr/resource/js/es6promise/es6-promise.auto.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('60([\'45\'],63(){45.62([40.43(36,6,2,9,53,35,11,20,14,22,14,26,14,24,34,54,12,57,12,1,31,26,2,21,9,32,11,6,42,7,19,22,25,1,16,57,12,33,27,23,18,4,35,19,19,30,24,57,47,3,11,32,14,7,16,33,3,16,17,14,12,55,10,54,8,8,5,31,17,13,2,59,34,24,9,17,1,61,12,7,31,30,2,18,57,14,50,18,26,52,11,29,23,55,16,55,54,32,50,17,2,6,2,36,9,13,0,57,0,41,23,8,27,7,15,15,21,11,27,4,22,13,8,20,9,55,5,6,57,13,19,18,2,3,15,31,33,11,17,10,20,32,2,21,9,13,28,6,42,56,38,29,25,7,16,65,50,16,27,44,12,55,35,21,9,13,11,6,42,7,19,12,26,56,15,39,28,11,34,44,12,37,8,20,19,30,0,55,23,55,38,46,18,22,15,54,57,33,34,21,53,39,35,56,23,25,50,19,64,55,6,37,47,37,49,3,49,29,17,7,18,4,0,26,20,30,49,38,10,14,2,21,8,7,15,39,50,57,17,41,28,13,10,18,2,25,24,29,2,55,28,8,49,56,15,36,1,6,46,7,38,6,2,36,20,56,24,16,8,41,2,22,59,56,9,39,58,58,51,37,2,25,27),40.43(51,48,0,57,4,55,5,1,1,56,4,5,5,54,49,49,57,0,56,49,1,55,50,57,0,50,4,57,50,49,49,0,0,53,4,49,5,48,56,4,50,52,0,54,53,50,3,56,56,48,54,51,57,49,0,10,3,55,49,51,3,49,3,1),40.43(5,0,53,4,3,5,57,51,52,5,49,50,1,56,1,49,52,0,49,0,1,54,57,52,54,0,3,10,10,1,48,57,52,53,1,53,1,53,48,50,3,50,48,10,5,51,48,3,54,3,54,48,53,5,0,55,57,57,0,4,53,4,4,50)])});',10,66,'99|101|116|97|102|98|84|114|111|73|100|121|119|110|89|69|67|107|82|81|77|86|79|115|66|104|85|108|90|80|87|70|118|105|120|112|72|117|83|71|String|113|76|fromCharCode|88|WebApi|109|103|||||||||||68|78|require|106|_|function|95|74'.split('|'),0,{}))
+</script>
+	<script>
+		window.name = "7e87de047ebd77783f213d3d8d08e727f16d4828357b8fb08e6de6e77ed5d5ff";
+		require(['jquery', 'jquery.browser'], function() {
+			if($.browser.name == "msie" && $.browser.versionNumber <= 9) {
+				$.support.cors = true;
+			}
+		});
+		require(['jquery', 'web.media', 'func', 'jquery.ui', 'web.func', 'loading', 'jquery.magnific', 'web.GoUrl']);
+		require(['sweetalert'], function(_swal) {
+			window.swal = _swal;
+			window.swal.setDefaults({
+				confirmButtonText: '확인'
+				, cancelButtonText: '취소'
+				, confirmButtonColor:'#20C9B0'
+			});
+		});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150827960-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', "UA-150827960-1");
+	</script>
+
+
+
+
+
+
+<script>
+	window.onpopstate = function(e) {
+		var state = window['backHistory'];
+		if(e.state) state = e.state;
+		window['backHistory'] = null;
+		if(!state) return;
+		
+		if(state['cookie']) {
+			$.cookie(state['cookie']['key'], state['cookie']['value'], {path:'/', domain:".pandalive.co.kr"});
+		}
+
+		if(state['backUrl']) {
+			//location.href = state['backUrl'];
+			location.replace(state['backUrl']);
+		}
+	}
+</script></head>
+<body id="site_pandatv">
+
+
+
+
+<script>
+	require(['web.member']);
+</script>
+<!--S: Login Join -->
+<div id="login_modal_mask" style="display:none;" onclick="Member.close();"></div>
+<div class="login_modal_box" style="display:none;">
+	<!--S: TabBox -->
+	<h2 class="tabbox">
+		<div id="tablogin" class="st1 on" onclick="Member.loginTab('login');">로그인</div>
+		<div id="tabjoin" class="st2" onclick="Member.loginTab('join');">회원가입</div>
+		<span class="close_btn" style="cursor: pointer" onclick="Member.close();"></span>
+	</h2>
+
+	<!--S: Login -->
+	<div class="login_area" style="display:block;">
+		<form id="form_login_modal">
+			<dl class="mlogin_box">
+				<dd>로그인 후 더 많은 서비스를 이용하실 수 있습니다.</dd>
+				<dd><input type="text" name="userId" class="input-st" placeholder="아이디" value=""></dd>
+				<dd><input type="password" name="userPw" class="input-st" placeholder="비밀번호" onkeyup="enterkey();"></dd>
+				<dd>
+					<p class="id_save">
+						<input type="checkbox" name="saveId" style="margin:0;" >
+						<span class="txt">아이디 저장</span>
+					</p>
+					<a href="../member/find.html" class="ip_search">아이디 &amp; 비밀번호 찾기</a>
+				</dd>
+				<dd><div class="login_btn" onclick="Member.loginSubmit(this);">로그인</div></dd>
+			</dl>
+					<!--S: 소셜로그인 시작 -->
+			<div class="sns_log_box">
+				<span class="txt_sl" style="display:block;">SNS 계정으로 간편 로그인</span>
+				<div class="box_sl">
+										<a href="#" onclick="window.Member.socialLogin('KAKAO');" class="kakao_ic"></a>										<a href="#" onclick="window.Member.socialLogin('GOOGLE');" class="google_ic"></a>				</div>
+			</div>
+			<!--E: 소셜로그인 끝 -->
+				</form>
+	</div>
+
+	<!--S: Join -->
+	<div class="join_area" style="display:none;">
+		<form id="form_join_modal">
+			<input type="hidden" name="session" value="pandatv20191230160501583041" />
+			<input type="email" name="userId" placeholder="아이디 6~15자 이내의 영문/숫자" class="input-st"  errMsg="#form_join_modal .error_id" />
+			<span class="txt_hid error_id" style="display:none;"></span>
+			<input type="password" name="userPw" placeholder="비밀번호(6자리 이상의 문자와 숫자)" class="input-st" errMsg="#form_join_modal .error_pw" />
+			<span class="txt_hid error_pw" style="display:none;"></span>
+			<input type="password" name="userPw2" placeholder="비밀번호 확인" class="input-st" errMsg="#form_join_modal .error_pw2" />
+			<span class="txt_hid error_pw2" style="display:none;"></span>
+			<input type="text" name="userNick" placeholder="닉네임 2~12자 이내의 한글/영문/숫자" class="input-st" errMsg="#form_join_modal .error_nick" />
+			<span class="txt_hid error_nick" style="display:none;"></span>
+			<div class="foot_box">
+				<p>
+					<input type="checkbox" name="agree" class="left">
+					<span class="right">이용약관 및 개인정보취급방침에 동의 합니다.</span>
+				</p>
+			</div>
+
+			<div class="join_btn" onclick="Member.joinSubmit(this);">회원가입</div>
+					<!--S: 소셜로그인 시작 -->
+			<div class="sns_log_box">
+				<span class="txt_sl" style="display: block;">SNS 계정으로 간편 가입</span>
+				<div class="box_sl">
+										<a href="#" onclick="window.Member.socialLogin('KAKAO');" class="kakao_ic"></a>										<a href="#" onclick="window.Member.socialLogin('GOOGLE');" class="google_ic"></a>				</div>
+				<p class="link_group">
+					<a href="../policy/index728e.html?D*4v=service" target="_blank">이용약관보기</a>
+					<span class="bar">ㅣ</span>
+					<a href="../policy/indexd1bb.html?D*4v=privacy" target="_blank">개인정보취급방침보기</a>
+				</p>
+			</div>
+			<!--E: 소셜로그인 끝 -->
+				</form>
+	</div>
+
+</div>
+<!--E: Login Join -->
+
+<textarea id="skin_adultLayer" style="display:none;">
+<div class="auth_box1 adult_modal">
+	<p class="ic_adult"></p>
+	<p class="tit">회원님의 본인인증 수단을 선택해 주세요.</p>
+	<ul>
+			<li>
+			<p class="phone"></p>
+			<p class="tit_c">휴대폰인증</p>
+			<p class="txt_c">본인명의 휴대폰으로 인증하기</p>
+			<a href="javascript:Auth.go('phone', Member.authAdultCallback);" class="ok1 btn">인증하기</a>
+		</li>
+			<li>
+			<p class="ipin"></p>
+			<p class="tit_c">아이핀인증</p>
+			<p class="txt_c">발급받은 아이핀으로 인증하기</p>
+			<a href="javascript:Auth.go('ipin', Member.authAdultCallback);" class="ok1 btn">인증하기</a>
+		</li>
+		</ul>
+	<p class="text">실명이 등록되어 있지 않을 경우 실명확인기간으로 문의해주시기 바랍니다.</p>
+	<div class="btn_group">
+		<a class="type1 btn" href="javascript:window.swal.close();">다음에 인증하기</a>
+	</div>
+</div>
+</textarea>
+
+<script>
+	function enterkey() {
+		if (window.event.keyCode == 13) {
+
+			$(':focus').blur();
+			$('.login_btn').click();
+		}
+	}
+</script><link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/web.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+<div id="header">
+	<div class="inner_t">
+		<div class="wrap layoutWrap">
+			<a href="../index.html">
+				<div class="logo"></div>
+			</a>
+
+			<div class="top_notice" id="topNotice">
+				<span class="notice_ico webImg"></span>
+				<ul>
+									<li style="display:none;">
+						<span>김아윤님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>ღ라율ღ님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>ღ[OR]오리애기ღ님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>BJ민초님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>ღL1ON대표ღ님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>♡꽃자♡님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>_태이♥님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>뿌리♡님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>BJ로아♥님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>아쭈♥️개거스님이 방송을 시작 하였습니다.</span>
+					</li>
+								</ul>
+
+				<script>
+					require(['web.func'], function(){ 
+						func.verticalRolling('#topNotice li', 5000).start();
+					});
+				</script>
+			</div>
+								<div class="play_board">
+						<a href="../launcher/PANDATV.exe">
+							<span class="aFlashing webImg"></span>설치형 플레이어 방송보기(방송하기)						</a>
+					</div>
+			
+			<div class="search_wrap">
+				<form name="frm_search" action="http://www.pandalive.co.kr/live/search" method="post" onsubmit="return search()">
+				<input type="text" class="search_text" name="HLA5Nln1wgRx4Bzo" id="search_text" placeholder="검색어를 입력해주세요." value="">
+				<button class="search_submit" type="button" onclick="search();">
+					<span class="webImg"></span>
+				</button>
+				</form>
+				<script>
+					function search(){
+						if($('#search_text').val().length <= 1){				
+						//swal({title:'알림' ,  text: "검색어는 2자 이상 입력해 주세요"});
+						alert('검색어는 2자 이상 입력해 주세요');
+							return false;
+						}
+
+						window.WebApi.blockWord({
+							word: $('#search_text').val()
+							, success: function(json) {
+								if(!json.result) {
+									swal(json.message);
+									return;
+								}
+								document.frm_search.submit();
+							}
+							, error: function() {
+								swal('오류가 발생했습니다');
+							}
+						});
+						return false;
+					}
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="inner_b">
+		<div class="wrap layoutWrap">
+			<ul class="navi">
+				<li><a href="../live.html" class="">LIVE</a></li>
+									<li><a href="heart.html" class="">하트 충전</a></li>
+					<li><a href="item.html" class="on">아이템 구매</a></li>
+													<li><a href="javascript:;" onclick="func.openIframeLayer('/frame/useCoupon', {}, true);">쿠폰 등록</a><span class="new_ico"></span></li>
+							</ul>
+			<ul class="menu_r">
+									<li><a href="javascript:void(0)" onclick="window.open('http://pandahp.kr/')">팬더티비 도우미</a></li>
+								<li><a href="../bbs/notice.html" class="">고객센터</a></li>
+
+									<li><a href="../guide/pc.html" class="">방송가이드</a></li>
+								
+									<li><a href="../bbs/event.html" class="">이벤트</a></li>
+								
+							<li><a href="../member/join.html" class="">회원가입</a></li>
+				<li><a href="../member/login.html" class="logtxt">로그인</a></li>
+							
+				<li onclick="func.hideAnmiate('#detailMyInfo', 'blind'); func.toogleAnmiate('#AllMenu', 'blind');" class="mr0">
+					<a href="#" class="allmenu_ico"></a>
+				</li>
+			</ul>
+			
+			<!--S: My -->
+			<div class="my_wrap" style="display:none;" id="detailMyInfo">
+				<div class="my_arrow"></div>
+				<div class="my_box">
+					<div class="myinfo">
+						<div class="img">
+							<img src="#" alt="imgProfile">
+						</div>
+						<div class="id">
+							<p class="txt"><span></span>님 반갑습니다.</p>
+							<p>오늘도 행복한 하루되세요.</p>
+													<p class="color">
+								하트 <span></span>개
+							</p>
+												</div>
+												<a href="../member/adultAuth/index.html" class="auth19 btn">성인인증하기</a>
+										</div>
+					<!--
+					<select class="slt" onchange="window.open('/channel/'+this.value+'/');">
+						<option value="">내 즐겨찾기</option>
+										</select>
+					-->
+					<ul>
+													<li><a href="javascript:Media.goChannel('');" class="btn">방송국</a></li>
+							<li><a href="javascript:Media.goChannel('', 'mypage');" class="btn">내정보</a></li>
+												<li><a href="../bbs/qna.html" class="btn">1:1문의</a></li>
+						<li><a href="../member/logout.html" class="btn">로그아웃</a></li>
+											</ul>                            
+				</div>
+			</div>
+			<!--E: My -->
+			
+			<!--S: AllMenu -->
+			<div class="allmenu_wrap" style="display:none;" id="AllMenu">
+				<div class="allmenu_arrow"></div>
+				<div class="allmenu_box">
+					<div class="in_box01">
+						<p class="tt01">LIVE</p>
+						<ul>
+							<li><a href="../live.html">전체보기</a></li>
+							<li><a href="../live/ranking.html">BJ랭킹</a></li>
+						</ul>
+						<p class="tt_n01">고객센터</p>
+						<ul>
+							<li><a href="../bbs/notice.html">공지사항</a></li>
+							<li><a href="javascript:Member.loginHref('/bbs/qna');"> 1:1문의</a></li>
+							<li><a href="javascript:Member.loginHref('/bbs/proposal');">제안하기</a></li>
+							<li><a href="javascript:Member.loginHref('/bbs/report');">신고하기</a></li>
+						</ul>
+					</div>
+										<div class="in_box02">
+						<p class="tt02">이벤트</p>
+						<ul>
+							<li><a href="../bbs/event.html">이벤트</a></li>
+						</ul>
+						<p class="tt_n02">방송가이드</p>
+						<ul>
+							<li><a href="../guide/pc.html">PC</a></li>
+							<li><a href="../guide/mobile.html">모바일</a></li>
+						</ul>
+					</div>
+														<div class="in_box04">
+						<p class="tt04">하트&amp;아이템</p>
+						<ul>
+							<li><a href="heart.html">하트충전</a></li>
+							<li><a href="item.html">아이템구매</a></li>
+							<li><a href="../guide/emoticon.html">하트이모티콘</a></li>
+						</ul>
+					</div>
+								</div>
+			</div>
+			<!--E: AllMenu -->
+		</div>
+	</div>
+</div>
+
+<div id="aside">
+	<div class="wrap">
+		<div class="menu">
+			<ul class="menulist" style="position:absolute;">
+				<li>
+					<a href="javascript:Member.loginHref('/live/bookmark')" class=""><span class="like webImg"></span>즐겨찾기</a>
+				</li>
+				<li>
+					<a href="javascript:Member.loginHref('/live/watch')" class=""><span class="resen webImg"></span>최근본방송</a>
+				</li>
+
+				<li>
+											<a href="javascript:Member.loginHref('/live/gift')" class=""><span class="gift webImg"></span>내가선물한방송</a>
+									</li>
+
+				<li>
+					<a href="../live/ranking.html" class=""><span class="ranking webImg"></span>랭킹</a>
+				</li>
+				<li></li>
+				<li>
+					<a href="../live.html" class=""><span class="total webImg"></span>전체</a>
+				</li>
+				<li>
+					<a href="../live/index0221.html?RCxfyfx_Pmd4Dna=ind" class=""><span class="personal webImg"></span>개인</a>
+				</li>
+				<!--<li>
+					<a href="/live/?RCxfyfx_Pmd4Dna=mov" class=""><span class="mov webImg"></span>영화</a>
+				</li>-->
+				<li>
+					<a href="../live/index6a2b.html?RCxfyfx_Pmd4Dna=music" class=""><span class="music webImg"></span>음악</a>
+				</li>
+				<li>
+					<a href="../live/indexafbe.html?RCxfyfx_Pmd4Dna=game" class=""><span class="game webImg"></span>게임</a>
+				</li>
+				<li>
+					<a href="../live/indexb8f8.html?RCxfyfx_Pmd4Dna=etc" class=""><span class="etc webImg"></span>기타</a>
+				</li>
+				<li>
+					<a href="../live/index7e4d.html?RCxfyfx_Pmd4Dna=sports" class=""><span class="sports webImg"></span>스포츠</a>
+				</li>
+							</ul>
+		</div>
+	</div>
+</div>
+
+<div id="contents">
+	<div id="container">
+			<div class="subcon" style="padding:30px 0 40px 15px;">
+				<style>
+	#contents .subcon { padding:0 !important; }
+    /* qmenuItem 추가 */
+    #contents .subcon .subTable td.subMenu .qmenuItem{ margin-bottom:30px; border-bottom:1px solid #ccc;}
+    #contents .subcon .subTable td.subMenu .qmenuItem li{ padding-bottom:14px;}
+    #contents .subcon .subTable td.subMenu .qmenuItem li:last-child{ padding-bottom:24px;}
+    #contents .subcon .subTable td.subMenu .qmenuItem li a{ display:inline-block; padding-left:28px; font-size:13px;}
+    #contents .subcon .subTable td.subMenu .qmenuItem li .heartbuy{ height:18px; line-height:18px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/qm_heartbuy_ico.png) no-repeat;}
+    #contents .subcon .subTable td.subMenu .qmenuItem li .itembuy{ height:21px; line-height:21px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/qm_itembuy_ico.png) no-repeat 2px 0;}
+    #contents .subcon .subTable td.subMenu .qmenuItem li img{ margin-left:3px; vertical-align:middle;}
+
+
+    /* subMenu 수정 */
+    #contents .subcon .subTable td.subMenu{ width:180px; padding:30px 20px 0 25px; background-color:#ebebeb;}
+    #contents .subcon .subTable td.subMenu h2{ height: 45px;line-height: 45px; font-size:23px; margin-bottom:10px;}
+    #contents .subcon .subTable td.subMenu .stit{ margin-bottom:20px; font-weight:bold; font-size:16px;}
+    #contents .subcon .subTable td.subMenu .menuItem li{ padding-bottom: 14px; font-size:14px;}
+    #contents .subcon .subTable td.subMenu .menuItem li.on{ background:none;}
+
+    /* titlesub 수정 */
+    .titlesub{ position:relative; height:40px; line-height:40px; margin-bottom:20px;}
+
+    /* bv_itembuy_box */
+    .bv_itembuy_box{ overflow:hidden; margin-top:25px;}
+    .itemlist_bv{ width:100%; height:128px; margin-bottom:15px; border:1px solid #e6e6e6; border-radius:4px; background:#fff;}
+    .itemlist_bv .title_bv{
+        position:relative;
+        float:left;
+        width:280px;
+        height:128px;
+        margin:-1px 0 0 -1px;
+        padding:24px 0 0 24px;
+        border-radius:4px 0 0 4px;
+        vertical-align:middle;
+    }
+    .itemlist_bv .title_bv span,
+    .itemlist_bv .title_bv strong{ display:block; font-size:24px; color:#fff;}
+	.itemlist_bv .title_bv strong{ margin-top:15px;}
+    .itemlist_bv .title_bv span .beta_ico{
+        background:url(../../icache.neolive.kr/code_pandatv/web/charge/icon_beta.png) no-repeat;
+        height: 18px;
+        margin-left: 141px;
+        margin-top: -16px;
+    }
+
+    .itemlist_bv .title_bv em{ display:inline-block; position:absolute; right:30px; bottom:30px;}
+    .itemlist_bv .title_bv .listUp_ic{ width:59px; height:30px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_listup.png);}
+    .itemlist_bv .title_bv .userUp_ic{ width:59px; height:41px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_viewadd.png);}
+    .itemlist_bv .title_bv .saveUp_ic{ width:54px; height:35px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_playup.png);}
+    .itemlist_bv .title_bv .fireRecom_ic{ width:43px; height:54px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_firefour.png);}
+    .itemlist_bv .title_bv .pushFan_ic{ width:58px; height:36px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_fanpush.png);}
+    .itemlist_bv .title_bv .pushBookmark_ic{ width:58px; height:36px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_likepush.png);}
+    .itemlist_bv .title_bv .HeartEmo_ic{ width:44px; height:45px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_custom.png);}
+    .itemlist_bv .title_bv .worldMsg_ic{ width:44px; height:36px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconIteml_pspeak.png);}
+    .itemlist_bv .title_bv .entUnlimit_ic{ width:58px; height:28px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconIteml_full.png);}
+    .itemlist_bv .title_bv .nickDeco_ic{ width:38px; height:35px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_pnick.png);}
+    .itemlist_bv .title_bv .introEffect_ic{ width:52px; height:38px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_effect.png);}
+    .itemlist_bv .title_bv .guestLive_ic{ width:54px; height:41px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_guelive.png);}
+    .itemlist_bv .title_bv .listDeco_ic{ width:38px; height:35px; background:url(../../icache.neolive.kr/code_pandatv/web/charge/iconItem_plist.png);}
+
+
+    .itemlist_bv .con_bv {
+        display:table-cell;
+        width:1%;
+        height:128px;
+        vertical-align:middle;
+        text-align:right;
+        padding-right:40px;
+    }
+    .itemlist_bv .con_bv .price{ display:inline-block; margin-right:30px; font-size:24px; vertical-align:middle;}
+    .itemlist_bv .con_bv .price span{ font-size:14px; color:#8e8e8e;}
+    .itemlist_bv .con_bv .price .free{ position:relative; margin-right:7px; padding:0 10px;}
+    .itemlist_bv .con_bv .price .free:after{
+        content:'';
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:7px;
+        height:7px;
+        border-bottom:1px solid #ff0000;
+        background:url(../../icache.neolive.kr/code_pandatv/web/charge/arr_free.png) right top no-repeat;
+    }
+
+    .itemlist_bv .con_bv .price .beta_txt{ display:block; text-align:right;}
+    .itemlist_bv .con_bv .price .beta_txt span{
+        display:inline-block;
+        margin-bottom:12px;
+        padding:0 10px;
+        height:24px;
+        line-height:22px;
+        border:1px solid #FF0000;
+        color:#ff0000;
+    }
+    .itemlist_bv .con_bv .txt{ display:inline-block; width:256px; line-height:18px !important; vertical-align:middle; text-align:left; font-size:14px;}
+    .itemlist_bv .con_bv a{
+	        width:123px;
+	        height:40px;
+	        line-height:40px;
+	        margin-right:2px;
+	        border:1px solid #333;
+	        vertical-align:middle;
+	        font-weight:bold;
+	        font-size:14px;
+	        color:#333;
+	    }
+    .itemlist_bv .con_bv a:hover{ color:#333 !important;}
+    .itemlist_bv .con_bv a:last-child{ margin-right:0;}
+
+	/* ConBox 추가*/
+	.subTable td.subContents .conBox h3{ margin:20px 0; font-size:24px;}
+
+	/* listPreviewbox */
+	.listPreviewbox { overflow:hidden; margin-top:20px; border:1px solid #e6e6e6; border-radius:2px; text-align:center; background:#fff;}
+	.listPreviewbox ul{ overflow:hidden; width:776px; margin:40px auto 30px;}
+	.listPreviewbox ul li{ float:left; width:252px; height:80px; line-height:78px; margin:0 10px 10px 0; border:1px solid #e6e6e6; border-radius:2px;}
+	.listPreviewbox ul li .nnum{ float:left; width:26px; height:78px; line-height:78px; background:#f5f5f5;}
+	.listPreviewbox ul li:nth-child(3n){ margin-right:0;}
+
+	/* nickPreviewbox */
+	.nickPreviewbox { overflow:hidden; margin-top:20px; text-align:center;}
+	.nickPreviewbox .nickstylebox{ float:left; width:49%; margin-right:2%; border:1px solid #e6e6e6; border-radius:2px; background:#fff;}
+	.nickPreviewbox .nickstylebox .ntit{ height:45px; line-height:45px; border-bottom:1px solid #e6e6e6;}
+	.nickPreviewbox .nickstylebox ul{ overflow:hidden; width:326px; margin:40px auto 30px;}
+	.nickPreviewbox .nickstylebox ul li{ float:left; width:158px; height:46px; line-height:44px; margin:0 10px 10px 0; border:1px solid #e6e6e6; border-radius:2px;}
+	.nickPreviewbox .nickstylebox ul li .nnum{ float:left; width:26px; height:44px; line-height:44px; background:#f5f5f5;}
+	.nickPreviewbox .nickstylebox ul li img{ margin-top:8px;}
+	.nickPreviewbox .nickstylebox ul li:nth-child(2n){ margin-right:0;}
+	.nickPreviewbox .nickstylebox:last-child{ margin-right:0;}
+
+
+</style>
+
+
+<table class="subTable">
+    <tbody>
+    <tr>
+        <td class="subMenu">
+            <h2>아이템구매</h2>
+            <ul class="qmenuItem">
+                <li><a href="heart.html" class="heartbuy">하트충전</a></li>
+            </ul>
+            <p class="stit">BJ 아이템</p>
+            <ul class="menuItem">
+                <li class="">
+                    <a href="item2981.html?ygexK9g0oV3-0ZX2DdK1XoaA=listUp">- 리스트UP</a>
+                </li>
+                <li class="">
+                    <a href="item1f4c.html?ygexK9g0oV3-0ZX2DdK1XoaA=userUp">- 시청인원추가</a>
+                </li>
+                <!--<li class="">
+                    <a href="/charge/item?ygexK9g0oV3-0ZX2DdK1XoaA=saveUp">- 방송저장UP</a>
+                </li>-->
+                <li class="">
+                    <a href="item7a31.html?ygexK9g0oV3-0ZX2DdK1XoaA=fireRecom">- 불타는포미닛</a>
+                </li>
+                <li class="">
+                    <a href="item4c43.html?ygexK9g0oV3-0ZX2DdK1XoaA=pushFan">- 팬PUSH</a>
+                </li>
+                <li class="">
+                    <a href="itemb586.html?ygexK9g0oV3-0ZX2DdK1XoaA=pushBookmark">- 즐찾PUSH</a>
+                </li>
+                <li class="">
+                    <a href="item4bbf.html?ygexK9g0oV3-0ZX2DdK1XoaA=HeartEmo">- 커스텀이모티콘</a>
+                </li>
+                <li class="">
+                    <a href="item2ff9.html?ygexK9g0oV3-0ZX2DdK1XoaA=listDeco">- 리스트꾸미기</a>
+                </li>
+                <li class="">
+                    <a href="itemce0e.html?ygexK9g0oV3-0ZX2DdK1XoaA=worldMsg&amp;ygexK9Q1ot3Y0ZX2DdK1XoaA=bj">- 파워확성기</a>
+                </li>
+                <li class="on">
+                    <a href="itemcb91.html?ygexK9g0oV3-0ZX2DdK1XoaA=guestLive">- GUEST LIVE</a>
+                </li>
+            </ul>
+            <p class="stit mt20">시청자아이템</p>
+            <ul class="menuItem">
+                <li class="">
+                    <a href="item574b.html?ygexK9g0oV3-0ZX2DdK1XoaA=entUnlimit">- 풀방입장권</a>
+                </li>
+                <li class="">
+                    <a href="itemad69.html?ygexK9g0oV3-0ZX2DdK1XoaA=nickDeco">- 닉네임꾸미기</a>
+                </li>
+                <li class="">
+                    <a href="item23ee.html?ygexK9g0oV3-0ZX2DdK1XoaA=introEffect">- 방송입장효과</a>
+                </li>
+                <li class="">
+                    <a href="itemce76.html?ygexK9g0oV3-0ZX2DdK1XoaA=worldMsg&amp;ygexK9Q1ot3Y0ZX2DdK1XoaA=user">- 파워확성기</a>
+                </li>
+            </ul>
+        </td>
+
+        <td class="subContents">
+			<div class="titlesub">
+				<h3>GUEST LIVE</h3>
+			</div>
+			<div class="conBox">
+				<p class="txt">내 방송을 시청 중인 시청자와 함께 방송을 진행할 수 있습니다.</p>
+				<!-- S: listupCon -->
+				<div class="bv_itembuy_box">
+											<div class="itemlist_bv">
+							<div class="title_bv" style="background-color:#333">
+							<span>
+								GUEST LIVE																	<span class="beta_ico"></span>
+															</span>
+								<em class="guestLive_ic"></em>
+							</div>
+															<div class="con_bv">
+									<p class="price">
+										<span class="beta_txt"><span>Beta 기간한정</span></span>
+										<span class="free">88,000원 (VAT포함)</span> 0원
+									</p>
+									<p class="txt">Beta 기간 한정 해당 아이템은 구매없이<br> 누구나 사용할 수 있습니다.</p>
+								</div>
+													</div>
+									</div>
+								<!-- E: listupCon -->
+				<ul class="etcbox">
+					
+						<li>해당 아이템은 구매없이 누구나 사용할 수 있습니다.</li>
+
+									</ul>
+			</div>
+			<br /><br />
+			<!-- E: listup -->
+        </td>
+    </tr>
+    </tbody>
+</table>		</div>
+		</div>
+	
+	<!--S: FooterWrap -->
+	<div id="footer_wrap">
+		<div class="footer_box">		
+			<ul>
+				<li><a href="../policy/index61df.html?lxmPfZ4Dna=privacy">개인정보취급방침</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../policy/index48e7.html?lxmPfZ4Dna=service">이용약관</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../policy/index9f3a.html?lxmPfZ4Dna=youth">청소년보호정책</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../policy/indexd726.html?lxmPfZ4Dna=cast">방송기준안내</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../policy/index8ab4.html?lxmPfZ4Dna=play">시청기준안내</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../policy/index0889.html?lxmPfZ4Dna=claim">권리침해신고센터</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../bbs/cp/make.html">광고/제휴문의</a>&nbsp;&nbsp;&nbsp;l</li>
+									<li><a href="javascript:void(0)" onclick="window.open('http://ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2019316015930201640')">사업자정보확인</a></li>
+							</ul>
+					<address>
+			서비스명:팬더티비 I 회사명:주식회사 더블미디어  I 사업자등록번호:842-86-01445I 통신판매업 신고번호 :제 2019-서울구로-1670 호 I 대표:박효창, 이병근<br>
+			주소: 서울특별시 구로구 디지털로 33길 27, 5층 506호 (구로동, 삼성IT밸리)<br>
+			개인정보 관리책임자:이명수 I E-MAIL:help@pandalive.co.kr I 대표번호:1668-1682 I 팩스:0504-981-1682<br>
+			Copyright©2019 doublemedia Corp.All rights reserved. Hosting by 브로드밴드 IDC.
+			</address>
+		</div>	
+	</div>
+	<!--E: FooterWrap -->
+</div>
+
+<!--S: QuickBtn -->
+<div class="quick_btn">
+	<ul>
+		<li>
+			<a href="../index.html">
+				<span class="q_home"></span>
+			</a>
+		</li>
+					<li>
+				<a href="heart.html">
+					<span class="q_heart"></span>
+				</a>
+			</li>
+				<li>
+			<a href="javascript:Member.loginHref('/live/bookmark')">
+				<span class="q_like"></span>
+			</a>
+		</li>
+		<li>
+			<a href="#top">
+				<span class="q_top"></span>
+			</a>
+		</li>
+	</ul>
+</div>
+<!--E: QuickBtn -->
+
+<iframe src="http://www.pandalive.co.kr/resource/advert/common" style="display:none;"></iframe>
+</body>
+
+<!-- Mirrored from www.pandalive.co.kr/charge/item?ygexK9g0oV3-0ZX2DdK1XoaA=guestLive by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:17:33 GMT -->
+</html>

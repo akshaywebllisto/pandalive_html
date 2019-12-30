@@ -1,0 +1,147 @@
+HTTrack3.49-2 launched on Mon, 30 Dec 2019 11:44:47 at http://www.pandalive.co.kr/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/*
+(webhttrack -q -%i -w http://www.pandalive.co.kr/ -O "/home/developer/websites/pandalive" -n -%P -N0 -s2 -p7 -D -a -K0 -c4 -%k -A25000 -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -%s -%u )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+11:44:49	Warning: 	Note: due to www.pandalive.co.kr remote robots.txt rules, links beginning with these path will be forbidden: /resource/ (see in the options to disable this)
+12:39:59	Error: 	"No data (connection closed)" (-4) after 2 retries at link dcache.neolive.kr/robots.txt (from www.pandalive.co.kr/)
+12:44:21	Warning: 	file not stored in cache due to bogus state (broken size, expected 2451316 got 1440240): dcache.neolive.kr/board/d1779a247e82ff96cae9c5f8a2c2020cea9e812d
+12:44:54	Error: 	"Not Found" (404) at link www.pandalive.co.kr/<!-- IMAGE --> (from www.pandalive.co.kr/)
+12:45:48	Warning: 	file not stored in cache due to bogus state (broken size, expected 5672634 got 1691576): dcache.neolive.kr/board/b7838b7f79af989766557b969d7a753c889ad8c0
+12:46:56	Warning: 	file not stored in cache due to bogus state (broken size, expected 2288505 got 1691576): dcache.neolive.kr/board/145c6916a58ac0811f163aafc917290ca99b6b79
+12:49:29	Error: 	"Not Found" (404) at link www.pandalive.co.kr/live/<!-- THUMB --> (from www.pandalive.co.kr/live/ranking)
+12:49:31	Error: 	"Not Found" (404) at link icache.neolive.kr/code:pandatv/web/rank/<!-- Bookmark_ONOFF --> (from www.pandalive.co.kr/live/ranking)
+12:49:31	Warning: 	Retry after error -4 (No data (connection closed)) at link dcache.neolive.kr/heart/w/5?t=3e304e9646e75572619f2f9114f121a2&U37p4-zAu2GFv1uthl=8 (from www.pandalive.co.kr/guide/emoticon)
+12:49:31	Warning: 	Retry after error -4 (No data (connection closed)) at link dcache.neolive.kr/heart/w/6?t=333c67dd5db4f111ea6f5402eef49f8e&U37p4-zAu2GFv1uthl=9 (from www.pandalive.co.kr/guide/emoticon)
+12:49:38	Error: 	"Not Found" (404) at link www.pandalive.co.kr/live/<!-- IMAGE --> (from www.pandalive.co.kr/live/?RCxfyfx_Pmd4Dna=ind)
+12:49:47	Warning: 	Retry after error -4 (No data (connection closed)) at link dcache.neolive.kr/board/8d858a131bc449e27436ecddaf459843c671879a (from www.pandalive.co.kr/channel/990314/notice/)
+12:49:54	Warning: 	Retry after error -4 (No data (connection closed)) at link dcache.neolive.kr/board/f20ebd470bc27e78515b8283f182d1882beb7a8d (from www.pandalive.co.kr/channel/9649319/notice/)
+12:50:36	Warning: 	file not stored in cache due to bogus state (broken size, expected 1749931 got 1301864): icache.neolive.kr/code:pandatv/common/item/onceCoin/onceCoin10000.gif
+12:50:43	Warning: 	Retry after error -4 (Incorrect length (1440240 Bytes, 2451316 expected)) at link dcache.neolive.kr/board/d1779a247e82ff96cae9c5f8a2c2020cea9e812d (from www.pandalive.co.kr/channel/4739060/notice/)
+12:50:44	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/d1779a247e82ff96cae9c5f8a2c2020cea9e812d
+12:50:44	Warning: 	Retry after error -4 (No data (connection closed)) at link dcache.neolive.kr/board/f7e252a771b31643a7deafa50d848ef79e04f542 (from www.pandalive.co.kr/channel/4739060/notice/)
+12:50:59	Warning: 	Retry after error -4 (No data (connection closed)) at link dcache.neolive.kr/board/23756c73d98ca56dc0ccbdc9982e5b06ed746ac9 (from www.pandalive.co.kr/channel/4739060/notice/)
+12:51:01	Warning: 	Retry after error -4 (Incorrect length (1691576 Bytes, 5672634 expected)) at link dcache.neolive.kr/board/b7838b7f79af989766557b969d7a753c889ad8c0 (from www.pandalive.co.kr/channel/4739060/notice/)
+12:51:02	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/b7838b7f79af989766557b969d7a753c889ad8c0
+12:52:12	Warning: 	Retry after error -4 (Incorrect length (1691576 Bytes, 2288505 expected)) at link dcache.neolive.kr/board/145c6916a58ac0811f163aafc917290ca99b6b79 (from www.pandalive.co.kr/channel/4739060/notice/)
+12:52:17	Warning: 	Note: due to https://onestore.co.kr remote robots.txt rules, links beginning with these path will be forbidden: /userpoc/auth/ (see in the options to disable this)
+12:52:18	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/145c6916a58ac0811f163aafc917290ca99b6b79
+12:55:25	Warning: 	file not stored in cache due to bogus state (broken size, expected 2451316 got 1691576): dcache.neolive.kr/board/d1779a247e82ff96cae9c5f8a2c2020cea9e812d
+12:55:40	Warning: 	file not stored in cache due to bogus state (broken size, expected 2062812 got 1691576): dcache.neolive.kr/board/23756c73d98ca56dc0ccbdc9982e5b06ed746ac9
+12:55:44	Warning: 	file not stored in cache due to bogus state (broken size, expected 5672634 got 1691576): dcache.neolive.kr/board/b7838b7f79af989766557b969d7a753c889ad8c0
+12:55:52	Warning: 	file not stored in cache due to bogus state (broken size, expected 2288505 got 1301864): dcache.neolive.kr/board/145c6916a58ac0811f163aafc917290ca99b6b79
+12:58:29	Warning: 	Retry after error -4 (No data (connection closed)) at link dcache.neolive.kr/board/c36a4cba7685db2545c42f3ad515e87cc5ce7ee3 (from www.pandalive.co.kr/bbs/event?lxmPfZ4Dna=end)
+12:58:29	Warning: 	Retry after error -4 (Incorrect length (1691576 Bytes, 2451316 expected)) at link dcache.neolive.kr/board/d1779a247e82ff96cae9c5f8a2c2020cea9e812d (from www.pandalive.co.kr/channel/4739060/notice/)
+12:58:29	Warning: 	Retry after error -4 (Incorrect length (1691576 Bytes, 2062812 expected)) at link dcache.neolive.kr/board/23756c73d98ca56dc0ccbdc9982e5b06ed746ac9 (from www.pandalive.co.kr/channel/4739060/notice/)
+12:58:29	Warning: 	Retry after error -4 (Incorrect length (1691576 Bytes, 5672634 expected)) at link dcache.neolive.kr/board/b7838b7f79af989766557b969d7a753c889ad8c0 (from www.pandalive.co.kr/channel/4739060/notice/)
+12:58:30	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/d1779a247e82ff96cae9c5f8a2c2020cea9e812d
+12:58:30	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/23756c73d98ca56dc0ccbdc9982e5b06ed746ac9
+12:58:30	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/b7838b7f79af989766557b969d7a753c889ad8c0
+12:58:35	Warning: 	Retry after error -4 (Incorrect length (1301864 Bytes, 2288505 expected)) at link dcache.neolive.kr/board/145c6916a58ac0811f163aafc917290ca99b6b79 (from www.pandalive.co.kr/channel/4739060/notice/)
+12:58:36	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/145c6916a58ac0811f163aafc917290ca99b6b79
+13:02:21	Warning: 	file not stored in cache due to bogus state (broken size, expected 2288505 got 1338576): dcache.neolive.kr/board/145c6916a58ac0811f163aafc917290ca99b6b79
+13:02:21	Error: 	"Not Found" (404) at link https://onestore.co.kr/userpoc/apps/GET (from https://onestore.co.kr/userpoc/apps/view?pid=0000740952)
+13:03:13	Warning: 	file not stored in cache due to bogus state (broken size, expected 2451316 got 1691576): dcache.neolive.kr/board/d1779a247e82ff96cae9c5f8a2c2020cea9e812d
+13:03:13	Warning: 	file not stored in cache due to bogus state (broken size, expected 2062812 got 1691576): dcache.neolive.kr/board/23756c73d98ca56dc0ccbdc9982e5b06ed746ac9
+13:03:14	Warning: 	file not stored in cache due to bogus state (broken size, expected 5672634 got 1691576): dcache.neolive.kr/board/b7838b7f79af989766557b969d7a753c889ad8c0
+13:03:46	Error: 	"Incorrect length (1691576 Bytes, 2451316 expected)" (-4) after 2 retries at link dcache.neolive.kr/board/d1779a247e82ff96cae9c5f8a2c2020cea9e812d (from www.pandalive.co.kr/channel/4739060/notice/)
+13:03:46	Error: 	"Incorrect length (1691576 Bytes, 2062812 expected)" (-4) after 2 retries at link dcache.neolive.kr/board/23756c73d98ca56dc0ccbdc9982e5b06ed746ac9 (from www.pandalive.co.kr/channel/4739060/notice/)
+13:03:46	Error: 	"Incorrect length (1691576 Bytes, 5672634 expected)" (-4) after 2 retries at link dcache.neolive.kr/board/b7838b7f79af989766557b969d7a753c889ad8c0 (from www.pandalive.co.kr/channel/4739060/notice/)
+13:03:46	Error: 	"Incorrect length (1338576 Bytes, 2288505 expected)" (-4) after 2 retries at link dcache.neolive.kr/board/145c6916a58ac0811f163aafc917290ca99b6b79 (from www.pandalive.co.kr/channel/4739060/notice/)
+13:03:46	Warning: 	HTML file (27196 bytes) retransferred due to lack of cache: www.pandalive.co.kr/member/find
+13:03:48	Warning: 	HTML file (6775 bytes) retransferred due to lack of cache: dcache.neolive.kr/user/aacb6daaaae1358bf39293460f8a35f97ec3089b/?2qyWlOU=1&Y6K2VQRw0MfwbPfZ4Dna=224&AYNUR1c5v-yi4dNLpZWlOU=126
+13:03:50	Warning: 	HTML file (5842 bytes) retransferred due to lack of cache: dcache.neolive.kr/user/070eabc254fac00658728f84e578a2823676ae36/?2qyWlOU=1&Y6K2VQRw0MfwbPfZ4Dna=224&AYNUR1c5v-yi4dNLpZWlOU=126
+13:03:50	Warning: 	HTML file (4607 bytes) retransferred due to lack of cache: dcache.neolive.kr/user/d76815b86a84f08a078afb4bdec1417ed2378f02/?2qyWlOU=1&Y6K2VQRw0MfwbPfZ4Dna=224&AYNUR1c5v-yi4dNLpZWlOU=126
+13:03:51	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): www.pandalive.co.kr/launcher/clientWin
+13:03:51	Warning: 	HTML file (25890 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/5861117/notice/
+13:03:51	Warning: 	HTML file (7927 bytes) retransferred due to lack of cache: dcache.neolive.kr/user/3bb5224d47308290e951990cf1305f87afe8f4c5/?2qyWlOU=1&Y6K2VQRw0MfwbPfZ4Dna=224&AYNUR1c5v-yi4dNLpZWlOU=126
+13:03:52	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/b2d28a96d7af0305906c4793ec05bcdad921712b
+13:03:53	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/afd6608ba36e3e288daa17c30434bfd3c0073c11
+13:03:56	Warning: 	HTML file (24748 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/990314/notice/
+13:04:00	Warning: 	HTML file (24181 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/9649319/notice/
+13:04:02	Warning: 	HTML file (25432 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/4739060/notice/
+13:04:05	Warning: 	HTML file (27049 bytes) retransferred due to lack of cache: www.pandalive.co.kr/bbs/notice/info/402841
+13:04:07	Warning: 	HTML file (25471 bytes) retransferred due to lack of cache: www.pandalive.co.kr/bbs/event/info/287891/
+13:04:09	Warning: 	HTML file (3387 bytes) retransferred due to lack of cache: www.pandalive.co.kr/<!-- IMAGE -->
+13:04:10	Error: 	"Not Found" (404) at link www.pandalive.co.kr/<!-- IMAGE --> (from www.pandalive.co.kr/)
+13:04:11	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/23cecb499f24b9b42892b3a9bbb08e0c5291591c
+13:04:16	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/1?t=140ad631500b5ddb5271e8a67d1ef37a&U37p4-zAu2GFv1uthl=130
+13:04:17	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/2?t=ef96811481b0413ccc4c391217e41f7c&U37p4-zAu2GFv1uthl=5
+13:04:17	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/3?t=5d53881add644ee9ee76fc95cb8b7c5c&U37p4-zAu2GFv1uthl=6
+13:04:17	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/4?t=e3ea7c3ffa6a5ad5c3f1506bb4c62d2b&U37p4-zAu2GFv1uthl=7
+13:04:17	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/7?t=6839ec2e31ce42fd9e48a8a8253ee2bc&U37p4-zAu2GFv1uthl=10
+13:04:18	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/10?t=2d08f68598431dab81b75822382be7d4&U37p4-zAu2GFv1uthl=13
+13:04:18	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/8?t=d41d72d9be2fb80d48b6954e1c710e6c&U37p4-zAu2GFv1uthl=11
+13:04:18	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/9?t=3798468851714e5681ad2f2b7fa1e7f8&U37p4-zAu2GFv1uthl=12
+13:04:18	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/11?t=cb0a016787b97e027a3290fa73f82e7b&U37p4-zAu2GFv1uthl=14
+13:04:19	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/12?t=bb7119e668271e35ca913b386b1c3b61&U37p4-zAu2GFv1uthl=15
+13:04:19	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/14?t=9763320d3a5be7841867c0a088a20662&U37p4-zAu2GFv1uthl=17
+13:04:19	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/15?t=3b7c40f6aaa1bed2d93e4887dae49b49&U37p4-zAu2GFv1uthl=18
+13:04:19	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/13?t=48a81b257d1b12da092a07c82c9c0c26&U37p4-zAu2GFv1uthl=16
+13:04:20	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/18?t=aac19165d19d83775f3655cfbeef93d7&U37p4-zAu2GFv1uthl=19
+13:04:20	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/19?t=2594c72db84864610904b981f444dd35&U37p4-zAu2GFv1uthl=20
+13:04:20	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/20?t=e0c0c743a791a20b8743295d589d9521&U37p4-zAu2GFv1uthl=21
+13:04:20	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/21?t=9955eb8ac03dbab345bfb7a05155ee7c&U37p4-zAu2GFv1uthl=22
+13:04:21	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/22?t=7ea356a200026845318546e242afb8de&U37p4-zAu2GFv1uthl=23
+13:04:21	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/user/aacb6daaaae1358bf39293460f8a35f97ec3089b
+13:04:22	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/a1a1f4d102a75d37fa49387940b02d692ca464e0
+13:04:22	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/79e6662b99585611082e95e07c905169476565eb
+13:04:23	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/e2bff7a62c96a8a4df2d90fcacc9297292a513b4
+13:04:23	Warning: 	Retry after error -4 (No data (connection closed)) at link icache.neolive.kr/code:pandatv/web/guide/pc_guide3_8.png?t=1 (from www.pandalive.co.kr/guide/pc)
+13:04:23	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/user/070eabc254fac00658728f84e578a2823676ae36
+13:04:23	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/user/d76815b86a84f08a078afb4bdec1417ed2378f02
+13:04:23	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/user/3bb5224d47308290e951990cf1305f87afe8f4c5
+13:04:23	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/f9ca6d33b13e9bac6ef455c55702c7865000046e
+13:04:24	Warning: 	Retry after error -4 (No data (connection closed)) at link icache.neolive.kr/code:pandatv/web/guide/pc_guide3_12.png?t=1 (from www.pandalive.co.kr/guide/pc)
+13:04:24	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/19fe516c0cc20cd23fa56b8a3b9be5691a907f91
+13:04:24	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/192cab977ae80d4b4577713fc3ceff4d63f12d88
+13:04:24	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/4d5f80e0cc712cc16246240640aaacd9d936d3af
+13:04:25	Warning: 	Retry after error -4 (No data (connection closed)) at link icache.neolive.kr/code:pandatv/web/guide/pc_guide3_15.png?t=1 (from www.pandalive.co.kr/guide/pc)
+13:04:25	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): data.full.co.kr/board/83607d2fedae38681a80e957ef14f4573c966e21_1080_0
+13:04:25	Warning: 	Retry after error -4 (No data (connection closed)) at link icache.neolive.kr/code:pandatv/web/guide/pc_guide3_17.png?t=1 (from www.pandalive.co.kr/guide/pc)
+13:04:26	Warning: 	Retry after error -4 (No data (connection closed)) at link icache.neolive.kr/code:pandatv/web/guide/pc_guide4_3.png?t=1 (from www.pandalive.co.kr/guide/pc)
+13:04:26	Warning: 	HTML file (26509 bytes) retransferred due to lack of cache: www.pandalive.co.kr/bbs/event?lxmPfZ4Dna=end
+13:04:26	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): data.full.co.kr/board/1e8adcfdd3a3a2c9a3010fa274ceea7736a49024_1080_0
+13:04:26	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/007a24930289ce1313263e83fee7c3cada5de2ee
+13:04:28	Warning: 	HTML file (3139 bytes) retransferred due to lack of cache: www.pandalive.co.kr/live/<!-- THUMB -->
+13:04:29	Error: 	"Not Found" (404) at link www.pandalive.co.kr/live/<!-- THUMB --> (from www.pandalive.co.kr/live/ranking)
+13:04:33	Warning: 	HTML file (27545 bytes) retransferred due to lack of cache: www.pandalive.co.kr/guide/emoticon?NgxdaEY0ZX2DdK1XoaA=custom
+13:04:35	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/5?t=3e304e9646e75572619f2f9114f121a2&U37p4-zAu2GFv1uthl=8
+13:04:36	Error: 	"" (404) at link www.pandalive.co.kr/live/<!-- IMAGE --> (from www.pandalive.co.kr/live/?RCxfyfx_Pmd4Dna=ind)
+13:04:36	Warning: 	HTML file (22370 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/5861117/fanRanking
+13:04:38	Warning: 	HTML file (22221 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/990314/fanRanking
+13:04:40	Warning: 	HTML file (22448 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/9649319/fanRanking
+13:04:42	Warning: 	HTML file (22283 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/4739060/fanRanking
+13:04:43	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): data.full.co.kr/board/1e7467da932188c61329a0f595648cb4c5844f1e_1080_0
+13:04:43	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/69d2020224671bb516309ef631a7c4019beaafc7
+13:04:43	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/1a4e3fa6be9f7188d3ac79655e664043564874d7
+13:04:44	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/heart/w/6?t=333c67dd5db4f111ea6f5402eef49f8e&U37p4-zAu2GFv1uthl=9
+13:04:44	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/f7e252a771b31643a7deafa50d848ef79e04f542
+13:04:44	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/8d858a131bc449e27436ecddaf459843c671879a
+13:04:46	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/23756c73d98ca56dc0ccbdc9982e5b06ed746ac9
+13:04:46	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/f20ebd470bc27e78515b8283f182d1882beb7a8d
+13:04:50	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://img.onestore.co.kr/thumbnails/img_sac/300_300_F10_95/data6/android/201910/30/SE201905231141386710042762/0000740952/img/original/0000740952_DP000101_20191030141756.png
+13:05:27	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/c36a4cba7685db2545c42f3ad515e87cc5ce7ee3
+13:07:19	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/b7838b7f79af989766557b969d7a753c889ad8c0
+13:14:36	Warning: 	HTML file (19196 bytes) retransferred due to lack of cache: www.pandalive.co.kr/eventFrame/bjRankEvent1912
+13:14:38	Warning: 	Retry after error -4 (No data (connection closed)) at link icache.neolive.kr/code:pandatv/common/item/onceCoin/onceCoin2828.gif (from www.pandalive.co.kr/charge/itemHeart)
+13:14:38	Warning: 	Retry after error -4 (No data (connection closed)) at link icache.neolive.kr/code:pandatv/common/item/onceCoin/onceCoin3000.gif (from www.pandalive.co.kr/charge/itemHeart)
+13:14:38	Warning: 	Retry after error -4 (No data (connection closed)) at link icache.neolive.kr/code:pandatv/common/item/onceCoin/onceCoin5000.gif (from www.pandalive.co.kr/charge/itemHeart)
+13:14:38	Warning: 	Retry after error -4 (Incorrect length (1301864 Bytes, 1749931 expected)) at link icache.neolive.kr/code:pandatv/common/item/onceCoin/onceCoin10000.gif (from www.pandalive.co.kr/charge/itemHeart)
+13:14:56	Warning: 	Retry after error -4 (No data (connection closed)) at link icache.neolive.kr/code:pandatv/common/item/onceCoin/onceCoin10000_cover.png (from www.pandalive.co.kr/charge/itemHeart)
+13:14:56	Warning: 	HTML file (27719 bytes) retransferred due to lack of cache: www.pandalive.co.kr/bbs/faq?yQCxfyfx_Pmd0ZX2DdK1XoaA=bj
+13:15:04	Warning: 	HTML file (25710 bytes) retransferred due to lack of cache: www.pandalive.co.kr/bbs/event/info/383331/
+13:15:28	Warning: 	HTML file (22631 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/5861117/fanRanking/
+13:15:34	Warning: 	HTML file (22514 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/9649319/fanRanking/
+13:15:41	Warning: 	HTML file (22338 bytes) retransferred due to lack of cache: www.pandalive.co.kr/channel/4739060/fanRanking/
+13:15:48	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/23756c73d98ca56dc0ccbdc9982e5b06ed746ac9
+13:19:56	Error: 	"Bad Request" (400) at link www.googletagmanager.com/gtm.js?id= (from https://onestore.co.kr/userpoc/apps/view?pid=0000740952)
+13:19:56	Warning: 	HTML file (28017 bytes) retransferred due to lack of cache: www.pandalive.co.kr/bbs/faq/info/364611/
+13:20:00	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dcache.neolive.kr/board/d1779a247e82ff96cae9c5f8a2c2020cea9e812d
+13:23:10	Warning: 	Retry after error -4 (No data (connection closed)) at link icache.neolive.kr/code:pandatv/web/guide/pc_guide3_15.png?t=1 (from www.pandalive.co.kr/guide/pc)
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 hours 38 minutes 24 seconds : 619 links scanned, 813 files written (139316940 bytes overall) [100095379 bytes received at 16953 bytes/sec], 3289929 bytes transferred using HTTP compression in 124 files, ratio 29%, 2.1 requests per connection
+(14 errors, 122 warnings, 0 messages)

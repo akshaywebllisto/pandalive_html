@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<!-- Mirrored from www.pandalive.co.kr/eventFrame/bjRankEvent1912 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:44:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>팬더티비</title>
+
+	<link rel="canonical" href="../index.html">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<meta name="naver-site-verification" content="f53f9ec6b870896e159227b9d6c68ef2613cb537"/>
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="팬더티비">
+	<meta property="og:site_name" content="팬더티비">
+
+			<meta name="og:description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+		
+	<meta property="og:image" content="../../icache.neolive.kr/code_pandatv/apple-icon.png">
+	<meta property="og:url" content="../index.html">
+
+			<meta name="description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+	
+	<meta name="keywords" content="PC/모바일 어디서나 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="팬더티비">
+	<meta name="twitter:site" content="팬더티비">
+	<meta name="twitter:description" content="PC/모바일 어디서도 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+	
+
+	<link rel="shortcut icon" href="../../icache.neolive.kr/code_pandatv/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="../../icache.neolive.kr/code_pandatv/apple-icon.png">
+
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/common.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/sweetalert/sweetalert2.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/jqueryui/jquery-ui.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/loading/loading.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/magnific/magnific-popup.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<!--[if gte IE 9 ]>
+	<link rel="stylesheet" type="text/css" href="/resource/css/web/ie9.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<![endif]-->
+
+	<script>
+		document.domain = "pandalive.co.kr";
+		window.liveData = {};
+		window.liveData.device = {};
+		window.liveData.device.type = "webPc";
+		window.liveData.device.version = "1.0.0";
+
+		window.userInfo = {};
+					window.userInfo.isLogin = false;
+		
+		window.siteMode = {};
+		window.siteMode.showAdult = true;
+		window.siteMode.needAuth = false;
+	window.siteMode.needAuth = true;	</script>
+	
+	<script src="http://www.pandalive.co.kr/resource/js/es6promise/es6-promise.auto.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('65([\'59\'],62(){59.64([42.43(20,6,3,17,2,57,55,12,39,19,32,49,57,5,41,45,26,23,66,54,67,6,57,47,14,14,52,41,54,15,1,57,66,31,52,8,20,30,63,21,49,6,3,20,7,23,3,5,15,11,13,2,37,54,9,8,10,28,7,50,55,15,34,10,0,23,13,18,9,27,11,50,56,57,55,5,9,12,56,6,34,30,4,23,19,53,61,12,56,49,18,66,31,28,7,3,60,14,66,11,6,24,3,50,41,39,4,2,58,22,12,8,3,6,26,37,31,17,13,46,28,6,46,47,7,33,13,18,33,60,55,2,66,2,26,36,17,10,56,21,30,8,34,17,7,66,13,5,27,15,25,67,3,8,9,16,39,49,1,27,21,34,38,17,0,33,13,5,19,11,25,8,3,22,1,5,22,19,7,27,35,50,67,10,32,23,55,12,19,11,25,38,3,22,7,37,22,14,1,49,56,57,4,10,26,19,44,12,56,57,18,2,6,53,9,8,20,49,56,49,55,15,38,20,32,40,55,18,40,33,11,66,67,30,35,16,13,36,56,49,54,21,16,14,0,31,52,12,56,49,32,1,21,36,35,3,25,10,7,50,58,29,16,14,8,40,25,18,9,14,28,2,66,17,26,5,22,5,44,27,56,6,3,20,7,16,3,5,15,5,56,2,21,30,9,16,10,9,56,11,61,6,6,51,44,5,28,10),42.43(0,51,50,52,49,55,57,1,0,51,48,4,52,55,4,52,57,53,50,50,24,48,0,54,49,1,2,53,51,29,0,49,49,49,0,29,0,53,1,53,24,52,4,0,55,51,4,56,56,56,0,55,50,1,52,53,0,53,52,54,55,55,49,1),42.43(55,1,50,50,57,4,48,48,53,48,49,2,1,54,4,51,49,52,52,52,2,49,2,50,48,50,53,48,54,24,29,49,49,56,48,53,4,53,48,55,1,51,2,50,2,48,52,48,54,50,4,48,0,4,50,53,29,0,49,57,0,49,1,24)])});',10,68,'100|98|99|84|102|116|68|114|90|78|108|73|112|118|120|72|83|107|111|86|109|70|76|119|101|110|113|69|104|97|103|85|88|77|105|75|115|81|121|80|79|95|String|fromCharCode|117||122|106|||||||||||74|WebApi|87|71|function|82|_|require||'.split('|'),0,{}))
+</script>
+	<script>
+		window.name = "7e87de047ebd77783f213d3d8d08e727f16d4828357b8fb08e6de6e77ed5d5ff";
+		require(['jquery', 'jquery.browser'], function() {
+			if($.browser.name == "msie" && $.browser.versionNumber <= 9) {
+				$.support.cors = true;
+			}
+		});
+		require(['jquery', 'web.media', 'func', 'jquery.ui', 'web.func', 'loading', 'jquery.magnific', 'web.GoUrl']);
+		require(['sweetalert'], function(_swal) {
+			window.swal = _swal;
+			window.swal.setDefaults({
+				confirmButtonText: '확인'
+				, cancelButtonText: '취소'
+				, confirmButtonColor:'#20C9B0'
+			});
+		});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150827960-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', "UA-150827960-1");
+	</script>
+
+
+
+
+
+
+<script>
+	window.onpopstate = function(e) {
+		var state = window['backHistory'];
+		if(e.state) state = e.state;
+		window['backHistory'] = null;
+		if(!state) return;
+		
+		if(state['cookie']) {
+			$.cookie(state['cookie']['key'], state['cookie']['value'], {path:'/', domain:".pandalive.co.kr"});
+		}
+
+		if(state['backUrl']) {
+			//location.href = state['backUrl'];
+			location.replace(state['backUrl']);
+		}
+	}
+</script></head>
+<body id="site_pandatv">
+
+<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/layer.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+<div id="blankFrame" style="display:inline-block;">
+	
+<style>
+	/* rank_tab */
+	.rank_tab {position:absolute; left:110px; right:110px; bottom:-46px; overflow:hidden; z-index:1;}
+	.rank_tab a {float:left; width:50%; height:104px; line-height:104px; text-align:center; letter-spacing:-3px; font-weight:800; font-size:31px; color:#111; background:#f2f2f2;}
+	.rank_tab a:last-child {margin-right:0;}
+	.rank_tab a.on {color:#015f36; background:#ffb816;}
+
+	/* toprank_list */
+	.toprank_list {width:100%;}
+	.toprank_list > thead {width:100%; background:#600002; text-align:center;}
+	.toprank_list > thead > tr > td {height:50px; font-size:17px; color:#fff !important;}
+	.toprank_list > thead > tr > td:nth-child(1) {width:13%;}
+	.toprank_list > thead > tr > td:nth-child(2) {width:6%;}
+	.toprank_list > thead > tr > td:nth-child(3) {width:53%;}
+	.toprank_list > thead > tr > td:nth-child(4) {width:28%;}
+	.toprank_list > tbody > tr:nth-child(odd) {background:#fff;}
+	.toprank_list > tbody > tr:nth-child(even) {background:#f8f5ee;}
+	.toprank_list > tbody > tr > td {padding:13px 0; font-size:14px; color:#ccc;}
+	.toprank_list > tbody > tr > td:nth-child(1) {width:13%; text-align:center; font-size:20px; font-style:italic; color:#600002;}
+	.toprank_list > tbody > tr > td:nth-child(2) {position:relative; width:6%;}
+	.toprank_list > tbody > tr > td:nth-child(2) img {position:absolute; bottom:0; left:-20px; width:36px;}
+	.toprank_list > tbody > tr > td:nth-child(3) {width:53%; text-align:left;}
+	.toprank_list > tbody > tr > td:nth-child(4) {width:28%; text-align:center;}
+
+	.topbjrank_nick {padding:0 10px; color:#000;}
+	.topbjrank_id {padding:0 10px; color:#787878;}
+	.topbj_score {color:#000;}
+
+	/* evt_rank_box */
+	.evt_rank_pic {position:relative; width:960px;}
+	.evt_rank_pic img {width:100%;}
+
+	/* evt_rank_box */
+	.evt_rank_box {position:relative; width:960px; font-size:13px; background:#8e1106;}
+	.evt_rank_box img {width:100%;}
+	.evt_rank_box .rankdate {position:absolute; top:30px; right:20px;}
+	.evt_rank_box .rankdate .tit {font-weight:bold; font-size:15px; color:#ffa4a4;}
+	.evt_rank_box .rankdate .upDate {font-size:15px; color:#ffa4a4;}
+	.evt_rank_box .listbox {padding:0 105px 78px 105px;}
+
+	#viewRank {display:none;}
+</style>
+
+<div id="evtrank" class="evt_rank_pic">
+	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/rank_top.png">
+	<div class="rank_tab">
+		<a href="javascript:void(0);" onclick="evtrankTab('bjRank',this);" class="on">BJ 랭킹전</a>
+		<a href="javascript:void(0);" onclick="evtrankTab('viewRank',this);" class="">시청자 랭킹전</a>
+	</div>
+</div>
+
+<div id="bjRank" class="evt_rank_pic">
+	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/rank_all_mid1.png">
+	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/rank_all_mid2.png">
+	<!-- S:EVENT1.BJ랭킹전 -->
+	<div class="evt_rank_box">
+		<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/rank_all_mid3.png">
+		<p class="rankdate">
+			<span class="tit">[최근업데이트시간]</span>
+			<span class="upDate">2019-12-30 16:40:45</span>
+		</p>
+		<div class="listbox">
+			<table class="toprank_list">
+				<thead>
+				<tr>
+					<td>순위</td>
+					<td></td>
+					<td>BJ</td>
+					<td>점수</td>
+				</tr>
+				</thead>
+				<tbody>
+										<tr>
+							<td>1</td>
+							<td>
+																	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/icon_rank1.png">
+															</td>
+							<td>
+								<span class="topbjrank_nick">BJ레이지 </span>│<span class="topbjrank_id">polo8979</span>
+							</td>
+							<td>
+								<span class="topbj_score">1,290,195 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>2</td>
+							<td>
+																	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/icon_rank2.png">
+															</td>
+							<td>
+								<span class="topbjrank_nick">ღ정다올ღ </span>│<span class="topbjrank_id">qktbejrk1</span>
+							</td>
+							<td>
+								<span class="topbj_score">1,112,161 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>3</td>
+							<td>
+																	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/icon_rank3.png">
+															</td>
+							<td>
+								<span class="topbjrank_nick">ღ[SJ]서정ღ </span>│<span class="topbjrank_id">eschoi8</span>
+							</td>
+							<td>
+								<span class="topbj_score">1,072,374 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>4</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">자몽vs김준 </span>│<span class="topbjrank_id">tant26</span>
+							</td>
+							<td>
+								<span class="topbj_score">705,228 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>5</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">진리의베이비 </span>│<span class="topbjrank_id">double101</span>
+							</td>
+							<td>
+								<span class="topbj_score">684,851 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>6</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">수리❤️ </span>│<span class="topbjrank_id">wlgp1047</span>
+							</td>
+							<td>
+								<span class="topbj_score">609,942 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>7</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">98꽃사슴♥ </span>│<span class="topbjrank_id">deer9898</span>
+							</td>
+							<td>
+								<span class="topbj_score">547,690 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>8</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">수수 </span>│<span class="topbjrank_id">angelo3o</span>
+							</td>
+							<td>
+								<span class="topbj_score">454,085 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>9</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">썬이텐ღ </span>│<span class="topbjrank_id">sunnyten</span>
+							</td>
+							<td>
+								<span class="topbj_score">402,375 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>10</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">ღ탱이 </span>│<span class="topbjrank_id">kittydooly</span>
+							</td>
+							<td>
+								<span class="topbj_score">376,424 점</span>
+							</td>
+						</tr>
+										</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- E:EVENT1.BJ랭킹전 -->
+	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/rank_all_btm.png">
+</div>
+
+<div id="viewRank" class="evt_rank_pic">
+	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/rank_view_mid1.png">
+	<!-- S:EVENT2.시청자랭킹전 -->
+	<div class="evt_rank_box">
+		<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/rank_view_mid2.png">
+		<p class="rankdate">
+			<span class="tit">[최근업데이트시간]</span>
+			<span class="upDate">2019-12-30 16:40:45</span>
+		</p>
+		<div class="listbox">
+			<table class="toprank_list">
+				<thead>
+				<tr>
+					<td>순위</td>
+					<td></td>
+					<td>시청자</td>
+					<td>점수</td>
+				</tr>
+				</thead>
+				<tbody>
+										<tr>
+							<td>1</td>
+							<td>
+																	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/icon_rank1.png">
+															</td>
+							<td>
+								<span class="topbjrank_nick">마빡님 </span>│<span class="topbjrank_id">nanananana1029</span>
+							</td>
+							<td>
+								<span class="topbj_score">116,455 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>2</td>
+							<td>
+																	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/icon_rank2.png">
+															</td>
+							<td>
+								<span class="topbjrank_nick">아시아해장 </span>│<span class="topbjrank_id">parkbbw7</span>
+							</td>
+							<td>
+								<span class="topbj_score">98,494 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>3</td>
+							<td>
+																	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/icon_rank3.png">
+															</td>
+							<td>
+								<span class="topbjrank_nick">[SJ]서정ღ5DO </span>│<span class="topbjrank_id">deluxebox</span>
+							</td>
+							<td>
+								<span class="topbj_score">72,084 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>4</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">수리♥뺑돌이 </span>│<span class="topbjrank_id">dark5883</span>
+							</td>
+							<td>
+								<span class="topbj_score">47,176 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>5</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">ღ정다올ღ샤인⭐ </span>│<span class="topbjrank_id">mastermask</span>
+							</td>
+							<td>
+								<span class="topbj_score">37,127 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>6</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">지오❤ </span>│<span class="topbjrank_id">legend88888</span>
+							</td>
+							<td>
+								<span class="topbj_score">32,414 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>7</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">까꿍▷로만◁one </span>│<span class="topbjrank_id">zivas7</span>
+							</td>
+							<td>
+								<span class="topbj_score">29,339 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>8</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">ღ탱이ღ황금차니™☃ </span>│<span class="topbjrank_id">moochan2</span>
+							</td>
+							<td>
+								<span class="topbj_score">28,039 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>9</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">ღ정다올ღ하봉⭐ </span>│<span class="topbjrank_id">club0365</span>
+							</td>
+							<td>
+								<span class="topbj_score">23,209 점</span>
+							</td>
+						</tr>
+												<tr>
+							<td>10</td>
+							<td>
+															</td>
+							<td>
+								<span class="topbjrank_nick">임금이만보는올치 </span>│<span class="topbjrank_id">pjua2023</span>
+							</td>
+							<td>
+								<span class="topbj_score">22,511 점</span>
+							</td>
+						</tr>
+										</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- E:EVENT2.시청자랭킹전 -->
+	<img src="../../icache.neolive.kr/code_pandatv/event/bjRankEvent1912/rank_view_btm.png">
+</div>
+
+<script>
+	/* evtrankTab */
+		function evtrankTab(type, dom) {
+			$('#bjRank, #viewRank').css('display', 'none');
+			$('#evtrank .rank_tab a').removeAttr('class');
+			$('#' + type).css('display', 'block');
+			$(dom).attr('class', 'on');
+
+			require(['jquery','func'],function(){
+				window.parent.func.autoIframeResize('#bbsIframe');
+			});
+		}
+</script></div>
+<iframe src="http://www.pandalive.co.kr/resource/advert/common" style="display:none;"></iframe>
+</body>
+
+<!-- Mirrored from www.pandalive.co.kr/eventFrame/bjRankEvent1912 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:44:38 GMT -->
+</html>

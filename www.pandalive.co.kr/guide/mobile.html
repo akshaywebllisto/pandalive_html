@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<!-- Mirrored from www.pandalive.co.kr/guide/mobile by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:07:42 GMT -->
+<head>
+	<title>팬더티비</title>
+
+	<link rel="canonical" href="../index.html">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<meta name="naver-site-verification" content="f53f9ec6b870896e159227b9d6c68ef2613cb537"/>
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="팬더티비">
+	<meta property="og:site_name" content="팬더티비">
+
+			<meta name="og:description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+		
+	<meta property="og:image" content="../../icache.neolive.kr/code_pandatv/apple-icon.png">
+	<meta property="og:url" content="../index.html">
+
+			<meta name="description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+	
+	<meta name="keywords" content="PC/모바일 어디서나 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="팬더티비">
+	<meta name="twitter:site" content="팬더티비">
+	<meta name="twitter:description" content="PC/모바일 어디서도 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+	
+
+	<link rel="shortcut icon" href="../../icache.neolive.kr/code_pandatv/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="../../icache.neolive.kr/code_pandatv/apple-icon.png">
+
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/common.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/sweetalert/sweetalert2.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/jqueryui/jquery-ui.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/loading/loading.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/magnific/magnific-popup.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<!--[if gte IE 9 ]>
+	<link rel="stylesheet" type="text/css" href="/resource/css/web/ie9.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<![endif]-->
+
+	<script>
+		document.domain = "pandalive.co.kr";
+		window.liveData = {};
+		window.liveData.device = {};
+		window.liveData.device.type = "webPc";
+		window.liveData.device.version = "1.0.0";
+
+		window.userInfo = {};
+					window.userInfo.isLogin = false;
+		
+		window.siteMode = {};
+		window.siteMode.showAdult = true;
+		window.siteMode.needAuth = false;
+	window.siteMode.needAuth = true;	</script>
+	
+	<script src="http://www.pandalive.co.kr/resource/js/es6promise/es6-promise.auto.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('Y([\'S\'],Z(){S.10([O.M(m,d,s,i,7,A,5,Q,a,b,H,p,i,7,m,a,W,15,m,6,L,f,n,f,0,U,0,2,t,H,i,q,1,e,m,f,r,3,0,f,0,A,s,b,E,Q,x,2,k,y,9,k,p,c,k,e,s,F,F,l,v,j,P,g,11,6,I,g,A,l,v,n,V,r,2,D,0,9,z,5,B,q,N,j,0,J,D,x,o,g,w,u,w,n,0,y,1,7,q,e,h,13,B,f,4,x,0,C,k,y,5,R,s,e,u,P,1,U,2,r,v,f,t,n,E,K,0,j,k,H,l,N,i,v,0,q,r,5,x,n,v,q,I,j,4,g,0,u,12,p,5,J,o,r,z,6,i,F,1,f,0,k,I,j,4,J,0,u,z,H,f,2,o,e,G,g,r,3,1,f,B,j,t,3,E,K,R,2,C,l,L,a,B,e,2,a,s,3,2,8,G,k,o,X,t,6,4,D,C,p,B,g,d,5,m,3,m,5,z,i,I,n,l,g,E,3,1,x,a,y,e,j,0,e,G,6,T,5,k,g,4,A,p,14,t,Q,m,8,C,g,9,P,o,e,u,T,0,9,z,l,p,q,N,i,1,K,i,4,A,l,W,F,o,j,G,D,V,L,s,y,t,X),O.M(2,3,3,h,5,c,b,1,9,8,5,1,9,a,8,c,8,4,3,4,d,h,9,h,1,6,3,1,c,3,w,7,8,w,8,h,7,9,3,4,1,3,c,b,6,8,7,1,2,8,7,0,d,b,8,1,8,7,b,1,9,h,6,0),O.M(2,7,h,0,2,7,5,a,5,a,d,b,h,7,d,4,7,9,6,c,9,h,3,1,3,6,1,d,4,b,2,c,a,2,d,6,4,2,d,a,4,1,a,w,4,b,9,d,c,0,8,5,2,c,6,b,7,4,c,b,3,6,2,0)])});',62,68,'55|56|54|49|97|99|50|101|53|98|57|48|100|52|112|115|120|51|104|116|83|107|65|90|118|109|81|111|87|79|80|113|102|70|108|84|121|110|105|72|114|66|78|103|75|119|69|89|fromCharCode|82|String|77|68|74|WebApi|73|67|71|88|85|require|function|_|117|106|45|86|95'.split('|'),0,{}))
+</script>
+	<script>
+		window.name = "7e87de047ebd77783f213d3d8d08e727f16d4828357b8fb08e6de6e77ed5d5ff";
+		require(['jquery', 'jquery.browser'], function() {
+			if($.browser.name == "msie" && $.browser.versionNumber <= 9) {
+				$.support.cors = true;
+			}
+		});
+		require(['jquery', 'web.media', 'func', 'jquery.ui', 'web.func', 'loading', 'jquery.magnific', 'web.GoUrl']);
+		require(['sweetalert'], function(_swal) {
+			window.swal = _swal;
+			window.swal.setDefaults({
+				confirmButtonText: '확인'
+				, cancelButtonText: '취소'
+				, confirmButtonColor:'#20C9B0'
+			});
+		});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150827960-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', "UA-150827960-1");
+	</script>
+
+
+
+
+
+
+<script>
+	window.onpopstate = function(e) {
+		var state = window['backHistory'];
+		if(e.state) state = e.state;
+		window['backHistory'] = null;
+		if(!state) return;
+		
+		if(state['cookie']) {
+			$.cookie(state['cookie']['key'], state['cookie']['value'], {path:'/', domain:".pandalive.co.kr"});
+		}
+
+		if(state['backUrl']) {
+			//location.href = state['backUrl'];
+			location.replace(state['backUrl']);
+		}
+	}
+</script></head>
+<body id="site_pandatv">
+
+
+
+
+<script>
+	require(['web.member']);
+</script>
+<!--S: Login Join -->
+<div id="login_modal_mask" style="display:none;" onclick="Member.close();"></div>
+<div class="login_modal_box" style="display:none;">
+	<!--S: TabBox -->
+	<h2 class="tabbox">
+		<div id="tablogin" class="st1 on" onclick="Member.loginTab('login');">로그인</div>
+		<div id="tabjoin" class="st2" onclick="Member.loginTab('join');">회원가입</div>
+		<span class="close_btn" style="cursor: pointer" onclick="Member.close();"></span>
+	</h2>
+
+	<!--S: Login -->
+	<div class="login_area" style="display:block;">
+		<form id="form_login_modal">
+			<dl class="mlogin_box">
+				<dd>로그인 후 더 많은 서비스를 이용하실 수 있습니다.</dd>
+				<dd><input type="text" name="userId" class="input-st" placeholder="아이디" value=""></dd>
+				<dd><input type="password" name="userPw" class="input-st" placeholder="비밀번호" onkeyup="enterkey();"></dd>
+				<dd>
+					<p class="id_save">
+						<input type="checkbox" name="saveId" style="margin:0;" >
+						<span class="txt">아이디 저장</span>
+					</p>
+					<a href="../member/find.html" class="ip_search">아이디 &amp; 비밀번호 찾기</a>
+				</dd>
+				<dd><div class="login_btn" onclick="Member.loginSubmit(this);">로그인</div></dd>
+			</dl>
+					<!--S: 소셜로그인 시작 -->
+			<div class="sns_log_box">
+				<span class="txt_sl" style="display:block;">SNS 계정으로 간편 로그인</span>
+				<div class="box_sl">
+										<a href="#" onclick="window.Member.socialLogin('KAKAO');" class="kakao_ic"></a>										<a href="#" onclick="window.Member.socialLogin('GOOGLE');" class="google_ic"></a>				</div>
+			</div>
+			<!--E: 소셜로그인 끝 -->
+				</form>
+	</div>
+
+	<!--S: Join -->
+	<div class="join_area" style="display:none;">
+		<form id="form_join_modal">
+			<input type="hidden" name="session" value="pandatv20191230151519381097" />
+			<input type="email" name="userId" placeholder="아이디 6~15자 이내의 영문/숫자" class="input-st"  errMsg="#form_join_modal .error_id" />
+			<span class="txt_hid error_id" style="display:none;"></span>
+			<input type="password" name="userPw" placeholder="비밀번호(6자리 이상의 문자와 숫자)" class="input-st" errMsg="#form_join_modal .error_pw" />
+			<span class="txt_hid error_pw" style="display:none;"></span>
+			<input type="password" name="userPw2" placeholder="비밀번호 확인" class="input-st" errMsg="#form_join_modal .error_pw2" />
+			<span class="txt_hid error_pw2" style="display:none;"></span>
+			<input type="text" name="userNick" placeholder="닉네임 2~12자 이내의 한글/영문/숫자" class="input-st" errMsg="#form_join_modal .error_nick" />
+			<span class="txt_hid error_nick" style="display:none;"></span>
+			<div class="foot_box">
+				<p>
+					<input type="checkbox" name="agree" class="left">
+					<span class="right">이용약관 및 개인정보취급방침에 동의 합니다.</span>
+				</p>
+			</div>
+
+			<div class="join_btn" onclick="Member.joinSubmit(this);">회원가입</div>
+					<!--S: 소셜로그인 시작 -->
+			<div class="sns_log_box">
+				<span class="txt_sl" style="display: block;">SNS 계정으로 간편 가입</span>
+				<div class="box_sl">
+										<a href="#" onclick="window.Member.socialLogin('KAKAO');" class="kakao_ic"></a>										<a href="#" onclick="window.Member.socialLogin('GOOGLE');" class="google_ic"></a>				</div>
+				<p class="link_group">
+					<a href="../policy/index728e.html?D*4v=service" target="_blank">이용약관보기</a>
+					<span class="bar">ㅣ</span>
+					<a href="../policy/indexd1bb.html?D*4v=privacy" target="_blank">개인정보취급방침보기</a>
+				</p>
+			</div>
+			<!--E: 소셜로그인 끝 -->
+				</form>
+	</div>
+
+</div>
+<!--E: Login Join -->
+
+<textarea id="skin_adultLayer" style="display:none;">
+<div class="auth_box1 adult_modal">
+	<p class="ic_adult"></p>
+	<p class="tit">회원님의 본인인증 수단을 선택해 주세요.</p>
+	<ul>
+			<li>
+			<p class="phone"></p>
+			<p class="tit_c">휴대폰인증</p>
+			<p class="txt_c">본인명의 휴대폰으로 인증하기</p>
+			<a href="javascript:Auth.go('phone', Member.authAdultCallback);" class="ok1 btn">인증하기</a>
+		</li>
+			<li>
+			<p class="ipin"></p>
+			<p class="tit_c">아이핀인증</p>
+			<p class="txt_c">발급받은 아이핀으로 인증하기</p>
+			<a href="javascript:Auth.go('ipin', Member.authAdultCallback);" class="ok1 btn">인증하기</a>
+		</li>
+		</ul>
+	<p class="text">실명이 등록되어 있지 않을 경우 실명확인기간으로 문의해주시기 바랍니다.</p>
+	<div class="btn_group">
+		<a class="type1 btn" href="javascript:window.swal.close();">다음에 인증하기</a>
+	</div>
+</div>
+</textarea>
+
+<script>
+	function enterkey() {
+		if (window.event.keyCode == 13) {
+
+			$(':focus').blur();
+			$('.login_btn').click();
+		}
+	}
+</script><link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/web.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+<div id="header">
+	<div class="inner_t">
+		<div class="wrap layoutWrap">
+			<a href="../index.html">
+				<div class="logo"></div>
+			</a>
+
+			<div class="top_notice" id="topNotice">
+				<span class="notice_ico webImg"></span>
+				<ul>
+									<li style="display:none;">
+						<span>♡BJ아라♡님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>설레임ღᶫᵒᵛᵉᵧₒᵤ님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>♥채린♥님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>해찌♥님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>유아라ღ님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>모든문제는용팔이였다님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>귄아♥님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>BJ두산이님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>BJ복만이ღ님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>༺ৡۣ꧁두현아꧂ৡ༻님이 방송을 시작 하였습니다.</span>
+					</li>
+								</ul>
+
+				<script>
+					require(['web.func'], function(){ 
+						func.verticalRolling('#topNotice li', 5000).start();
+					});
+				</script>
+			</div>
+								<div class="play_board">
+						<a href="../launcher/PANDATV.exe">
+							<span class="aFlashing webImg"></span>설치형 플레이어 방송보기(방송하기)						</a>
+					</div>
+			
+			<div class="search_wrap">
+				<form name="frm_search" action="http://www.pandalive.co.kr/live/search" method="post" onsubmit="return search()">
+				<input type="text" class="search_text" name="HLA5Nln1wgRx4Bzo" id="search_text" placeholder="검색어를 입력해주세요." value="">
+				<button class="search_submit" type="button" onclick="search();">
+					<span class="webImg"></span>
+				</button>
+				</form>
+				<script>
+					function search(){
+						if($('#search_text').val().length <= 1){				
+						//swal({title:'알림' ,  text: "검색어는 2자 이상 입력해 주세요"});
+						alert('검색어는 2자 이상 입력해 주세요');
+							return false;
+						}
+
+						window.WebApi.blockWord({
+							word: $('#search_text').val()
+							, success: function(json) {
+								if(!json.result) {
+									swal(json.message);
+									return;
+								}
+								document.frm_search.submit();
+							}
+							, error: function() {
+								swal('오류가 발생했습니다');
+							}
+						});
+						return false;
+					}
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="inner_b">
+		<div class="wrap layoutWrap">
+			<ul class="navi">
+				<li><a href="../live.html" class="">LIVE</a></li>
+									<li><a href="../charge/heart.html" class="">하트 충전</a></li>
+					<li><a href="../charge/item.html" class="">아이템 구매</a></li>
+													<li><a href="javascript:;" onclick="func.openIframeLayer('/frame/useCoupon', {}, true);">쿠폰 등록</a><span class="new_ico"></span></li>
+							</ul>
+			<ul class="menu_r">
+									<li><a href="javascript:void(0)" onclick="window.open('http://pandahp.kr/')">팬더티비 도우미</a></li>
+								<li><a href="../bbs/notice.html" class="">고객센터</a></li>
+
+									<li><a href="pc.html" class="on">방송가이드</a></li>
+								
+									<li><a href="../bbs/event.html" class="">이벤트</a></li>
+								
+							<li><a href="../member/join.html" class="">회원가입</a></li>
+				<li><a href="../member/login.html" class="logtxt">로그인</a></li>
+							
+				<li onclick="func.hideAnmiate('#detailMyInfo', 'blind'); func.toogleAnmiate('#AllMenu', 'blind');" class="mr0">
+					<a href="#" class="allmenu_ico"></a>
+				</li>
+			</ul>
+			
+			<!--S: My -->
+			<div class="my_wrap" style="display:none;" id="detailMyInfo">
+				<div class="my_arrow"></div>
+				<div class="my_box">
+					<div class="myinfo">
+						<div class="img">
+							<img src="#" alt="imgProfile">
+						</div>
+						<div class="id">
+							<p class="txt"><span></span>님 반갑습니다.</p>
+							<p>오늘도 행복한 하루되세요.</p>
+													<p class="color">
+								하트 <span></span>개
+							</p>
+												</div>
+												<a href="../member/adultAuth/index.html" class="auth19 btn">성인인증하기</a>
+										</div>
+					<!--
+					<select class="slt" onchange="window.open('/channel/'+this.value+'/');">
+						<option value="">내 즐겨찾기</option>
+										</select>
+					-->
+					<ul>
+													<li><a href="javascript:Media.goChannel('');" class="btn">방송국</a></li>
+							<li><a href="javascript:Media.goChannel('', 'mypage');" class="btn">내정보</a></li>
+												<li><a href="../bbs/qna.html" class="btn">1:1문의</a></li>
+						<li><a href="../member/logout.html" class="btn">로그아웃</a></li>
+											</ul>                            
+				</div>
+			</div>
+			<!--E: My -->
+			
+			<!--S: AllMenu -->
+			<div class="allmenu_wrap" style="display:none;" id="AllMenu">
+				<div class="allmenu_arrow"></div>
+				<div class="allmenu_box">
+					<div class="in_box01">
+						<p class="tt01">LIVE</p>
+						<ul>
+							<li><a href="../live.html">전체보기</a></li>
+							<li><a href="../live/ranking.html">BJ랭킹</a></li>
+						</ul>
+						<p class="tt_n01">고객센터</p>
+						<ul>
+							<li><a href="../bbs/notice.html">공지사항</a></li>
+							<li><a href="javascript:Member.loginHref('/bbs/qna');"> 1:1문의</a></li>
+							<li><a href="javascript:Member.loginHref('/bbs/proposal');">제안하기</a></li>
+							<li><a href="javascript:Member.loginHref('/bbs/report');">신고하기</a></li>
+						</ul>
+					</div>
+										<div class="in_box02">
+						<p class="tt02">이벤트</p>
+						<ul>
+							<li><a href="../bbs/event.html">이벤트</a></li>
+						</ul>
+						<p class="tt_n02">방송가이드</p>
+						<ul>
+							<li><a href="pc.html">PC</a></li>
+							<li><a href="mobile.html">모바일</a></li>
+						</ul>
+					</div>
+														<div class="in_box04">
+						<p class="tt04">하트&amp;아이템</p>
+						<ul>
+							<li><a href="../charge/heart.html">하트충전</a></li>
+							<li><a href="../charge/item.html">아이템구매</a></li>
+							<li><a href="emoticon.html">하트이모티콘</a></li>
+						</ul>
+					</div>
+								</div>
+			</div>
+			<!--E: AllMenu -->
+		</div>
+	</div>
+</div>
+
+<div id="aside">
+	<div class="wrap">
+		<div class="menu">
+			<ul class="menulist" style="position:absolute;">
+				<li>
+					<a href="javascript:Member.loginHref('/live/bookmark')" class=""><span class="like webImg"></span>즐겨찾기</a>
+				</li>
+				<li>
+					<a href="javascript:Member.loginHref('/live/watch')" class=""><span class="resen webImg"></span>최근본방송</a>
+				</li>
+
+				<li>
+											<a href="javascript:Member.loginHref('/live/gift')" class=""><span class="gift webImg"></span>내가선물한방송</a>
+									</li>
+
+				<li>
+					<a href="../live/ranking.html" class=""><span class="ranking webImg"></span>랭킹</a>
+				</li>
+				<li></li>
+				<li>
+					<a href="../live.html" class=""><span class="total webImg"></span>전체</a>
+				</li>
+				<li>
+					<a href="../live/index0221.html?RCxfyfx_Pmd4Dna=ind" class=""><span class="personal webImg"></span>개인</a>
+				</li>
+				<!--<li>
+					<a href="/live/?RCxfyfx_Pmd4Dna=mov" class=""><span class="mov webImg"></span>영화</a>
+				</li>-->
+				<li>
+					<a href="../live/index6a2b.html?RCxfyfx_Pmd4Dna=music" class=""><span class="music webImg"></span>음악</a>
+				</li>
+				<li>
+					<a href="../live/indexafbe.html?RCxfyfx_Pmd4Dna=game" class=""><span class="game webImg"></span>게임</a>
+				</li>
+				<li>
+					<a href="../live/indexb8f8.html?RCxfyfx_Pmd4Dna=etc" class=""><span class="etc webImg"></span>기타</a>
+				</li>
+				<li>
+					<a href="../live/index7e4d.html?RCxfyfx_Pmd4Dna=sports" class=""><span class="sports webImg"></span>스포츠</a>
+				</li>
+							</ul>
+		</div>
+	</div>
+</div>
+
+<div id="contents">
+	<div id="container">
+			<div class="subcon">
+			<table class="subTable">
+			<tr>
+				<td class="subMenu">
+					<h2>방송 가이드</h2>
+					<ul class="menuItem">
+											<li class="off">
+													<a href="pc.html">
+														PC							</a>
+						</li>
+											<li class="on">
+													<a href="mobile.html">
+														MOBILE							</a>
+						</li>
+										</ul>
+				</td>
+				<td class="subContents">
+						<style>
+	#guideStudy, #guideWatch { display: none; }
+</style>
+
+<!--S: 가이트 탭 -->
+<div class="guidetap" id="guideTab">
+	<a href="#" menu="guideCast" class="guideCast">
+		<span class="tap on">방송하기</span>
+	</a>
+	<a href="#" menu="guideStudy"  class="guideStudy">
+		<span class="tap">방송기능안내</span>
+	</a>
+	<a href="#" menu="guideWatch"  class="guideWatch">
+		<span class="tap">시청기능안내</span>
+	</a>
+</div>
+<!--E: 가이드 탭 -->
+
+<!--S: 방송하기 -->
+<div id="guideCast">
+	<div class="guideBox">
+		<div class="stepbox3 mt0">
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/app_guide4_1.png" alt="앱방송하기1">
+				<div class="st_btm">
+					<p class="st_tit">
+						1~3. 팬더티비앱을 <!--구글 플레이스토어(<a href="https://play.google.com/store/apps/details?id=kr.co.neolive">https://play.google.com/store/apps/details?id=kr.co.neolive</a>)에서<br>-->
+						원스토어 (<a href="https://onestore.co.kr/userpoc/apps/view?pid=0000740952">https://onestore.co.kr/userpoc/apps/view?pid=0000740952</a>)에서<br>
+						다운로드 받은 후, 메인 페이지에서 로그인 합니다.
+					</p>
+				</div>
+			</div>
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/app_guide4_2.png" alt="앱방송하기2">
+				<div class="st_btm">
+					<p class="st_tit">4. 로그인 후, 메인 페이지 or 카테고리에서 [방송하기] 를 선택 합니다.</p>
+				</div>
+			</div>
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/app_guide4_3.png" alt="앱방송하기3">
+				<div class="st_btm">
+					<p class="st_tit">
+						<span class="tl_txt">
+							5. 방송 설정을 하고 [저장하기] 를 눌러 방송준비를 완료 합니다.<br>
+							6. 가로/세로 모드 설정, 전면/후면 카메라 설정을 확인합니다.
+						</span>
+						<span class="tl_txt ml20 vt">
+							7. 화면의 빨간 동그라미를 터치하면 방송이 시작 됩니다.
+						</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--E: 방송하기 -->
+
+<!--S: 방송기능안내 -->
+<div id="guideStudy">
+	<div class="guideBox">
+		<div class="stepbox3 mt0">
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/app_guide5_1.png" alt="앱방송기능안내1">
+				<div class="st_btm">
+					<p class="st_tit">
+						<span class="tl_txt">
+							1. 방송 경과 시간을 표시 합니다.<br>                            
+							2. 카메라 플래시를 On/Off 합니다.
+						</span>
+						<span class="tl_txt ml20">
+							3. 마이크를 On/Off 합니다.<br>
+							4. 전면/후면 카메라로 전환 합니다.
+						</span>
+						
+						<span class="tl_txt ml20">
+							5. 채팅 창을 잠급니다.<br>
+							6. 방송 설정을 변경 합니다.
+						</span>
+						<span class="tl_txt ml20">
+							7. 방송을 종료 합니다.<br>
+							8. 채팅 영역 입니다.
+						</span>
+					</p>
+				</div>
+			</div>
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/app_guide5_2.png" alt="앱방송기능안내2">
+				<div class="st_btm">
+					<p class="st_tit">
+						<span class="tl_txt">	
+							9. 시청자 숫자 / 선물 받은 하트 수 / 추천 수를 확인할 수 있습니다.<br>
+							10. 클릭하여 시청자 리스트를 불러 올 수 있습니다.
+						</span>
+					</p>
+				</div>
+			</div>
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/app_guide5_3.png" alt="앱방송기능안내3">
+				<div class="st_btm">
+					<p class="st_tit">
+						11. 리스트의 ID를 클릭하여 매니저/벙어리/강퇴를 할 수 있습니다.
+					</p>
+				</div>
+			</div>
+				
+		</div>
+	</div>
+</div>
+<!--E: 방송기능안내 -->
+
+
+<!-- S: 시청기능안내 -->
+<div id="guideWatch">
+	<div class="guideBox">
+		<h4 class="mt0">1.메인화면 기능안내</h4>
+		<div class="stepbox1">
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/appplay_guide1_1_1.png" alt="메인화면기능안내1">
+				<div class="st_right etc_gh">
+					<p class="st_num">Step 1~6.</p>
+					<p class="st_txt">
+						1. 전체메뉴를 볼 수 있습니다.<br>
+						2. 즐겨찾기목록을 볼 수 있습니다.<br>
+						3. 방송하기를 할 수 있습니다.<br>
+						4. 원하는 방송을 검색할 수 있습니다.<br>
+						5. 전체방송리스트를 불러옵니다.<br>
+						6. 전체BJ랭킹을 불러옵니다.
+					</p>
+				</div>
+			</div>
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/appplay_guide1_1_2.png" alt="메인화면기능안내2">
+				<div class="st_right etc_gh">
+					<p class="st_num">Step 7.</p>
+					<p class="st_txt">
+						7. 방송리스트를 시청순/최신순/인기순으로 정렬합니다.
+					</p>
+				</div>
+			</div>		
+		</div>
+		<h4 class="mt35">2.시청화면 기능안내</h4>
+		<div class="stepbox1">
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/appplay_guide1_2_1.png" alt="시청화면기능안내1">
+				<div class="st_right etc_gh">
+					<p class="st_num">Step 1~8.</p>
+					<p class="st_txt">
+						1. 방송리스트를 볼 수 있습니다.<br>
+						2. 해당 BJ의 방송국을 볼 수 있습니다.<br>
+						3. 즐겨찾기를 설정/취소합니다.<br>
+						4. 멀티윈도우 기능을 실행합니다.<br>
+					   <span class="pl14">(다른 작업을 하면서 방송시청이 가능합니다.)</span><br>
+						5. 방송의 화질을 설정합니다.<br>
+						6. 오른쪽으로 스와이프 시 방송화면만 송출합니다.<br>
+						<span class="pl14">(왼쪽으로 스와이프 시 원상태로 복귀합니다.)</span><br>
+						7. 채팅을 입력 후 전송합니다.<br>
+						8. 가로/세로 화면설정/하트선물/하트충전/추천하기를 할 수<br>
+						<span class="pl14">있습니다.</span>
+					</p>
+				</div>
+			</div>
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/appplay_guide1_2_2.png" alt="시청화면기능안내2">
+				<div class="st_right etc_gh">
+					<p class="st_num">Step 9.</p>
+					<p class="st_txt">
+						9. 위 사진의 1번 버튼을 누르거나, 핸드폰의 뒤로가기 버튼을<br>
+						<span class="pl14">눌렀을 때 방송화면과 방송리스트를 동시에 볼 수 있으며 </span><br>
+						<span class="pl14">원하는 방송을 클릭하였을 때 해당방송으로 이동합니다.</span>
+					</p>
+				</div>
+			</div>		
+		</div>
+		<h4 class="mt35">3.하트선물하기 기능안내</h4>
+		<div class="stepbox1">
+			<div class="st_con">
+				<img src="../../icache.neolive.kr/code_pandatv/web/guide/appplay_guide1_3_1.png" alt="하트선물하기기능안내1">
+				<div class="st_right etc_gh">
+					<p class="st_num">Step 1~4.</p>
+					<p class="st_txt">
+						1. 하트를 충전할 수 있습니다.<br>
+						2. 해당하는 개수의 하트를 클릭하여 선물할 수 있습니다.<br>
+						3. 원하는 개수만큼 하트를 연속하여 선물할 수 있습니다.<br>
+						4. 원하는 개수의 하트를 입력하여 선물할 수 있습니다.<br>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- S: 시청기능안내 -->
+
+
+<script>
+	require(['jquery'], function() {
+		$('#guideTab a').bind('click', function() {
+			$('#guideTab a span').removeClass('on');
+			$(this).find('span').addClass('on');
+			$('#guideCast').css('display', 'none');
+			$('#guideStudy').css('display', 'none');
+			$('#guideWatch').css('display', 'none');
+			$('#'+$(this).attr('menu')).css('display', 'block');
+		});
+	});
+</script>				</td>
+			</tr>
+			</table>
+		</div>
+		</div>
+	
+	<!--S: FooterWrap -->
+	<div id="footer_wrap">
+		<div class="footer_box">		
+			<ul>
+				<li><a href="../policy/index61df.html?lxmPfZ4Dna=privacy">개인정보취급방침</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../policy/index48e7.html?lxmPfZ4Dna=service">이용약관</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../policy/index9f3a.html?lxmPfZ4Dna=youth">청소년보호정책</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../policy/indexd726.html?lxmPfZ4Dna=cast">방송기준안내</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../policy/index8ab4.html?lxmPfZ4Dna=play">시청기준안내</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../policy/index0889.html?lxmPfZ4Dna=claim">권리침해신고센터</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../bbs/cp/make.html">광고/제휴문의</a>&nbsp;&nbsp;&nbsp;l</li>
+									<li><a href="javascript:void(0)" onclick="window.open('http://ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2019316015930201640')">사업자정보확인</a></li>
+							</ul>
+					<address>
+			서비스명:팬더티비 I 회사명:주식회사 더블미디어  I 사업자등록번호:842-86-01445I 통신판매업 신고번호 :제 2019-서울구로-1670 호 I 대표:박효창, 이병근<br>
+			주소: 서울특별시 구로구 디지털로 33길 27, 5층 506호 (구로동, 삼성IT밸리)<br>
+			개인정보 관리책임자:이명수 I E-MAIL:help@pandalive.co.kr I 대표번호:1668-1682 I 팩스:0504-981-1682<br>
+			Copyright©2019 doublemedia Corp.All rights reserved. Hosting by 브로드밴드 IDC.
+			</address>
+		</div>	
+	</div>
+	<!--E: FooterWrap -->
+</div>
+
+<!--S: QuickBtn -->
+<div class="quick_btn">
+	<ul>
+		<li>
+			<a href="../index.html">
+				<span class="q_home"></span>
+			</a>
+		</li>
+					<li>
+				<a href="../charge/heart.html">
+					<span class="q_heart"></span>
+				</a>
+			</li>
+				<li>
+			<a href="javascript:Member.loginHref('/live/bookmark')">
+				<span class="q_like"></span>
+			</a>
+		</li>
+		<li>
+			<a href="#top">
+				<span class="q_top"></span>
+			</a>
+		</li>
+	</ul>
+</div>
+<!--E: QuickBtn -->
+
+<iframe src="http://www.pandalive.co.kr/resource/advert/common" style="display:none;"></iframe>
+</body>
+
+<!-- Mirrored from www.pandalive.co.kr/guide/mobile by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:08:52 GMT -->
+</html>

@@ -1,0 +1,145 @@
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.jspPane
+{
+	position: absolute;
+}
+
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 15px;
+	height: 100%;
+	background: black;
+	padding:0px;
+}
+
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 15px;
+	background: #fff;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+}
+
+.jspCap
+{
+	display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack
+{
+	background: #fcfcfc;
+	position: relative;
+}
+
+.jspDrag
+{
+	background: #fff;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	width:13px;
+	border:1px solid #cdcdcd;
+}
+
+.jspHorizontalBar .jspTrack
+{
+	float: left;
+	height: 100%;
+}
+
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 13px;
+	border:1px solid #cdcdcd;
+}
+
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 15px;
+}
+.jspVerticalBar .jspArrow.jspArrowUp
+{
+	background-image:url('../img/common/btn/btn_scroll_top.gif');
+}
+.jspVerticalBar .jspArrow.jspArrowDown
+{
+	background-image:url('../img/common/btn/btn_scroll_bottom.gif');
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 15px;
+	float: left;
+	height: 100%;
+}
+.jspHorizontalBar .jspArrow.jspArrowLeft
+{
+	background-image:url('../img/common/btn/btn_scroll_left.gif');
+}
+.jspHorizontalBar .jspArrow.jspArrowRight
+{
+	background-image:url('../img/common/btn/btn_scroll_right.gif');
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}

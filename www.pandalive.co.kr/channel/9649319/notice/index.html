@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<!-- Mirrored from www.pandalive.co.kr/channel/9649319/notice/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:34:02 GMT -->
+<head>
+	<title>팬더티비</title>
+
+	<link rel="canonical" href="../../../index.html">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<meta name="naver-site-verification" content="f53f9ec6b870896e159227b9d6c68ef2613cb537"/>
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="팬더티비">
+	<meta property="og:site_name" content="팬더티비">
+
+			<meta name="og:description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+		
+	<meta property="og:image" content="../../../../icache.neolive.kr/code_pandatv/apple-icon.png">
+	<meta property="og:url" content="../../../index.html">
+
+			<meta name="description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+	
+	<meta name="keywords" content="PC/모바일 어디서나 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="팬더티비">
+	<meta name="twitter:site" content="팬더티비">
+	<meta name="twitter:description" content="PC/모바일 어디서도 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+	
+
+	<link rel="shortcut icon" href="../../../../icache.neolive.kr/code_pandatv/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="../../../../icache.neolive.kr/code_pandatv/apple-icon.png">
+
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/common.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/sweetalert/sweetalert2.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/jqueryui/jquery-ui.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/loading/loading.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/magnific/magnific-popup.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<!--[if gte IE 9 ]>
+	<link rel="stylesheet" type="text/css" href="/resource/css/web/ie9.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<![endif]-->
+
+	<script>
+		document.domain = "pandalive.co.kr";
+		window.liveData = {};
+		window.liveData.device = {};
+		window.liveData.device.type = "webPc";
+		window.liveData.device.version = "1.0.0";
+
+		window.userInfo = {};
+					window.userInfo.isLogin = false;
+		
+		window.siteMode = {};
+		window.siteMode.showAdult = true;
+		window.siteMode.needAuth = false;
+	window.siteMode.needAuth = true;	</script>
+	
+	<script src="http://www.pandalive.co.kr/resource/js/es6promise/es6-promise.auto.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('58([\'42\'],59(){42.61([40.39(33,19,15,16,47,5,1,28,1,5,29,11,64,22,34,12,24,23,33,65,56,66,54,19,12,47,38,26,66,5,29,20,22,45,8,10,27,6,55,7,56,6,65,27,12,16,43,17,14,49,36,4,22,10,21,12,31,2,13,54,18,0,65,35,8,1,22,18,38,68,30,54,5,7,4,5,55,18,54,13,19,3,55,21,4,5,10,7,14,50,55,9,1,26,16,38,27,8,55,50,8,5,33,23,24,48,35,48,67,11,28,6,44,17,46,4,10,21,55,2,55,6,20,35,55,1,8,9,3,68,26,7,44,10,46,36,56,23,1,37,56,6,53,26,56,45,43,20,55,11,20,62,5,28,2,37,22,9,34,11,24,21,15,13,56,1,32,9,14,29,30,50,67,7,19,35,55,23,34,11,24,5,15,13,14,63,13,17,3,49,56,57,25,7,8,34,31,23,56,57,18,0,68,53,32,21,10,49,56,49,55,41,5,10,19,12,55,18,12,37,11,66,67,26,30,1,22,16,56,49,54,20,1,17,2,33,52,23,56,49,19,3,20,16,30,15,24,7,14,50,36,4,1,17,21,12,24,18,32,17,27,0,66,28,8,9,13,9,31,29,56,68,15,10,14,1,15,9,41,50,56,66,54,16,8,1,28,32,56,11,60,68,68,51,31,9,27,7),40.39(48,2,54,49,57,57,25,55,57,55,56,6,56,57,4,48,54,0,4,2,55,51,51,49,57,56,4,50,51,53,54,54,49,3,51,53,50,56,25,57,0,25,52,3,52,53,48,50,54,6,0,49,0,56,48,0,51,49,0,56,53,49,51,50),40.39(2,52,49,2,56,2,55,57,56,57,4,3,0,53,3,50,4,55,55,2,53,0,57,56,48,49,55,50,54,57,49,6,54,52,25,3,49,57,48,51,48,57,2,0,51,0,49,57,52,51,50,51,2,57,3,3,6,25,4,50,52,56,48,48)])});',10,69,'99|83|100|98|97|121|101|108|113|116|109|73|79|76|114|84|115|120|111|88|70|90|118|112|110|102|103|104|107|69|75|117|78|85|86|119|74|77|82|fromCharCode|String|72|WebApi|87|106||95|89|||||||||||require|function|71|_|105|81|122||||'.split('|'),0,{}))
+</script>
+	<script>
+		window.name = "7e87de047ebd77783f213d3d8d08e727f16d4828357b8fb08e6de6e77ed5d5ff";
+		require(['jquery', 'jquery.browser'], function() {
+			if($.browser.name == "msie" && $.browser.versionNumber <= 9) {
+				$.support.cors = true;
+			}
+		});
+		require(['jquery', 'web.media', 'func', 'jquery.ui', 'web.func', 'loading', 'jquery.magnific', 'web.GoUrl']);
+		require(['sweetalert'], function(_swal) {
+			window.swal = _swal;
+			window.swal.setDefaults({
+				confirmButtonText: '확인'
+				, cancelButtonText: '취소'
+				, confirmButtonColor:'#20C9B0'
+			});
+		});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150827960-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', "UA-150827960-1");
+	</script>
+
+
+
+
+
+
+<script>
+	window.onpopstate = function(e) {
+		var state = window['backHistory'];
+		if(e.state) state = e.state;
+		window['backHistory'] = null;
+		if(!state) return;
+		
+		if(state['cookie']) {
+			$.cookie(state['cookie']['key'], state['cookie']['value'], {path:'/', domain:".pandalive.co.kr"});
+		}
+
+		if(state['backUrl']) {
+			//location.href = state['backUrl'];
+			location.replace(state['backUrl']);
+		}
+	}
+</script></head>
+<body id="site_pandatv">
+
+
+
+
+<script>
+	require(['web.member']);
+</script>
+<!--S: Login Join -->
+<div id="login_modal_mask" style="display:none;" onclick="Member.close();"></div>
+<div class="login_modal_box" style="display:none;">
+	<!--S: TabBox -->
+	<h2 class="tabbox">
+		<div id="tablogin" class="st1 on" onclick="Member.loginTab('login');">로그인</div>
+		<div id="tabjoin" class="st2" onclick="Member.loginTab('join');">회원가입</div>
+		<span class="close_btn" style="cursor: pointer" onclick="Member.close();"></span>
+	</h2>
+
+	<!--S: Login -->
+	<div class="login_area" style="display:block;">
+		<form id="form_login_modal">
+			<dl class="mlogin_box">
+				<dd>로그인 후 더 많은 서비스를 이용하실 수 있습니다.</dd>
+				<dd><input type="text" name="userId" class="input-st" placeholder="아이디" value=""></dd>
+				<dd><input type="password" name="userPw" class="input-st" placeholder="비밀번호" onkeyup="enterkey();"></dd>
+				<dd>
+					<p class="id_save">
+						<input type="checkbox" name="saveId" style="margin:0;" >
+						<span class="txt">아이디 저장</span>
+					</p>
+					<a href="../../../member/find.html" class="ip_search">아이디 &amp; 비밀번호 찾기</a>
+				</dd>
+				<dd><div class="login_btn" onclick="Member.loginSubmit(this);">로그인</div></dd>
+			</dl>
+					<!--S: 소셜로그인 시작 -->
+			<div class="sns_log_box">
+				<span class="txt_sl" style="display:block;">SNS 계정으로 간편 로그인</span>
+				<div class="box_sl">
+										<a href="#" onclick="window.Member.socialLogin('KAKAO');" class="kakao_ic"></a>										<a href="#" onclick="window.Member.socialLogin('GOOGLE');" class="google_ic"></a>				</div>
+			</div>
+			<!--E: 소셜로그인 끝 -->
+				</form>
+	</div>
+
+	<!--S: Join -->
+	<div class="join_area" style="display:none;">
+		<form id="form_join_modal">
+			<input type="hidden" name="session" value="pandatv20191230163401514071" />
+			<input type="email" name="userId" placeholder="아이디 6~15자 이내의 영문/숫자" class="input-st"  errMsg="#form_join_modal .error_id" />
+			<span class="txt_hid error_id" style="display:none;"></span>
+			<input type="password" name="userPw" placeholder="비밀번호(6자리 이상의 문자와 숫자)" class="input-st" errMsg="#form_join_modal .error_pw" />
+			<span class="txt_hid error_pw" style="display:none;"></span>
+			<input type="password" name="userPw2" placeholder="비밀번호 확인" class="input-st" errMsg="#form_join_modal .error_pw2" />
+			<span class="txt_hid error_pw2" style="display:none;"></span>
+			<input type="text" name="userNick" placeholder="닉네임 2~12자 이내의 한글/영문/숫자" class="input-st" errMsg="#form_join_modal .error_nick" />
+			<span class="txt_hid error_nick" style="display:none;"></span>
+			<div class="foot_box">
+				<p>
+					<input type="checkbox" name="agree" class="left">
+					<span class="right">이용약관 및 개인정보취급방침에 동의 합니다.</span>
+				</p>
+			</div>
+
+			<div class="join_btn" onclick="Member.joinSubmit(this);">회원가입</div>
+					<!--S: 소셜로그인 시작 -->
+			<div class="sns_log_box">
+				<span class="txt_sl" style="display: block;">SNS 계정으로 간편 가입</span>
+				<div class="box_sl">
+										<a href="#" onclick="window.Member.socialLogin('KAKAO');" class="kakao_ic"></a>										<a href="#" onclick="window.Member.socialLogin('GOOGLE');" class="google_ic"></a>				</div>
+				<p class="link_group">
+					<a href="../../../policy/index728e.html?D*4v=service" target="_blank">이용약관보기</a>
+					<span class="bar">ㅣ</span>
+					<a href="../../../policy/indexd1bb.html?D*4v=privacy" target="_blank">개인정보취급방침보기</a>
+				</p>
+			</div>
+			<!--E: 소셜로그인 끝 -->
+				</form>
+	</div>
+
+</div>
+<!--E: Login Join -->
+
+<textarea id="skin_adultLayer" style="display:none;">
+<div class="auth_box1 adult_modal">
+	<p class="ic_adult"></p>
+	<p class="tit">회원님의 본인인증 수단을 선택해 주세요.</p>
+	<ul>
+			<li>
+			<p class="phone"></p>
+			<p class="tit_c">휴대폰인증</p>
+			<p class="txt_c">본인명의 휴대폰으로 인증하기</p>
+			<a href="javascript:Auth.go('phone', Member.authAdultCallback);" class="ok1 btn">인증하기</a>
+		</li>
+			<li>
+			<p class="ipin"></p>
+			<p class="tit_c">아이핀인증</p>
+			<p class="txt_c">발급받은 아이핀으로 인증하기</p>
+			<a href="javascript:Auth.go('ipin', Member.authAdultCallback);" class="ok1 btn">인증하기</a>
+		</li>
+		</ul>
+	<p class="text">실명이 등록되어 있지 않을 경우 실명확인기간으로 문의해주시기 바랍니다.</p>
+	<div class="btn_group">
+		<a class="type1 btn" href="javascript:window.swal.close();">다음에 인증하기</a>
+	</div>
+</div>
+</textarea>
+
+<script>
+	function enterkey() {
+		if (window.event.keyCode == 13) {
+
+			$(':focus').blur();
+			$('.login_btn').click();
+		}
+	}
+</script><link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/channel.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+<script>
+	require(['web.gift', 'WebApi', 'web.post']);
+
+	function addBookmark(userIdx, ele) {
+		if(!Member.loginCheck()) return;
+		WebApi.addBookmark({
+			userIdx:userIdx
+			, success: function(json) {
+				if(json.result) {
+					$(ele).addClass('on');
+				}
+				swal(json.message);
+			}
+		});
+	}
+
+	function delBookmark(userIdx, ele){
+        if(!Member.loginCheck()) return;
+        WebApi.delBookmark({
+            userIdx:userIdx
+            , success: function(json) {
+                if(json.result) {
+                    $(ele).removeClass(' on');
+                }
+                swal(json.message);
+            }
+        });
+    }
+
+    function editBookmark(userIdx, ele) {
+        if($(ele).hasClass("on")) {
+            delBookmark(userIdx, ele);
+        } else {
+            addBookmark(userIdx, ele);
+        }
+    }
+
+</script>
+<!--S: Header-c -->
+<div id="header-c">
+	<h1 class="logo">
+		<a href="../../../index.html">
+			<img src="../../../../icache.neolive.kr/code_pandatv/web/channel/logo.png" alt="방송국로고">
+		</a>
+	</h1>
+	<div class="my_link">
+			<ul>
+			<li class="cp" onclick="Member.loginCheck('login');">로그인</li>
+			<li>|</li>
+			<li class="cp" onclick="Member.loginCheck('join');">회원가입</li>
+			<li>|</li>
+			<li><a href="../../../member/find.html">아이디 & 비밀번호 찾기</a></li>
+		</ul>
+			</div>
+
+	<!--S: UserBox -->
+	<div class="user_box">
+		<div class="inner_l">
+			<div class="pic">
+							<div class="pic_s">
+					<img src="../../../../dcache.neolive.kr/user/d76815b86a84f08a078afb4bdec1417ed2378f02.jpg" alt="프로필사진">
+				</div>
+			</div>
+
+			<p class="tit_box">
+
+				
+					
+				
+				<span class="tit_c">
+					pm7~11시는 수리와 함께				</span>
+				<span class="txt_c">수리수리마수리~♥</span>
+			</p>
+
+
+		</div>
+		<div class="inner_r">
+		<div class="info_box">
+			<p class="info">
+													<img class="bjPost" src="../../../../icache.neolive.kr/code_pandatv/common/bn_send_message_on.png" onclick="Post.sendView('9649319');" />
+								<span class="nick_c">수리❤️</span>
+				<span class="bar">l</span>
+				<span class="id_c">wlgp1047</span>
+			</p>
+							<p class="rank">
+					<span class="num_c">7</span>
+					<span class="txt_c">위</span>
+				</p>
+					</div>
+
+		<div class="link_group">
+							<a href="#" class="v_box"  style="visibility:hidden;">
+					<span class="view channelImg"></span>
+					<span class="txt_c">방송준비</span>
+				</a>
+											<a href="#" class="g_box" onclick="Gift.heartView('9649319')">
+						<span class="gift channelImg"></span>
+						<span class="txt_c">선물하기</span>
+					</a>
+							<a class="btn score" href="#" onclick="func.hideAnmiate('#bigFanLayer', 'blind'); func.toogleAnmiate('#bjScoreLayer', 'blind');">
+				BJ점수
+			</a>
+			<a class="btn fan" href="#" onclick="func.hideAnmiate('#bjScoreLayer', 'blind'); func.toogleAnmiate('#bigFanLayer', 'blind');">
+				열혈팬
+			</a>
+
+			<!--S: BigFanBox -->
+			<div class="bigfan_box" style="display:none;" id="bigFanLayer">
+				<a href="#" class="close" onclick="func.hideAnmiate('#bigFanLayer', 'blind');"></a>
+				<p class="tit_f">열혈 팬 리스트</p>
+				<ul>
+																		<li>
+								<p class="rank1 channelImg">1등</p>
+								<span class="color1">수리♡굳이호랭이(hogirl3127)</span>
+							</li>
+													<li>
+								<p class="rank2 channelImg">2등</p>
+								<span class="color2">수리♡구지용용(gooz14)</span>
+							</li>
+													<li>
+								<p class="rank3 channelImg">3등</p>
+								<span class="color3">수리ღ삼월⭐(terf12)</span>
+							</li>
+													<li>
+								<p class="rank4 channelImg">4등</p>
+								<span class="color_etc">⛧༺야인༒김두한༻⛧(kymino777)</span>
+							</li>
+													<li>
+								<p class="rank_etc channelImg">5등</p>
+								<span class="color_etc">바다⛧•ε•가족(remixkiss)</span>
+							</li>
+															</ul>
+				<a href="../fanRanking.html" class="add_btn">더보기 ></a>
+			</div>
+			<!--E: BigFanBox -->
+
+			<!--S: BjScoreBox -->
+			<div class="bjscore_box" style="display:none;" id="bjScoreLayer">
+				<a href="#" class="close" onclick="func.hideAnmiate('#bjScoreLayer', 'blind');"></a>
+				<p class="tit_s">BJ점수</p>
+				<ul>
+					<li>
+						<p class="heart channelImg">BJ 점수</p>
+						<span>10,068,332</span>점
+					</li>
+					<li>
+						<p class="like channelImg">즐겨찾기</p>
+						<span>1,695</span>명
+					</li>
+					<li>
+						<p class="fans channelImg">방송 팬</p>
+						<span>455</span>명
+					</li>
+					<li>
+						<p class="up channelImg">추천 수</p>
+						<span>9,073</span>번
+					</li>
+					<li>
+						<p class="today channelImg">오늘 방문</p>
+						<span>2,511</span>번
+					</li>
+					<li>
+						<p class="all channelImg">전체 방문</p>
+						<span>2,737</span>번
+					</li>
+				</ul>
+
+				<div class="time_s">
+					<p>
+						30일간 방송시간
+						<span>41시간 56분</span>
+					</p>
+					<p>
+						전체 방송시간
+						<span>68시간 0분</span>
+					</p>
+				</div>
+
+			</div>
+			<!--E: BjScoreBox -->
+
+		</div>
+	</div>
+	</div>
+	<!--E: UserBox -->
+</div>
+<!--E: Header-c -->
+
+
+<!--S: Navi-c -->
+<div id="navi-c">
+	<!--S: Navi_tab_c -->
+	<div class="navi_tab_c">
+		<ul>
+					<li><a href="index.html" class="on">BJ알림</a></li>
+					<li><a href="../fanGrade/index.html" class="">팬 등급</a></li>
+				</ul>
+		<div class="s_menu">
+					<a href="index.html" class="s_txt on">BJ알림</a>
+			<span class="bar">l</span>
+				</div>
+	</div>
+	<!--E: Navi_tab_c -->
+	<div class="q_menu">
+		<ul>
+						<li>
+				<a href="../../../charge/heart.html" class="h_box">
+					<span class="hitem channelImg"></span>
+					<span>하트&아이템 구매</span>
+
+				</a>
+			</li>
+								<li>
+				<a href="javascript:;" onclick="func.openIframeLayer('/frame/useCoupon', {}, true);" class="c_box">
+					<img src="../../../../icache.neolive.kr/code_pandatv/web/channel/coupon_bar.png" alt="쿠폰등록바코드">
+					<span class="txt_c">쿠폰등록</span>
+				</a>
+			</li>
+		
+		</ul>
+	</div>
+</div>
+<!--E: Navi-c -->
+
+<div id="container">
+	<div id="content">
+			<div class="path">BJ알림</div>
+<h2>BJ알림</h2>
+
+<!--S: NewsBox -->
+<div class="news_box">
+	<p class="news channelImg">팬들에게 지금 나의 소식을 전하세요</p>
+</div>
+<!--E: NewsBox -->
+
+<form method="post">
+
+<!--S: FannewsBox -->
+<div class="fannews_box">
+	<div class="con_f">
+		<ul>
+					<li onclick="bjNotice.infoView('406588');">   
+				<p class="date_f"> 
+									<span class="channelImg ic_up"></span>
+									2019-12-30				</p>
+				<p class="note_f">
+					아 그리구 합방때 후폭풍으로 공지를 못썻네용!<br />
+ 뺑돌옵♥,가족옵♥,미사옵♥,삼월옵♥ 늘 든든합니다♥<br />
+두한옵♥♥<br />
+수리가 욕한건 미션이였던..				</p>
+						</li>
+					<li onclick="bjNotice.infoView('406585');">   
+				<p class="date_f"> 
+									<span class="channelImg ic_up"></span>
+									2019-12-30				</p>
+				<p class="note_f">
+					마니또옵♥오빠 나가고 나서 니또오빠 욕미션 나왔는데 차마 수리의 마니또같은 오빠에겐...욕을 못했답니다..ㅠㅠ! 못하겟어요 안해 못해!!소행옵♥벽찍 넘나 ..				</p>
+						</li>
+					<li onclick="bjNotice.infoView('406583');">   
+				<p class="date_f"> 
+									<span class="channelImg ic_up"></span>
+									2019-12-30				</p>
+				<p class="note_f">
+					용용♥ 너를 알수가 없다 용용아ㅋㅋㅋ너두 삼월병으로 곧 전파 되길 바랄게 큐큐큐큐<br />
+머스탱옵♥오늘 수리를 울려주신 장본인 흐어엉ㅜ_ㅜ 팬닉으로 쫜!..				</p>
+						</li>
+					<li onclick="bjNotice.infoView('406581');">   
+				<p class="date_f"> 
+									<span class="channelImg ic_up"></span>
+									2019-12-30				</p>
+				<p class="note_f">
+					우리 뺑돌옵♥<br />
+오랜만에 술드셔서 힘든 와중에도 수리방 오셔서 수리가 까불까불 거렸는데도 항상 미워하는척하시면 이뻐해주시구  늘 감사합니다!<br /..				</p>
+						</li>
+					<li onclick="bjNotice.infoView('406578');">   
+				<p class="date_f"> 
+									<span class="channelImg ic_up"></span>
+									2019-12-30				</p>
+				<p class="note_f">
+					오늘의 MVP 호랭이옵 ♥ <br />
+음주 하트였나요~? 오늘도 술드셨을까봐 수리는 걱정됩니다 ㅠㅠ<br />
+요즘 삼월병 걸리셔서 이쁘다 귀엽다해주시고 하루에 ..				</p>
+						</li>
+					<li onclick="bjNotice.infoView('405863');">   
+				<p class="date_f"> 
+									2019-12-28				</p>
+				<p class="note_f">
+					오빠들~ 이벤트 후폭풍으로 오늘 방송은 <br />
+휴방 하고 푹쉬고 내일 방송하겠습니다~<br />
+주말 잘보내시고 일욜 저녁에 만나용~				</p>
+						</li>
+					<li onclick="bjNotice.infoView('404986');">   
+				<p class="date_f"> 
+									2019-12-27				</p>
+				<p class="note_f">
+					아참!!<br />
+내일 8시부터 맞방 신 BJ종자와 오랜만에 이벤트로 맞방vs음방 합방 예정입니당~~~많이 놀러오세용 오빠들♥♥<br />
+<br />
+				</p>
+						</li>
+					<li onclick="bjNotice.infoView('404985');">   
+				<p class="date_f"> 
+									2019-12-27				</p>
+				<p class="note_f">
+					골도옵♥자주 찾아와주시구 소중한 하트까지 감사합니당 골도옵하~~!!!!아빠옵♥힝 소중한 하트로 팬가입까지 흐어엉 음란한아빠지만 수리는 괜찮습니닷ㅋㅋ이사..				</p>
+						</li>
+					<li onclick="bjNotice.infoView('404981');">   
+				<p class="date_f"> 
+									2019-12-27				</p>
+				<p class="note_f">
+					울 삼월옵♥ 맨날 수리 이쁘다구 흐어어어엉 나의 천사!! 수리링에 마자막 해장님 도발까지 크크 짱짱맨<br />
+하봉옵♥오늘은 많이 못놀아서 아쉽네영 하봉옵 ..				</p>
+						</li>
+					<li onclick="bjNotice.infoView('404980');">   
+				<p class="date_f"> 
+									2019-12-27				</p>
+				<p class="note_f">
+					오늘의 MVP 울 해장님 뺑돌옵♥ 크크크 결국 도발에 넘어가셨쥬?영업성공~!!백두산 등반에 하산까지 감사합니당 해장니이이임!<br />
+확행이옵♥수리 재밌다고 ..				</p>
+							<p class="thumb_f">
+					<img src="../../../../dcache.neolive.kr/board/f20ebd470bc27e78515b8283f182d1882beb7a8d">
+				</p>
+						</li>
+				</ul>
+	</div>
+</div>
+<!--E: FannewsBox -->
+
+<!--S: Paging -->
+<div class="paging_wrap">
+	<ul class="paging">
+<li class="on"><a href="javascript:;" onclick="func.changeInput(this, 'wV3cO1A1GI5YNQuycO9ultuZ65IZWlOU', '0'); func.formSubmit(this);">1</a></li>
+<li><a href="javascript:;" onclick="func.changeInput(this, 'wV3cO1A1GI5YNQuycO9ultuZ65IZWlOU', '10'); func.formSubmit(this);">2</a></li>
+<li><a href="javascript:;" onclick="func.changeInput(this, 'wV3cO1A1GI5YNQuycO9ultuZ65IZWlOU', '20'); func.formSubmit(this);">3</a></li>
+<li><a href="javascript:;" onclick="func.changeInput(this, 'wV3cO1A1GI5YNQuycO9ultuZ65IZWlOU', '30'); func.formSubmit(this);">4</a></li>
+</ul></div>
+<!--E: Paging -->
+
+</form>
+
+<script>
+	require(['web.bjNotice']);
+
+</script>	</div>
+</div>
+
+
+<iframe src="http://www.pandalive.co.kr/resource/advert/common" style="display:none;"></iframe>
+</body>
+
+<!-- Mirrored from www.pandalive.co.kr/channel/9649319/notice/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:34:02 GMT -->
+</html>

@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/* template : potal_A_pageingTemplate" */
+.paging .btnPrev_on,.paging .btnPrev_off{display:inline-block;height:15px;width:50px;padding:0;vertical-align:middle;font-weight:normal;}
+.paging .btnPrev_on a{display:inline-block;width:100%;background:url("../img/common/btn/btn_pagingprev_off.png") 0 3px no-repeat;color:#767676;font-size:12px;}
+.paging .btnPrev_on a:hover{background:url("../img/common/btn/btn_pagingprev_on.png") 0 3px no-repeat;color:#333;}
+.paging .btnNext_on,.paging .btnNext_off{display:inline-block;height:15px;width:50px;margin-left:4px;padding:0;font-weight:normal;vertical-align:middle;}
+.paging .btnNext_on a{display:inline-block;width:100%;background:url("../img/common/btn/btn_pagingnext_off.png") 100% 3px no-repeat;}
+.paging .btnNext_on a:hover{background:url("../img/common/btn/btn_pagingnext_on.png") 100% 3px no-repeat;}
+
+.paging .btnPrev_off a,.paging .btnNext_off a{cursor:default;}
+.paging span.num a {display: inline-block;margin-right: 1.5px;padding: 0 0 0 10px;color: #666;}
+
+/* 이전 다음 버튼 style 선적용 (후기용)*/
+#pagingWrap .btnPrev a{display:inline-block;width:100%;background:url("../img/common/btn/btn_pagingprev_off.png") 0 3px no-repeat;color:#767676;font-size:12px;}
+#pagingWrap .btnPrev a:hover{background:url("../img/common/btn/btn_pagingprev_on.png") 0 3px no-repeat;color:#333;}
+#pagingWrap .btnNext a{display:inline-block;width:100%;background:url("../img/common/btn/btn_pagingnext_off.png") 100% 3px no-repeat;padding-left:0px;}
+#pagingWrap .btnNext a:hover{background:url("../img/common/btn/btn_pagingnext_on.png") 100% 3px no-repeat;}

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<!-- Mirrored from www.pandalive.co.kr/policy/?lxmPfZ4Dna=service by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:14:54 GMT -->
+<head>
+	<title>팬더티비</title>
+
+	<link rel="canonical" href="../index.html">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<meta name="naver-site-verification" content="f53f9ec6b870896e159227b9d6c68ef2613cb537"/>
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="팬더티비">
+	<meta property="og:site_name" content="팬더티비">
+
+			<meta name="og:description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+		
+	<meta property="og:image" content="../../icache.neolive.kr/code_pandatv/apple-icon.png">
+	<meta property="og:url" content="../index.html">
+
+			<meta name="description" content="팬더티비에서 실시간 라이브 방송을 즐겨보세요! 누구나 BJ가 될 수 있습니다. PC/모바일 어디서든 이용가능!">
+	
+	<meta name="keywords" content="PC/모바일 어디서나 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="팬더티비">
+	<meta name="twitter:site" content="팬더티비">
+	<meta name="twitter:description" content="PC/모바일 어디서도 즐기는 실시간 인터넷방송 팬더티비, 모바일방송,개인방송,실시간라이브방송">
+	
+
+	<link rel="shortcut icon" href="../../icache.neolive.kr/code_pandatv/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="../../icache.neolive.kr/code_pandatv/apple-icon.png">
+
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/common.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/sweetalert/sweetalert2.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/jqueryui/jquery-ui.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/loading/loading.min.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/plugin/magnific/magnific-popup.css?ver=e76ce41e2ea2fa12400aa598247ba2d0">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<link rel="preload" href="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0" as="script">
+	<!--[if gte IE 9 ]>
+	<link rel="stylesheet" type="text/css" href="/resource/css/web/ie9.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+	<![endif]-->
+
+	<script>
+		document.domain = "pandalive.co.kr";
+		window.liveData = {};
+		window.liveData.device = {};
+		window.liveData.device.type = "webPc";
+		window.liveData.device.version = "1.0.0";
+
+		window.userInfo = {};
+					window.userInfo.isLogin = false;
+		
+		window.siteMode = {};
+		window.siteMode.showAdult = true;
+		window.siteMode.needAuth = false;
+	window.siteMode.needAuth = true;	</script>
+	
+	<script src="http://www.pandalive.co.kr/resource/js/es6promise/es6-promise.auto.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require.min.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/requirejs/require-config.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	<script src="http://www.pandalive.co.kr/resource/js/common.js?ver=e76ce41e2ea2fa12400aa598247ba2d0"></script>
+	
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('60([\'46\'],61(){46.62([33.37(22,68,23,51,38,1,13,18,64,16,23,67,20,5,4,3,10,5,67,14,68,9,23,15,11,54,12,0,3,54,10,50,3,18,55,2,16,5,56,68,12,0,57,19,36,57,55,11,16,7,56,66,65,0,52,25,15,17,8,7,56,49,25,31,24,30,10,29,55,26,65,9,42,35,4,50,40,19,9,49,7,63,28,49,4,66,28,2,65,57,47,18,67,5,21,24,10,49,56,68,35,31,3,15,18,21,28,38,34,65,56,67,7,49,55,27,10,40,56,14,0,68,59,23,4,26,28,2,17,14,29,20,3,44,21,2,22,5,56,68,42,50,67,31,36,19,55,43,17,14,29,25,3,44,4,39,19,34,56,7,12,20,25,41,36,19,32,11,26,39,10,0,55,24,55,27,22,30,21,7,54,57,58,41,17,53,12,43,56,24,5,50,39,18,55,3,32,35,32,49,1,49,16,15,4,30,13,0,34,26,10,49,27,6,47,2,17,11,4,7,12,50,57,15,38,20,29,6,30,2,5,66,16,2,55,20,11,49,56,7,45,9,3,22,4,27,3,2,45,41,11,0,57,49,1,2,21,40,56,14,12,68,68,51,32,2,5,31),33.37(55,52,55,50,53,55,55,57,0,52,54,1,1,56,57,0,8,0,50,52,13,9,53,50,57,55,0,57,50,0,51,8,13,9,50,48,57,55,56,8,0,54,52,55,51,6,8,51,6,0,0,6,52,8,51,55,56,49,50,50,51,53,55,52),33.37(6,52,49,49,49,54,57,1,52,0,52,0,51,53,8,50,50,6,51,13,56,1,13,50,54,51,50,49,6,0,1,56,55,50,52,55,51,55,48,48,56,0,48,56,53,51,1,51,54,9,53,51,1,55,1,54,1,54,52,52,8,55,51,53)])});',10,69,'99|97|116|84|114|104|100|69|98|101|87|111|71|102|73|107|80|86|95|119|90|79|109|106|115|121|77|83|118|110|82|108|117|String|85|103|88|fromCharCode|113|81|78|120|74|112|76|72|WebApi|89|||||||||||105|122|require|function|_|70|75||||'.split('|'),0,{}))
+</script>
+	<script>
+		window.name = "7e87de047ebd77783f213d3d8d08e727f16d4828357b8fb08e6de6e77ed5d5ff";
+		require(['jquery', 'jquery.browser'], function() {
+			if($.browser.name == "msie" && $.browser.versionNumber <= 9) {
+				$.support.cors = true;
+			}
+		});
+		require(['jquery', 'web.media', 'func', 'jquery.ui', 'web.func', 'loading', 'jquery.magnific', 'web.GoUrl']);
+		require(['sweetalert'], function(_swal) {
+			window.swal = _swal;
+			window.swal.setDefaults({
+				confirmButtonText: '확인'
+				, cancelButtonText: '취소'
+				, confirmButtonColor:'#20C9B0'
+			});
+		});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150827960-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', "UA-150827960-1");
+	</script>
+
+
+
+
+
+
+<script>
+	window.onpopstate = function(e) {
+		var state = window['backHistory'];
+		if(e.state) state = e.state;
+		window['backHistory'] = null;
+		if(!state) return;
+		
+		if(state['cookie']) {
+			$.cookie(state['cookie']['key'], state['cookie']['value'], {path:'/', domain:".pandalive.co.kr"});
+		}
+
+		if(state['backUrl']) {
+			//location.href = state['backUrl'];
+			location.replace(state['backUrl']);
+		}
+	}
+</script></head>
+<body id="site_pandatv">
+
+
+
+
+<script>
+	require(['web.member']);
+</script>
+<!--S: Login Join -->
+<div id="login_modal_mask" style="display:none;" onclick="Member.close();"></div>
+<div class="login_modal_box" style="display:none;">
+	<!--S: TabBox -->
+	<h2 class="tabbox">
+		<div id="tablogin" class="st1 on" onclick="Member.loginTab('login');">로그인</div>
+		<div id="tabjoin" class="st2" onclick="Member.loginTab('join');">회원가입</div>
+		<span class="close_btn" style="cursor: pointer" onclick="Member.close();"></span>
+	</h2>
+
+	<!--S: Login -->
+	<div class="login_area" style="display:block;">
+		<form id="form_login_modal">
+			<dl class="mlogin_box">
+				<dd>로그인 후 더 많은 서비스를 이용하실 수 있습니다.</dd>
+				<dd><input type="text" name="userId" class="input-st" placeholder="아이디" value=""></dd>
+				<dd><input type="password" name="userPw" class="input-st" placeholder="비밀번호" onkeyup="enterkey();"></dd>
+				<dd>
+					<p class="id_save">
+						<input type="checkbox" name="saveId" style="margin:0;" >
+						<span class="txt">아이디 저장</span>
+					</p>
+					<a href="../member/find.html" class="ip_search">아이디 &amp; 비밀번호 찾기</a>
+				</dd>
+				<dd><div class="login_btn" onclick="Member.loginSubmit(this);">로그인</div></dd>
+			</dl>
+					<!--S: 소셜로그인 시작 -->
+			<div class="sns_log_box">
+				<span class="txt_sl" style="display:block;">SNS 계정으로 간편 로그인</span>
+				<div class="box_sl">
+										<a href="#" onclick="window.Member.socialLogin('KAKAO');" class="kakao_ic"></a>										<a href="#" onclick="window.Member.socialLogin('GOOGLE');" class="google_ic"></a>				</div>
+			</div>
+			<!--E: 소셜로그인 끝 -->
+				</form>
+	</div>
+
+	<!--S: Join -->
+	<div class="join_area" style="display:none;">
+		<form id="form_join_modal">
+			<input type="hidden" name="session" value="pandatv20191230151604918405" />
+			<input type="email" name="userId" placeholder="아이디 6~15자 이내의 영문/숫자" class="input-st"  errMsg="#form_join_modal .error_id" />
+			<span class="txt_hid error_id" style="display:none;"></span>
+			<input type="password" name="userPw" placeholder="비밀번호(6자리 이상의 문자와 숫자)" class="input-st" errMsg="#form_join_modal .error_pw" />
+			<span class="txt_hid error_pw" style="display:none;"></span>
+			<input type="password" name="userPw2" placeholder="비밀번호 확인" class="input-st" errMsg="#form_join_modal .error_pw2" />
+			<span class="txt_hid error_pw2" style="display:none;"></span>
+			<input type="text" name="userNick" placeholder="닉네임 2~12자 이내의 한글/영문/숫자" class="input-st" errMsg="#form_join_modal .error_nick" />
+			<span class="txt_hid error_nick" style="display:none;"></span>
+			<div class="foot_box">
+				<p>
+					<input type="checkbox" name="agree" class="left">
+					<span class="right">이용약관 및 개인정보취급방침에 동의 합니다.</span>
+				</p>
+			</div>
+
+			<div class="join_btn" onclick="Member.joinSubmit(this);">회원가입</div>
+					<!--S: 소셜로그인 시작 -->
+			<div class="sns_log_box">
+				<span class="txt_sl" style="display: block;">SNS 계정으로 간편 가입</span>
+				<div class="box_sl">
+										<a href="#" onclick="window.Member.socialLogin('KAKAO');" class="kakao_ic"></a>										<a href="#" onclick="window.Member.socialLogin('GOOGLE');" class="google_ic"></a>				</div>
+				<p class="link_group">
+					<a href="index728e.html?D*4v=service" target="_blank">이용약관보기</a>
+					<span class="bar">ㅣ</span>
+					<a href="indexd1bb.html?D*4v=privacy" target="_blank">개인정보취급방침보기</a>
+				</p>
+			</div>
+			<!--E: 소셜로그인 끝 -->
+				</form>
+	</div>
+
+</div>
+<!--E: Login Join -->
+
+<textarea id="skin_adultLayer" style="display:none;">
+<div class="auth_box1 adult_modal">
+	<p class="ic_adult"></p>
+	<p class="tit">회원님의 본인인증 수단을 선택해 주세요.</p>
+	<ul>
+			<li>
+			<p class="phone"></p>
+			<p class="tit_c">휴대폰인증</p>
+			<p class="txt_c">본인명의 휴대폰으로 인증하기</p>
+			<a href="javascript:Auth.go('phone', Member.authAdultCallback);" class="ok1 btn">인증하기</a>
+		</li>
+			<li>
+			<p class="ipin"></p>
+			<p class="tit_c">아이핀인증</p>
+			<p class="txt_c">발급받은 아이핀으로 인증하기</p>
+			<a href="javascript:Auth.go('ipin', Member.authAdultCallback);" class="ok1 btn">인증하기</a>
+		</li>
+		</ul>
+	<p class="text">실명이 등록되어 있지 않을 경우 실명확인기간으로 문의해주시기 바랍니다.</p>
+	<div class="btn_group">
+		<a class="type1 btn" href="javascript:window.swal.close();">다음에 인증하기</a>
+	</div>
+</div>
+</textarea>
+
+<script>
+	function enterkey() {
+		if (window.event.keyCode == 13) {
+
+			$(':focus').blur();
+			$('.login_btn').click();
+		}
+	}
+</script><link rel="stylesheet" type="text/css" href="http://www.pandalive.co.kr/resource/css/web/web.css?ver=e76ce41e2ea2fa12400aa598247ba2d0" />
+<div id="header">
+	<div class="inner_t">
+		<div class="wrap layoutWrap">
+			<a href="../index.html">
+				<div class="logo"></div>
+			</a>
+
+			<div class="top_notice" id="topNotice">
+				<span class="notice_ico webImg"></span>
+				<ul>
+									<li style="display:none;">
+						<span>얼굴인형님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>♡BJ아라♡님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>설레임ღᶫᵒᵛᵉᵧₒᵤ님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>♥채린♥님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>해찌♥님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>유아라ღ님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>모든문제는용팔이였다님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>귄아♥님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>BJ두산이님이 방송을 시작 하였습니다.</span>
+					</li>
+									<li style="display:none;">
+						<span>BJ복만이ღ님이 방송을 시작 하였습니다.</span>
+					</li>
+								</ul>
+
+				<script>
+					require(['web.func'], function(){ 
+						func.verticalRolling('#topNotice li', 5000).start();
+					});
+				</script>
+			</div>
+								<div class="play_board">
+						<a href="../launcher/PANDATV.exe">
+							<span class="aFlashing webImg"></span>설치형 플레이어 방송보기(방송하기)						</a>
+					</div>
+			
+			<div class="search_wrap">
+				<form name="frm_search" action="http://www.pandalive.co.kr/live/search" method="post" onsubmit="return search()">
+				<input type="text" class="search_text" name="HLA5Nln1wgRx4Bzo" id="search_text" placeholder="검색어를 입력해주세요." value="">
+				<button class="search_submit" type="button" onclick="search();">
+					<span class="webImg"></span>
+				</button>
+				</form>
+				<script>
+					function search(){
+						if($('#search_text').val().length <= 1){				
+						//swal({title:'알림' ,  text: "검색어는 2자 이상 입력해 주세요"});
+						alert('검색어는 2자 이상 입력해 주세요');
+							return false;
+						}
+
+						window.WebApi.blockWord({
+							word: $('#search_text').val()
+							, success: function(json) {
+								if(!json.result) {
+									swal(json.message);
+									return;
+								}
+								document.frm_search.submit();
+							}
+							, error: function() {
+								swal('오류가 발생했습니다');
+							}
+						});
+						return false;
+					}
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="inner_b">
+		<div class="wrap layoutWrap">
+			<ul class="navi">
+				<li><a href="../live.html" class="">LIVE</a></li>
+									<li><a href="../charge/heart.html" class="">하트 충전</a></li>
+					<li><a href="../charge/item.html" class="">아이템 구매</a></li>
+													<li><a href="javascript:;" onclick="func.openIframeLayer('/frame/useCoupon', {}, true);">쿠폰 등록</a><span class="new_ico"></span></li>
+							</ul>
+			<ul class="menu_r">
+									<li><a href="javascript:void(0)" onclick="window.open('http://pandahp.kr/')">팬더티비 도우미</a></li>
+								<li><a href="../bbs/notice.html" class="">고객센터</a></li>
+
+									<li><a href="../guide/pc.html" class="">방송가이드</a></li>
+								
+									<li><a href="../bbs/event.html" class="">이벤트</a></li>
+								
+							<li><a href="../member/join.html" class="">회원가입</a></li>
+				<li><a href="../member/login.html" class="logtxt">로그인</a></li>
+							
+				<li onclick="func.hideAnmiate('#detailMyInfo', 'blind'); func.toogleAnmiate('#AllMenu', 'blind');" class="mr0">
+					<a href="#" class="allmenu_ico"></a>
+				</li>
+			</ul>
+			
+			<!--S: My -->
+			<div class="my_wrap" style="display:none;" id="detailMyInfo">
+				<div class="my_arrow"></div>
+				<div class="my_box">
+					<div class="myinfo">
+						<div class="img">
+							<img src="#" alt="imgProfile">
+						</div>
+						<div class="id">
+							<p class="txt"><span></span>님 반갑습니다.</p>
+							<p>오늘도 행복한 하루되세요.</p>
+													<p class="color">
+								하트 <span></span>개
+							</p>
+												</div>
+												<a href="../member/adultAuth/index.html" class="auth19 btn">성인인증하기</a>
+										</div>
+					<!--
+					<select class="slt" onchange="window.open('/channel/'+this.value+'/');">
+						<option value="">내 즐겨찾기</option>
+										</select>
+					-->
+					<ul>
+													<li><a href="javascript:Media.goChannel('');" class="btn">방송국</a></li>
+							<li><a href="javascript:Media.goChannel('', 'mypage');" class="btn">내정보</a></li>
+												<li><a href="../bbs/qna.html" class="btn">1:1문의</a></li>
+						<li><a href="../member/logout.html" class="btn">로그아웃</a></li>
+											</ul>                            
+				</div>
+			</div>
+			<!--E: My -->
+			
+			<!--S: AllMenu -->
+			<div class="allmenu_wrap" style="display:none;" id="AllMenu">
+				<div class="allmenu_arrow"></div>
+				<div class="allmenu_box">
+					<div class="in_box01">
+						<p class="tt01">LIVE</p>
+						<ul>
+							<li><a href="../live.html">전체보기</a></li>
+							<li><a href="../live/ranking.html">BJ랭킹</a></li>
+						</ul>
+						<p class="tt_n01">고객센터</p>
+						<ul>
+							<li><a href="../bbs/notice.html">공지사항</a></li>
+							<li><a href="javascript:Member.loginHref('/bbs/qna');"> 1:1문의</a></li>
+							<li><a href="javascript:Member.loginHref('/bbs/proposal');">제안하기</a></li>
+							<li><a href="javascript:Member.loginHref('/bbs/report');">신고하기</a></li>
+						</ul>
+					</div>
+										<div class="in_box02">
+						<p class="tt02">이벤트</p>
+						<ul>
+							<li><a href="../bbs/event.html">이벤트</a></li>
+						</ul>
+						<p class="tt_n02">방송가이드</p>
+						<ul>
+							<li><a href="../guide/pc.html">PC</a></li>
+							<li><a href="../guide/mobile.html">모바일</a></li>
+						</ul>
+					</div>
+														<div class="in_box04">
+						<p class="tt04">하트&amp;아이템</p>
+						<ul>
+							<li><a href="../charge/heart.html">하트충전</a></li>
+							<li><a href="../charge/item.html">아이템구매</a></li>
+							<li><a href="../guide/emoticon.html">하트이모티콘</a></li>
+						</ul>
+					</div>
+								</div>
+			</div>
+			<!--E: AllMenu -->
+		</div>
+	</div>
+</div>
+
+<div id="aside">
+	<div class="wrap">
+		<div class="menu">
+			<ul class="menulist" style="position:absolute;">
+				<li>
+					<a href="javascript:Member.loginHref('/live/bookmark')" class=""><span class="like webImg"></span>즐겨찾기</a>
+				</li>
+				<li>
+					<a href="javascript:Member.loginHref('/live/watch')" class=""><span class="resen webImg"></span>최근본방송</a>
+				</li>
+
+				<li>
+											<a href="javascript:Member.loginHref('/live/gift')" class=""><span class="gift webImg"></span>내가선물한방송</a>
+									</li>
+
+				<li>
+					<a href="../live/ranking.html" class=""><span class="ranking webImg"></span>랭킹</a>
+				</li>
+				<li></li>
+				<li>
+					<a href="../live.html" class=""><span class="total webImg"></span>전체</a>
+				</li>
+				<li>
+					<a href="../live/index0221.html?RCxfyfx_Pmd4Dna=ind" class=""><span class="personal webImg"></span>개인</a>
+				</li>
+				<!--<li>
+					<a href="/live/?RCxfyfx_Pmd4Dna=mov" class=""><span class="mov webImg"></span>영화</a>
+				</li>-->
+				<li>
+					<a href="../live/index6a2b.html?RCxfyfx_Pmd4Dna=music" class=""><span class="music webImg"></span>음악</a>
+				</li>
+				<li>
+					<a href="../live/indexafbe.html?RCxfyfx_Pmd4Dna=game" class=""><span class="game webImg"></span>게임</a>
+				</li>
+				<li>
+					<a href="../live/indexb8f8.html?RCxfyfx_Pmd4Dna=etc" class=""><span class="etc webImg"></span>기타</a>
+				</li>
+				<li>
+					<a href="../live/index7e4d.html?RCxfyfx_Pmd4Dna=sports" class=""><span class="sports webImg"></span>스포츠</a>
+				</li>
+							</ul>
+		</div>
+	</div>
+</div>
+
+<div id="contents">
+	<div id="container">
+			<div class="subcon">
+			<table class="subTable">
+			<tr>
+				<td class="subMenu">
+					<h2>정책안내</h2>
+					<ul class="menuItem">
+											<li class="off">
+													<a href="index61df.html?lxmPfZ4Dna=privacy">
+														개인정보취급방침							</a>
+						</li>
+											<li class="on">
+													<a href="index48e7.html?lxmPfZ4Dna=service">
+														이용약관							</a>
+						</li>
+											<li class="off">
+													<a href="index9f3a.html?lxmPfZ4Dna=youth">
+														청소년보호정책							</a>
+						</li>
+											<li class="off">
+													<a href="indexd726.html?lxmPfZ4Dna=cast">
+														방송기준안내							</a>
+						</li>
+											<li class="off">
+													<a href="index8ab4.html?lxmPfZ4Dna=play">
+														시청기준안내							</a>
+						</li>
+											<li class="off">
+													<a href="index0889.html?lxmPfZ4Dna=claim">
+														권리침해신고센터							</a>
+						</li>
+										</ul>
+				</td>
+				<td class="subContents">
+						
+<style>
+	#policy * { font-stretch:inherit; color:inherit; }
+</style>
+		
+<div id="policy">
+		<p>팬더티비의 이용약관은 다음과 같은 내용을 담고 있습니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 1조(목적)</span></strong></p><p>이 약관은 주식회사 더블미디어(이하 "회사"라 합니다)가 제공하는 서비스(이용고객 또는 회원이 PC, 멀티미디어 모바일 등의 각종 디지털기기-휴대단말기(스마트폰, 태블릿) 등의 각종 유무선 장치를 포함, 또는 프로그램을 통하여 이용할 수 있도록 회사가 제공하는 모든 인터넷서비스를 의미합니다. 이하 같습니다.)와 관련하여, 회사와 이용고객(또는 회원)간에 서비스 이용조건 및 절차, 회사와 이용고객간의 권리ㆍ의무 및 책임사항 기타 필요한 사항을 규정함을 목적으로 합니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 2조(정의)</span></strong></p><p>① "서비스"라 함은 접속 가능한 유 무선 단말기의 종류와는 상관 없이 이용고객(또는 회원)이 이용 할 수 있는 제반 “서비스”를 의미합니다.</p><p>② "이용고객"이라 함은 회사의 "서비스"에 접속하여 이 약관에 따라"회사"가 제공하는 "서비스”를 이용하는 회원, 비회원 고객을 말합니다.</p><p>③ "회원”이라 함은 회원등록을 한 자로서, 회사의 정보를 지속적으로 제공받으며, 서비스를 계속적으로 이용할 수 있는 자를 말합니다. 방송을 진행하는 회원 중에는 회사의 지원을 받아 서비스를 이용하는 회원도 있습니다.</p><p>④ “비회원”이란 회원으로 가입하지 않고 회사가 제공하는 서비스를 이용하는 자를 말합니다.</p><p>⑤ "아이디(ID)"라 함은 "이용고객"의 식별과 "서비스" 이용을 위하여 "이용고객"이 정하고 "회사"가 승인하는 문자와 숫자의 조합을 의미합니다.</p><p>⑥ "비밀번호"라 함은 "이용고객"이 부여 받은 "아이디”와 일치되는 "이용고객"임을 확인하고 비밀보호를 위해 "이용고객" 자신이 정한 문자 또는 숫자의 조합을 의미합니다.</p><p>⑦ "유료서비스"라 함은 "회사" 또는 "회원"이 유료로 제공하는 각종 온라인 디지털 콘텐츠(각종 정보 콘텐츠, VOD, 하트, 아이템 기타 유료 콘텐츠를 포함) 및 제반 서비스를 의미합니다.</p><p>⑧ "게시물"이라 함은 이용고객이 "서비스"를 이용함에 있어 "서비스상"에 게시한 부호, 문자, 음성, 음향, 화상, 동영상 등의 정보 형태의 글, 사진, 동영상 및 각종 파일과 링크 등을 의미합니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 3조(약관의 효력과 변경)</span></strong></p><p>① 본 약관은 주식회사 더블미디어가 제공하는 모든 인터넷서비스에 게시하여 공시함으로써 효력을 발생합니다.</p><p>② 회사는 약관의 규제에 관한 법률, 정보통신망 이용촉진 및 정보보호 등에 관한 법률 등 관련법에 위배하지 않는 범위에서 이 약관을 변경할 수 있으며, 약관을 변경할 경우에는 이용고객이 쉽게 알 수 있도록 서비스 초기화면에 최소 15일 전부터 공시합니다. 다만, 이용고객에게 불리한 약관의 개정의 경우에는 그 적용일자 30일전부터 적용일 이후 상당기간 동안 각각 이를 서비스 홈페이지에 공지하여 그 내용을 확인할 수 있게 합니다.</p><p>③ 회사가 전항에 따라 개정약관을 공지 또는 통지하면서 이용고객에게 30일 기간 내에 의사표시를 하지 않으면 의사표시가 표명된 것으로 본다는 뜻을 명확하게 공지 또는 통지하였음에도 이용고객이 명시적으로 거부의 의사표시를 하지 아니한 경우에는 이용고객이 개정약관에 동의한 것으로 봅니다. </p><p>④ 이용고객은 변경된 약관에 동의하지 않으면, 언제나 서비스 이용을 중단하고, 이용계약을 해지할 수 있습니다. 약관의 효력발생일 이후의 계속적인 서비스 이용은 약관의 변경사항에 대한 이용고객의 동의로 간주됩니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 4조(약관의 적용)</span></strong></p><p>① "회사"는 "유료서비스" 및 개별 서비스에 대해서는 별도의 이용약관 및 정책(이하 "유료서비스약관 등")을 둘 수 있으며, 해당 내용이 이 약관과 상충할 경우에는 "유료서비스약관 등"이 우선하여 적용됩니다.</p><p>② 이 약관에 명시되지 아니한 사항이나 해석에 대해서는 별도의 세부 약관, 상관행, 회사의 공지, 이용안내, 관계법령에서 정한 바에 따릅니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 5조(서비스의 구분)</span></strong></p><p>① "회사"가 이용고객에게 제공하는 "서비스"는 무료서비스, 유료서비스 등으로 구분합니다.</p><p>② 무료서비스, 유료서비스 등의 종류와 이용방법 등은 이 약관 및 "회사"가 공지 또는 이용안내에서 별도로 정하는 바에 의합니다.</p><p>③ 서비스 이용등급은 콘텐츠 초기 화면에 표시된 이용등급정보에 따르며, "회사"는 이용고객에 대하여 "청소년보호법" 등에 따른 등급 및 연령 준수를 위해 이용제한이나 등급별 제한을 할 수 있습니다.</p><p><br></p><p><span style="color:#f65516;"><strong>제 6조(이용고객에 대한 통지)</strong></span></p><p>① "회사"가 이용고객(회원에 한함)에 대한 통지를 하는 경우 이 약관에 별도 규정이 없는 한 서비스 내 전자쪽지 등으로 할 수 있습니다.</p><p>② "회사"는 이용고객 전체에 대한 통지의 경우 7일 이상 "회사"의 공지사항에 게시함으로써 제1항의 통지에 갈음할 수 있습니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 7조(이용계약의 성립 및 체결단위)</span></strong></p><p>① 이용계약은 이용고객의 이용신청에 대한 "회사"의 이용승낙으로 성립합니다.</p><p>② 이용계약은 아이디 단위로 체결합니다.</p><p>③ "서비스"의 대량이용 등 특별한 "서비스" 이용에 관한 계약은 별도의 계약으로 합니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 8조(이용신청)</span></strong></p><p>① 서비스 이용자가 본 약관을 읽고 “동의” 버튼을 누르거나 “확인” 등에 체크하는 방법을 취한 경우 본 약관에 동의한 것으로 간주합니다.</p><p>② 회사의 서비스 이용을 위한 회원가입은 서비스 이용자가 제1항과 같이 동의한 후 회사가 정한 온라인 회원가입 신청서에 회원아이디를 포함한 필수 입력사항을 입력하고 “등록하기” 내지 “확인” 버튼을 누르는 방법으로 합니다. 다만, 회사가 필요하다고 인정하는 경우 회원에게 별도의 서류를 제출하게 할 수 있습니다.</p><p>③ "회사"는 이 약관의 주요 내용을 "이용신청고객"에게 고지하여야 합니다.</p><p>④ 회원가입은 "이용신청고객" 자신의 실명으로 하여야 하며, 타인의 정보(아이핀 및 휴대폰정보 등)를 도용하여 이용신청을 한 회원의 모든 ID는 삭제됩니다.</p><p>⑤ "이용신청고객"이 미성년자(만 14세 미만) 또는 한정치산자인 경우는 법정대리인(부모 등)의 동의를 받아 이용신청을 할 수 있습니다.</p><p>⑥ 전항의 경우는 동의서를 첨부하여 이용신청을 하여야 합니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 9조(이용계약의 체결/승낙)</span></strong></p><p>① "회사"는 전조의 규정에 의한 이용신청에 대하여 업무수행상 또는 기술상 지장이 없는 경우에는 원칙적으로 지체 없이 이용신청을 승낙합니다.</p><p>② "회사"는 이용신청을 승낙하는 때에는 다음 각호의 사항을 이용고객에게 "서비스"를 통하거나, 전자우편등의 방법으로 전달합니다. </p><p>1. 아이디</p><p>2. 이용고객의 권익보호 및 의무 등에 관한 사항</p><p>3. 기타 이용고객이 "서비스" 이용 시 알아야 할 사항</p><p>③"회사"는 다음 각호의 1에 해당하는 이용신청에 대하여는 승낙을 하지 않거나, 사후에 이용계약을 해지할 수 있습니다. </p><p>1. 타인의 명의거나 실명이 아닌 경우</p><p>2. 기존에 사용되고 있는 아이디 또는 공서양속을 저해하는 표시의 아이디를 사용하고자 하는 신청을 한 경우</p><p>3. 허위의 신청이거나 허위서류를 첨부한 경우</p><p>4. "이용고객"이 회사에 납부하여야 할 요금 등을 납부하지 않은 경우</p><p>5. 14세 미만 아동이 법정대리인의 동의를 얻지 못한 경우</p><p>6. 가입신청자가 이 약관에 의하여 이전에 이용고객자격을 상실한 적이 있는 경우, 단 "회사"의 이용고객 재가입 승낙을 얻은 경우에는 예외로 한다.</p><p>7. 기타 "이용신청고객"의 귀책사유로 이용승낙이 곤란하거나, 기타 규정한 제반 사항을 위반하여 신청하는 경우</p><p>④"회사"는 다음 각호의 1에 해당하는 사유가 있는 경우에는 그 사유가 해소될 때까지는 승낙을 보류할 수 있습니다.</p><p>1. 회사의 설비에 여유가 없는 경우</p><p>2. "서비스"에 장애가 있는 경우</p><p>⑤ "회사"는 "이용신청고객"이 미성년자, 한정치산자인 경우에 법정대리인(부모 등)의 동의 없는 이용신청에 대하여 승낙을 보류할 수 있습니다.</p><p>⑥ "회사"는 "이용고객"에 대해 회사정책에 따라 등급별로 구분하여 이용시간, 이용횟수, 서비스 메뉴 등을 세분하여 이용에 차등을 둘 수 있습니다.</p><p>⑦ "회사"는 "이용고객"에 대하여 "영화 및 비디오물의 진흥에 관한 법률" 및 "청소년보호법"등에 따른 등급 및 연령 준수를 위해 이용제한이나 등급별 제한을 할 수 있습니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 10조(아이디 부여 등)</span></strong></p><p>① "회사"는 원칙적으로 "이용신청고객"이 신청한대로 아이디를 부여합니다.</p><p>② 아이디는 변경할 수 없는 것을 원칙으로 합니다.</p><p>③ 아이디가 다음 각호에 해당하는 경우에는 "회사"는 해당 이용고객에 대한 "서비스" 제공을 중단하고, 새로운 아이디로 이용신청 할 것을 권할 수 있습니다. </p><p>1. 아이디가 이용고객의 전화번호 또는 주민등록번호 등으로 등록되어 사생활 침해의 우려가 있는 경우</p><p>2. 타인에게 혐오감을 주거나 공서양속을 해치는 경우</p><p>3. 기타 이용고객의 보호를 위한 합리적인 사유가 있는 경우</p><p><br></p><p><strong><span style="color:#f65516;">제 11조(서비스 이용)</span></strong></p><p>① “서비스” 이용은 회사의 서비스 사용승낙 직후부터 가능합니다. 단, 유료 서비스의 경우 회사가 요금납입을 확인한 직후부터 가능합니다.</p><p>② 민법상 미성년자인 회원이 유료 서비스를 이용할 경우 미성년자인 회원은 결제 전 법정대리인의 동의를 얻어야 합니다.</p><p>③ 서비스의 이용은 연중무휴 1일 24시간을 원칙으로 합니다. 다만, 시스템 점검, 증설과 교체 및 고장 등의 이유로 회사가 정한 기간에는 서비스가 일지 중지될 수 있으며, 이러한 경우에는 회사가 사전 또는 사후에 이를 공지합니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 12조(회사의 의무)</span></strong></p><p>① "회사"는 관련법과 이 약관이 금지하거나 미풍양속에 반하는 행위를 하지 않으며, 계속적이고 안정적으로 "서비스" 를 제공하기 위하여 최선을 다하여 노력합니다.</p><p>② "회사"는 "이용고객"이 안전하게 "서비스"를 이용할 수 있도록 개인정보(신용정보 포함)보호를 위해 보안시스템을 갖추어야 하며 개인정보처리방침을 공시하고 준수합니다.</p><p>③ "회사"는 이용고객으로부터 제기되는 의견이나 불만이 정당하다고 인정할 경우에는 즉시 처리하여야 합니다. 다만, 즉시 처리가 곤란한 경우에는 이용고객에게 그 사유와 처리일정을 전자 우편 등(전자 쪽지)의 방법으로 통보하여야 합니다.</p><p>④ "회사"는 계속적이고 안정적인 "서비스"의 제공을 위하여 설비에 장애가 생기거나 멸실 된 때에는 이를 지체 없이 수리 또는 복구합니다. 다만, 천재지변 또는 "회사"에 부득이한 사유가 있는 경 우, 무료서비스의 경우에는 "서비스" 제공을 일시 정지할 수 있습니다. 이 경우 그 사유 및 중지 기간 등을 이용자에게 지체 없이 사후 공지합니다.</p><p>⑤"회사"는 이용계약의 체결, 계약사항의 변경 및 해지 등 이용고객과의 계약관련 절차 및 내용 등에 있어 이용고객에게 편의를 제공하도록 노력합니다.</p><p>⑥ 회사는 회원이 수신 동의를 하지 않은 영리 목적의 광고성 전자우편, SMS문자메시지등을 발송하지 아니합니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 13조(개인정보보호)</span></strong></p><p>"회사"는 이용자들의 개인정보를 중요시하며, 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법, 전기통신사업법 등 관련 법규를 준수하고 있습니다. "회사"는 개인정보보호정책을 통하여 이용고객이 제공하는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 14조(이용고객의 의무)</span></strong><br>① 이용고객은 회원가입을 통해 이용신청을 할 경우 사실에 근거하여 작성하여야 합니다. 회원이 허위, 또는 타인의 정보를 등록한 경우 회사에 대하여 일체의 권리를 주장할 <br>수 없으며, 회사는 이로 인하여 발생하는 손해에 대하여 책임을 부담하지 않습니다.</p><p>② 이용고객은 본 약관에서 규정하는 사항과 기타 회사가 정한 제반 규정, 회사가 공지하는 사항을 준수하여야 합니다. 또한 회원은 회사의 업무에 방해가 되는 행위, 회사의 명예를 손상시키는 행위를 해서는 안됩니다.</p><p>③ 회원은 청소년 보호법 등 관계 법령을 준수하여야 합니다. 회원이 청소년 보호법 등 관계 법령을 위반한 경우는 해당 법령에 의거 처벌을 받게 됩니다.</p><p>④ 회원은 주소, 연락처, 전자우편 주소 등 이용계약 사항이 변경된 경우에 즉시 온라인 상에서 이를 수정해야 합니다. 수정을 하지 않거나 수정 지연으로 발생되는 책임은 회원에게 있습니다.</p><p>⑤ 회원은 회원에게 부여된 아이디와 비밀번호를 직접 관리해야 합니다. 회원의 관리 소홀로 발생한 문제는 회사에서 책임지지 않습니다.</p><p>⑥ 회원이 아이디, 닉네임, 기타 서비스 내에서 사용되는 명칭 등의 선정 시에는 다음 각 호에 해당하는 내용을 사용하여서는 안됩니다.</p><p>1. 회사가 제공하는 서비스의 공식 운영자를 사칭하거나 유사한 명칭을 사용하여 다른 이용고객 에게 혼란을 초래하는 행위 </p><p>2. 선정적이고 음란한 내용이 포함된 명칭의 사용</p><p>3. 제3자의 상표권, 저작권, 지적 재산권 등의 권리를 침해할 가능성이 있는 명칭의 사용</p><p>4. 비속어라고 판단 되거나 반사회적 이고 관계법령에 저촉되는 내용이 포함된 명칭의 사용</p><p>⑦ 회원은 회사의 명시적 동의가 없는 한 서비스 이용 권한, 기타 이용 계약상의 지위를 타인에게 매도, 증여할 수 없으며 무형자산을 담보로 제공할 수 없습니다.</p><p>⑧ 이용고객은 회사에서 제공하는 서비스를 게임 또는 서비스 본래의 이용목적 이외의 용도로 사용해서는 안됩니다. 이용고객은 아래 각 호의 행위를 하여서는 안되며, 이에 해당되는 행위를 할 경우에는 본 약관 및 각 서비스 별로 공지하는 운영정책에 따라 이용고객의 서비스 이용을 제한하거나 아이디의 삭제, 수사기관의 고발 조치 등 적법한 조치를 포함한 제재를 가할 수 있습니다.</p><p>1. 회원 가입 또는 변경 시 개인정보에 허위 내용을 기재하는 행위</p><p>2. 타인의 개인 정보를 도용하거나 부정하게 사용하는 행위</p><p>3. 회원의 아이디 등 사이버 자산을 타인과 매매하는 행위</p><p>4. 회사의 운영진 또는 직원을 사칭하는 행위</p><p>5. 회사로부터 특별한 권리를 부여 받지 않고 회사의 클라이언트 프로그램을 변경하거나, 회사의 서버를 해킹하거나, 웹사이트 또는 게시된 정보의 일부분 또는 전체를 임의로 변경하거나 삭제하는 행위</p><p>6. 회사 프로그램 상의 버그를 악용하는 행위 </p><p>7. 회사의 사전 승낙 없이 서비스를 이용하여 영업활동을 하는 행위 </p><p>8. 다른 이용고객을 희롱 또는 위협하거나 다른 이용고객에게 고통, 피해, 또는 불편을 주는 행위 </p><p>9. 모욕적이거나 개인신상에 대한 내용이어서 타인의 명예나 프라이버시를 침해할 수 있는 내용을 전송, 게시, 전자우편 또는 기타의 방법으로 타인에게 유포하는 행위</p><p>10. 회사로부터 승인 받지 아니하고 각 서비스의 클라이언트 프로그램을 변경하거나, 서버를 해킹하거나 또는 웹사이트의 일부분을 변경하는 행위, 또는 이러한 목적으로 개발, 유포되는 프로그램을 사용하거나 이의 사용을 장려 또는 광고하는 행위</p><p>11. 회사의 게시물 또는 타인의 게시물 일부분 또는 전체를 임의로 변경하거나 삭제하는 행위 </p><p>12. 회사의 승인을 받지 않고 다른 회원의 개인정보를 수집 또는 저장하는 행위</p><p>13. 회사의 허가 없이 소프트웨어 또는 하드웨어를 이용하여 서비스 내에서 게임의 내용에 권한 없이 관여하는 소프트웨어 혹은 하드웨어를 사용, 배포하거나 사용을 장려하거나 이에 대한 광고를 하는 행위</p><p>14. 회사가 제공하는 서비스 프로그램의 이용방식, 기획의도를 변경하거나 서비스에 비정상적으로 위해를 가하거나 고의로 방해하는 일체의 행위</p><p>15. 본 서비스를 통해 얻은 정보를 회사의 사전 승낙 없이 서비스 이용 외의 목적으로 복제, 이를 출판 및 방송 등에 사용하거나, 제3자에게 제공하는 행위 </p><p>16. 공공질서 및 미풍양속에 위반되는 저속하거나 음란한 내용의 정보, 문장, 도형, 음향, 동영 상 또는 불법 복제된 소프트웨어를 전송, 게시, 전자우편 또는 기타 방법으로 타인에게 유포하는 등 불법적인 목적으로 서비스를 이용하는 행위</p><p>17. 범죄와 결부된다고 객관적으로 판단되는 행위</p><p>18. 본 약관을 포함하여 기타 회사가 정한 제반 규정 또는 이용 조건을 위반 하는 행위 및 기타 관계 법령에 위배되는 행위</p><p><br></p><p><strong><span style="color:#f65516;">제 15조(서비스의 제한, 정지 등)</span></strong></p><p>① 회사는 아래 각 호의 1에 해당하는 사유가 발생한 경우에는 회원의 서비스 이용을 제한하거나 중지시킬 수 있습니다. </p><p>1. 회원이 회사 서비스의 운영을 고의?과실로 방해하는 경우</p><p>2. 회원이 제14조(이용고객의 의무)의 의무를 위반한 경우</p><p>3. 서비스용 설비 점검, 보수 또는 공사로 인하여 부득이한 경우</p><p>4. 전기통신사업법에 규정된 기간통신사업자가 전기통신 서비스를 중지했을 경우</p><p>5. 전시, 사변, 국가비상사태, 천재지변 또는 이에 준하는 국가비상사태가 발생하거나 발생할 우려가 있는 경우</p><p>6. 서비스 설비의 장애 또는 서비스 이용의 폭주 등으로 서비스 이용에 지장이 있는 경우</p><p>7. 기타 중대한 사유로 인하여 회사가 서비스 제공을 지속하는 것이 부적당하다고 인정하는 경우</p><p>② 회사는 전항의 규정에 의하여 서비스의 이용을 제한하거나 중지한 때에는 그 사유 및 제한 기간 등을 이용고객에게 알려야 합니다 다만, "회사"가 사전에 통지할 수 없는 부득이한 사유가 있는 경우 사후에 통지할 수 있습니다.</p><p>③ 무료서비스는 "회사"의 경영정책 등을 이유로 서비스의 전부 또는 일부가 제한되거나 중지될 수 있으며, 유료로 전환될 수 있습니다.</p><p>④ "회사"는 "서비스"의 이용을 제한하거나 정지하는 때와 무료서비스를 유료로 전환하는 때에는 그 사유 및 제한기간, 예정 일시 등을 지체 없이 이용고객에게 알려야 합니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 16조(서비스의 제공중단, 이용제한 등)</span></strong></p><p>①"회사"는 이용고객이 유료서비스의 요금 등을 지정한 기일로부터 1개월 이상 납부하지 않을 경우에는 전부 또는 일부의 서비스제공을 중단할 수 있습니다.</p><p>②"회사"는 이용고객이 다음 각호의 1에 해당하는 경우에는 이용고객의 서비스 이용을 일부 또는 전부 제한할 수 있습니다. </p><p>1. 제14조 3항, 4항, 5항의 규정에 의한 각 의무를 이행하지 않는 경우</p><p>2. 다량의 정보를 전송하여 서비스의 안정적 운영을 방해하는 경우</p><p>3. 수신자의 의사에 반하는 광고성 정보, 전자우편을 지속적으로 전송하는 경우</p><p>4. 정보통신설비의 오작동이나 정보를 파괴를 유발하는 컴퓨터 바이러스 프로그램 등을 유포하는 경우</p><p>5. 정보통신윤리위원회로부터 이용제한 요구 대상인 경우</p><p>6. 선거관리위원회의 유권해석 상의 불법선거운동을 하는 경우</p><p>7. 전기통신관련법령 등을 위반하는 행위를 하는 경우</p><p>8. 다른 이용고객의 아이디를 부정하게 사용하는 경우</p><p>③전항의 규정에 의하여 이용고객의 이용을 제한하는 때의 제한의 종류 및 기간 등 구체적인 기준은 "회사"의 공지, 이용안내 등에서 별도로 정하는 바에 따릅니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 17조(이용제한 및 해제절차)</span></strong></p><p>① "회사"가 제15조에 의하여 이용제한을 하고자 하는 때에는 그 사유, 일시 및 기간을 정하여 이용제한 7일전까지 전화 또는 전자우편 등의 방법으로 해당 이용고객 또는 대리인에게 통지합니다. 단, 긴급하게 이용을 제한할 필요가 있을 경우에는 그러하지 않습니다.</p><p>② 전항의 규정에 의하여 이용정지의 통지를 받은 이용고객 또는 대리인은 그 이용정지의 통지에 대하여 이의가 있을 때에는 이의신청을 할 수 있습니다.</p><p>③ "회사"는 이용정지 기간 중에 그 이용정지 사유가 해소된 것이 확인된 경우에는 이용정지조치를 즉시 해제합니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 18조(서비스의 해제·해지 및 청약철회)</span></strong></p><p>① "회사”와“유료서비스”에 관한 계약을 체결한“이용고객”은 계약을 체결한 날로부터 7일 이내에 청약을 철회 할 수 있습니다. 다만,“회사”가 다음 각호 중 하나의 조치를 취한 경우에는 “이용고객”의 청약철회가 제한될 수 있습니다. </p><p>1. 청약의 철회가 불가능한 콘텐츠에 대한 사실을 해당 콘텐츠에 포함한 경우</p><p>2. 시용상품을 제공한 경우</p><p>3. 한시적 또는 일부 이용 등의 방법으로 제공한 경우</p><p>② "이용고객”은 다음 각 호의 사유가 있을 때에는 당해 “유료서비스”를 공급받은 날로부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 이용계약을 해제, 해지할 수 있습니다.</p><p>1. 계약을 체결한 “유료서비스”가 제공되지 않은 경우</p><p>2. 제공되는 “유료서비스”가 표시와 상이하거나, 차이가 있는 경우</p><p>3. 기타 “유료서비스”의 결함으로 정상적인 이용이 불가능한 경우</p><p>③ 제1항의 청약철회와 제2항의 계약해제, 해지는 본인이 직접 "서비스"를 통하거나 서면 또는 전화의 방법으로 회사에 신청하여야 합니다.</p><p>④ "회사"는 전항의 규정에 의하여 청약철회 또는 계약해제, 해지의 의사표시를 수신한 후 지체 없이 이러한 사실을 본인에게 회신 합니다.</p><p><br></p><p><span style="color:#f65516;"><strong>제 19조(손해배상)</strong></span></p><p>① "회사"는 무료서비스의 장애, 제공 중단, 보관된 자료 멸실 또는 삭제, 변조 등으로 인한 손해에 대하여는 배상하지 않습니다.</p><p>② "회사"는 "회사"의 귀책사유로 인하여 이용고객에게 서비스를 제공하지 못하는 경우 유료 서비스 이용자에게는 공정거래위원회가 고시한 소비자피해보상규정에 따라 보상합니다.</p><p>③ 기타 손해배상의 방법, 절차 등은 관계법령에 따릅니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 20조(면책)</span></strong></p><p>① "회사"는 이용고객이 "회사"의 "서비스" 제공으로부터 기대되는 이익을 얻지 못한 데 대하여 책임이 없습니다.</p><p>② "회사"는 제3자가 게시 또는 전송한 자료로 인한 이용고객의 손해에 대하여는 책임이 없습니다.</p><p>③ "회사"는 이용고객 상호간 또는 이용고객과 제3자 간에 "서비스"를 매개로 발생한 분쟁에 대하여는 개입할 의무도 이로 인한 손해를 배상할 책임도 없습니다.</p><p>④ "회사"는 이용고객이 서비스를 이용하면서 서비스에 관련된 저작권법 위반을 포함한 모든 민형사상의 책임을 지지 않습니다. 관련법 위반의 모든 책임은 해당 게시물의 게재자 에게 있음을 명확히 합니다.</p><p>⑤ 회사는 CP, 파트너가 제공하거나 회원이 작성하는 등의 방법으로 서비스에 게재된 정보, 자료, 정확성 등에 대해서는 보증을 하지 않으며 이로 인해 발생한 회원의 손해에 대해서는 책임을 지지 않습니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 21조(자료의 저장)</span></strong></p><p>"회사"는 이용고객이 제공하는 정보, 자료에 대하여 회사의 공지, 서비스 이용안내에서 정한 바에 따라 일정한 게재기한 및 용량을 정할 수 있습니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 22조(공개 게시물 등의 관리)</span></strong></p><p>① "회사"는 건전한 통신문화정착과 효율적 서비스 운영을 위하여 다음 각호에 해당하는 공개 게시물, 자료를 삭제, 이동, 등록거부 하는 등의 필요조치를 취할 수 있습니다. 이 경우 게시물 및 자료의 삭제 등에 대하여 회사는 어떠한 책임도 부담하지 않습니다.</p><p>1. 불법복제 또는 해킹을 조장하는 내용인 경우</p><p>2. 타 회원 또는 제 3자에게 심한 모욕 또는 명예를 손상시키는 내용인 경우</p><p>3. 공공질서 및 미풍양속에 위반되는 내용을 유포하거나 링크시키는 경우</p><p>4. 타 이용고객 또는 제 3자의 저작권 등 기타 권리를 침해하는 내용인 경우</p><p>5. 회사에서 규정한 게시물 원칙에 어긋나거나, 게시판 성격에 부합하지 않는 경우</p><p>6. 타인의 법률상 이익을 침해하는 행위와 관련된 것으로 추정되는 게시물, 자료로, 이해당사자의 삭제 등의 요청이 있거나, 회사가 피소/ 고발될 수 있는 사유를 제공하는 경우</p><p>7. 서비스에 위해를 가할 소지가 있는 바이러스 등이 포함된 경우</p><p>8. 전기통신 관계법령 및 형사 관계법령에 따른 국가기관 등의 삭제 등 요구가 있는 경우</p><p>9. 기타 관계법령에 위배된다고 판단되는 경우</p><p>② "회사"는 게시물 등에 대하여 제3자로부터 명예훼손, 지적재산권 등의 권리 침해를 이유로 게시중단 요청을 받은 경우 이를 임시로 게시중단(전송중단)할 수 있으며, 게시중단 요청자와 게시물 등록자 간에 소송, 합의 기타 이에 준하는 관련기관의 결정 등이 이루어져 회사에 접수된 경우 이에 따릅니다.</p><p>③ 해당 게시물 등에 대해 임시게시 중단이 된 경우, 게시물을 등록한 이용고객은 재게 시(전송재개)를 회사에 요청할 수 있으며, 게시 중단일로부터 30일 이내에 재 게시를 요청하지 아니한 경우 회사는 이를 삭제할 수 있습니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 23조(정보의 제공 및 광고의 게재)</span></strong></p><p>① "회사"는 이용고객이 서비스 이용 중 필요하다고 인정되는 각종 정보 및 광고를 배너 게재, 전자우편(E-Mail), 휴대폰 단문 메세지(SMS), 전화, 우편 등의 방법으로 이용고객에게 제공(또는 전송)할 수 있습니다. 이용고객은 이를 원하지 않을 경우에 회사가 제공하는 방법에 따라 수신을 거부할 수 있습니다.</p><p>② 전항 단서에 따른, 수신 거부 이용고객의 경우에도 이용약관, 개인정보보호정책, 기타 이용고객의 이익에 영향을 미칠 수 있는 중요한 사항의 변경 등 이용고객이 반드시 알고 있어야 하는 사항에 대해서는 전자 우편 등의 방법으로 정보의 제공 등을 할 수 있습니다.</p><p>③ 회사는 광고주의 판촉 활동에 이용고객이 참여하거나, 거래의 결과로써 발생하는 손실 또는 손해에 대해서는 책임을 지지 않습니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 24조(게시물에 대한 권리 및 지적재산권)</span></strong></p><p>① "회원"은 "서비스" 에 제공한 "회원"의 "콘텐츠"(영상파일, 라이브 캡쳐 촬영, 모바일 녹화영상, 방송국이나 게시판 등에 게시한 글, 방송시청 중 채팅자료 등 "회원"이 서비스에 제공하거나 서비스를 이용하면서 업로드한 자료 일체)와 관련하여 저작권, 인격권 등 제 3자와의 분쟁 발생시 그 법적 대응 및 결과에 대한 책임을 지며, "회사"는 해당 "콘텐츠"와 관련된 일체의 책임을 명시적으로 부인합니다.</p><p>② "회사"는 "서비스"를 통한 저작권 침해행위나 지적재산권 침해를 허용하지 아니하며, "회원"의 "콘텐츠"가 타인의 지적재산권을 침해한다는 사실을 적절하게 고지 받거나 인지하게 되는 경우 저작권법 기타 관련 법령에서 정한 절차에 따라 그 "콘텐츠" 일체의 서비스를 중지하거나 제거할 수 있습니다. 또한 "회사"는 "회원"의 "콘텐츠"가 "서비스" 운영 상의 문제가 있다고 판단하는 경우 사전통지 없이 삭제하거나 이동 또는 등록 거부할 수 있는 권리를 보유합니다. </p><p>③ "회원"의 "콘텐츠"에 대한 저작권은 원래의 저작자가 보유하되, 본 약관이 정하는 바에 따라 "회사" 혹은 "회사가 지정한 자"에게 "콘텐츠"에 대한 사용 권한을 부여합니다. "회사"가 "회원"의 "콘텐츠"를 사용하는 용도와 방법은 아래와 같습니다. </p><p>1. "회원"이 "서비스"에 제공한 "콘텐츠"를 "회사"나 타 회원 기타 이용자가 녹화/편집/변경하여 새로운 콘텐츠로 제작한 다음 이를 "서비스"의 타 회원 기타 이용자들이 시청하게 하거나, 또는 "회사"의 제휴사에 제공하여 그 이용자들이 이를 시청할 수 있도록 함.</p><p>2. "회원"이 "서비스"에 제공한 "콘텐츠"를 타 회원 기타 이용자가 시청하도록 함.</p><p>3. "회원"이 "서비스"에 제공한 "콘텐츠"를 "회사"가 저장한 후 이를 VOD등의 다시 보기 서비스로 "서비스" 회원 기타 이용자들이 시청할 수 있게 하거나, "회사"의 제휴사에 제공함으로써 제휴사가 그 이용자들에게 스트리밍 또는 VOD 등의 다시보기 서비스로 시청할 수 있게 함.</p><p>④ 본 조 제③항에 규정한 "회사", "타 회원 기타 이용자" 및 "회사의 제휴사"가 "회원"의 "콘텐츠"를 이용할 수 있는 조건은 아래와 같습니다. </p><p>1. 콘텐츠 이용 매체/플랫폼 - 현재 알려져 있거나 앞으로 개발된 모든 형태의 매체, 장비, 기술을 포함함. ()</p><p>2. 콘텐츠 이용 용도 - 상업적 또는 비상업적 이용을 구분하지 않음.</p><p>3. 콘텐츠 이용 범위 - 국내 및 국외에서의 복제, 수정, 각색, 공연, 전시, 방송, 배포, 대여, 공중송신, 2차적 저작물 작성, 기타 이용 </p><p>4. 콘텐츠 이용 조건 - 비독점적, 지속적인 무상의 권리로서 양도 가능하며, 취소 불가하고 서브 라이선스 가 가능함. </p><p>⑤ 본 조 제③항의 "회원"의 사용허락은 "회사"가 공지, 이용안내에서 정한 바에 따라 장래에 대하여 철회할 수 있습니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 25조(하트 충전)</span></strong></p><p>하트 충전은 주식회사 더블미디어 계정이 있어야 가능하며, 회사에서 제공하는 결제방식을 통해서만 가능합니다. 회사의 서비스 이용요금을 결제할 때에는 해당 결제수단의 사업자가 제시하는 절차이행 및 이용약관에 동의한 것으로 간주합니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 26조(결제에 대한 승인)</span></strong></p><p>① 회사는 이용신청에 대해 승인을 하지 않거나, 추후 해당 승인을 취소할 수 있습니다. </p><p>1. 만 19세 미만의 미성년자가 법정대리인의 동의 없이 신청한 경우</p><p>2. 기타 이용 신청을 승인하는 것이 관계 법령이 위반되거나 사회 안녕 질서 및 미풍양속, 회사의 관련 약관 등 회사의 업무 방침에 위반된다고 판단되는 경우 </p><p>② 회사는 이용신청에 대한 승인 제한 사유가 해소될 때까지 승인을 제한할 수 있습니다. </p><p>1. 서비스 상의 장애 및 서버증설 등의 사유가 발생한 경우</p><p>2. 서비스 설비가 부족하여 만족스러운 서비스를 제공할 수 없다고 판단될 경우</p><p><br></p><p><strong><span style="color:#f65516;">제 27조(사용기간 및 요금 등의 납입방법)</span></strong></p><p>충전한 하트 및 유료 서비스 사용기간은 마지막 이용일로부터 5년 이내에 사용해야 하고, 기간 내 사용되지 않은 하트 및 유료서비스는 상사시효에 근거하여 주식회사 더블미디어의 최종 서비스 이용일로부터 5년이 경과한 후에는 자동으로 소멸됩니다. 다만, 다른 법령에서 이보다 단기의 시효의 규정이 있는 때에는 그 규정에 의합니다. </p><p>① 유료서비스 요금은 선납을 원칙으로 하며, 사용에 따라 차감하는 형식으로 요금을 청구, 납입 합니다.</p><p>② 장애로 인해 구매한 서비스를 이용하지 못할 경우, 이용약관의 손해배상 조항에 따릅니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 28조(이용계약 해지)</span></strong></p><p>① 이용고객이 이용계약을 해지하고자 하는 때에는 본인이 직접 "서비스"를 통하거나(서비스내의 회원탈퇴 메뉴를 이용) 서면 또는 전화의 방법으로 회사에 신청하여야 합니다. </p><p>② "회사"는 전항의 규정에 의하여 해지신청이 접수되면 지체 없이 서비스의 이용을 제한합니다.</p><p>③ "회사"는 이용계약을 해지하고자 할 경우에는 해지조치 7일전까지 그 뜻을 이용고객에게 통지하여 의견을 진술할 기회를 주어야 합니다. 다만, 다음 각호의 1에 해당하는 경우에는 즉시 해지를 할 수 있습니다. </p><p>1. 이용고객이 이용제한 규정을 위반하거나, 그 이용제한 기간 내에 제한 사유를 해소하지 않은 경우</p><p>2. 타인명의 이용신청 또는 허위의 이용신청, 허위서류를 첨부한 이용신청임이 확인된 경우</p><p>3. 미성년자 또는 한정치산자가 법정대리인(부모 등)의 동의서를 첨부하지 않고 이용신청을 한 경우</p><p>4. 이용고객이 정당한 사유 없이 의견진술에 응하지 않는 경우</p><p>5. 이용고객이 기타 법령을 위반한 경우(저작권법 및 정보통신망 이용촉진 및 정보보호에 관한 법률 등의 위반 및 음란물 유포 등)</p><p>④ "회사"는 전항의 규정에 의하여 해지된 이용신청고객의 이용신청에 대하여 해지 후 1개월 이내에는 승낙을 하지 않을 수 있습니다.</p><p>⑤ "이용고객"이 계약을 해지할 경우, 관련법 및 개인정보처리방침에 따라 "회사"가 이용고객정보를 보유하는 경우를 제외하고는 해지 즉시 "회원"의 모든 데이터(서비스에 제공하거나 보관중인 자료 및 개인정보)를 삭제합니다. 이와 관련하여 어떠한 책임도 부담하지 않습니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 29조(이용자의 계약 해지 및 해제)</span></strong></p><p>① 회사가 유료서비스를 공급하지 아니하거나 불완전한 서비스를 공급한 경우에 이용자가 당해 서비스계약을 해제 또는 해지하기 위해서 상당한 기간을 정하여 완전한 서비스를 공급할 것을 우선하여야 합니다. 단, 이용자는 다음 각호의 어느 하나에 해당하는 경우 최고를 하지 않고 계약을 해제 또는 해지할 수 있다. </p><p>1. 일정한 시일 또는 기간 내에 서비스를 공급하여야만 그 목적을 달성할 수 있는 계약에서 회사가 그 시기에 서비스를 공급하지 아니한 경우</p><p>2. 회사가 미리 서비스를 공급하지 않을 의사를 표시한 경우</p><p>3. 완전한 서비스의 공급이 불가능한 경우(서비스 구입목적을 달성할 수 없는 경우에 한함) </p><p>4. 서비스계약이 계속 거래에 해당하는 경우기타 법률에 규정되거나 당사자가 합의한 경우</p><p>5. 기타 법률에 규정되거나 당사자가 합의한 경우 </p><p>② 이용자는 아래사항에 해당하는 경우 캐시 및 유료서비스 관련 계약을 해제 또는 해지할 수 있습니다. </p><p>1. 이용자가 회사와 합의한 해제·해지사유가 발생한 경우</p><p>2. 법률에서 정한 해제·해지사유가 발생한 경우</p><p><br></p><p><span style="color:#f65516;"><strong>제 30조(회사의 계약 해지 및 해제)</strong></span></p><p>① 회사는 다음 각호의 어느 하나에 해당하는 경우 당해 서비스계약을 해제 또는 해지할 수 있다. </p><p>1. 이용자와 합의한 해제·해지사유가 발생한 경우</p><p>2. 법률에서 정한 해제·해지사유가 발생한 경우 <br>② 회사는 이용자가 채무를 이행하지 않은 경우(서비스대금을 지급하지 않은 경우 등)에 당해 서비스계약을 해제 또는 해지하기 위해서 상당한 기간을 정하여 채무의 이행을 최고하여야 한다. 다만, 회사는 다음 각호의 어느 하나에 해당하는 경우 지체 없이 계약을 해제 또는 해지할 수 있다. </p><p>1. 이용자가 채무이행을 거절한 경우 </p><p>2. 기타 법률에서 규정하고 있는 경우</p><p><br></p><p><strong><span style="color:#f65516;">제 31조(양도금지)</span></strong></p><p>이용고객의 약관 상의 권리는 이를 양도하거나 증여할 수 없으며, 질권의 목적으로 사용할 수 없습니다</p><p><br></p><p><span style="color:#f65516;"><strong>제 32조(요금 등의 환불)</strong></span></p><p>① "회사"는 요금 등의 과 오금이 발생한 경우 이용대금의 결제와 동일한 방법으로 과 오금 전액을 환불하여야 합니다.</p><p>② 전액 환불의 경우 회원이 해당 서비스의 이용을 위하여 이용한 결제수단으로 환불하는 것을 원칙으로 하나 이것이 불가능 하거나 서비스의 중도해지로 인한 부분 환불 등의 경우에는 회사가 정하는 별도의 방법으로 환불합니다.</p><p>③ 회원의 귀책사유로 이용요금을 환불하는 경우 일반적인 방법은 아래와 같습니다. 회사가 제공하는 유료서비스가 결제 후 1회의 이용만으로 서비스의 이용이나 구매가 완료되는 서비스인 경우 해당 서비스를 이용한 후에는 환불이 불가능합니다.</p><p>④ 제3항의 규정에도 불구하고 아래 각 호의 경우에는 회원이 결제한 전액을 환불합니다. </p><p>1. 서비스 장애 또는 회사가 제시한 최소한의 기술사양을 충족하였음에도 불구하고 회사의 귀책사유로 서비스를 이용하지 못한 경우</p><p>2. 회원이 구매한 서비스가 제공되지 않은 경우</p><p>3. 제공되는 서비스가 표시?광고 등과 상이하거나 차이가 있는 경우</p><p>4. 제공되는 서비스의 결함으로 서비스의 정상적인 이용이 불가능한 경우</p><p>5. 회원이 제14조의 규정을 위반하여 회사가 회원의 서비스 이용을 제한하거나 일방적으로 본 계약을 해지하는 경우 회사는 회원에게 대하여 일체의 환불을 하지 않습니다. </p><p>⑤ 본 조의 규정에 의한 환불은 환불 의무가 발생한 날로부터 3영업일 이내에 하는 것으로 하며 회사는 결제 수수료 등 입금에 따라 발생한 비용을 공제하고 반환할 수 있습니다. 환불이 지연되는 경우 지연이자율은 연리 11%로 합니다. 단, 환불에 회원의 협조가 필요한 경우에 회원의 귀책사유로 인한 환불 지연에 대해서는 지연이자를 지급하지 않습니다.</p><p>⑥ 환불에 소요되는 비용은 이용고객의 귀책사유로 인한 환불의 경우에는 이용고객이, 회사의 귀책사유로 인한 환불의 경우에는 회사가 각각 부담합니다.</p><p>⑦ "회사"는 요금 등을 반환하여야 할 이용고객이 요금 등을 미납하고 있을 경우에는 반환하여야 할 요금 등에서 이를 우선 변제충당하고 반환할 수 있습니다.</p><p>⑧ 제16조 제2항에 따른 이용제한의 경우 이와 관련된 요금 등은 반환하지 않습니다.</p><p>⑨ 부정거래 방지를 위하여 휴대폰결제의 경우 요금 수납 확인 후 환불처리 가능합니다.</p><p><br></p><p><strong><span style="color:#f65516;">제 33조(관할재판 및 준거법)</span></strong></p><p>① "서비스"와 관련하여 분쟁이 발생한 경우, 제소 당시의 "이용자"의 주소에 의하고, 주소가 없는 경우 거소를 관할하는 지방법원의 전속관할로 합니다.</p><p>② 제소 당시 "이용자"의 주소 또는 거소가 분명하지 아니한 경우에 "회사"와 "이용자"간의 "콘텐츠" 이용계약에 관한 소송에 관한 관할법원은 민사소송법에 따라 정합니다.</p><p>③ 1항과2항의 경우 준거법은 대한민국의 법령을 적용합니다.</p><p>부칙</p><p>제1조 (시행일)이 약관은 2017년 8월 14일부터 시행합니다.</p><p>제2조 관리 책임자 및 담당자는 2017년 8월 14일을 기준으로 다음과 같이 지정합니다.</p><br><p>개인정보/청소년보호 책임자<br>이름 : 이명수<br>직위 : 부사장<br>연락처: 1668-1682<br>E-mail : help@pandalive.co.kr<br></p>
+	<br>
+	<br>
+	<p>개인정보/청소년보호 관리자<br>이름 : 진소정<br>소속 : 운영팀<br>직위 : 팀장<br>연락처: 1668-1682<br>E-mail : help@pandalive.co.kr<br></p>
+
+
+
+
+
+
+</div> 				</td>
+			</tr>
+			</table>
+		</div>
+		</div>
+	
+	<!--S: FooterWrap -->
+	<div id="footer_wrap">
+		<div class="footer_box">		
+			<ul>
+				<li><a href="index61df.html?lxmPfZ4Dna=privacy">개인정보취급방침</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="index48e7.html?lxmPfZ4Dna=service">이용약관</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="index9f3a.html?lxmPfZ4Dna=youth">청소년보호정책</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="indexd726.html?lxmPfZ4Dna=cast">방송기준안내</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="index8ab4.html?lxmPfZ4Dna=play">시청기준안내</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="index0889.html?lxmPfZ4Dna=claim">권리침해신고센터</a>&nbsp;&nbsp;&nbsp;l</li>
+				<li><a href="../bbs/cp/make.html">광고/제휴문의</a>&nbsp;&nbsp;&nbsp;l</li>
+									<li><a href="javascript:void(0)" onclick="window.open('http://ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2019316015930201640')">사업자정보확인</a></li>
+							</ul>
+					<address>
+			서비스명:팬더티비 I 회사명:주식회사 더블미디어  I 사업자등록번호:842-86-01445I 통신판매업 신고번호 :제 2019-서울구로-1670 호 I 대표:박효창, 이병근<br>
+			주소: 서울특별시 구로구 디지털로 33길 27, 5층 506호 (구로동, 삼성IT밸리)<br>
+			개인정보 관리책임자:이명수 I E-MAIL:help@pandalive.co.kr I 대표번호:1668-1682 I 팩스:0504-981-1682<br>
+			Copyright©2019 doublemedia Corp.All rights reserved. Hosting by 브로드밴드 IDC.
+			</address>
+		</div>	
+	</div>
+	<!--E: FooterWrap -->
+</div>
+
+<!--S: QuickBtn -->
+<div class="quick_btn">
+	<ul>
+		<li>
+			<a href="../index.html">
+				<span class="q_home"></span>
+			</a>
+		</li>
+					<li>
+				<a href="../charge/heart.html">
+					<span class="q_heart"></span>
+				</a>
+			</li>
+				<li>
+			<a href="javascript:Member.loginHref('/live/bookmark')">
+				<span class="q_like"></span>
+			</a>
+		</li>
+		<li>
+			<a href="#top">
+				<span class="q_top"></span>
+			</a>
+		</li>
+	</ul>
+</div>
+<!--E: QuickBtn -->
+
+<iframe src="http://www.pandalive.co.kr/resource/advert/common" style="display:none;"></iframe>
+</body>
+
+<!-- Mirrored from www.pandalive.co.kr/policy/?lxmPfZ4Dna=service by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 07:14:54 GMT -->
+</html>

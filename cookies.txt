@@ -1,0 +1,11 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+onestore.co.kr	TRUE	/userpoc/	FALSE	1999999999	JSESSIONID	90FB21DF5FB83C99320D10F59716DF36.vuser11
+.pandalive.co.kr	TRUE	/	FALSE	1999999999	partner	pandatv
+.pandalive.co.kr	TRUE	/	FALSE	1999999999	userLoginIdx	deleted
+.pandalive.co.kr	TRUE	/	FALSE	1999999999	UID_INF	deleted
+.pandalive.co.kr	TRUE	/	FALSE	1999999999	userLoginYN	N
+onestore.co.kr	TRUE	/	FALSE	1999999999	WMONID	DEoeUTxdZoH
+.pandalive.co.kr	TRUE	/	FALSE	1999999999	sessKey	c1b7634372715f48a438e09fc1d0f1af2c0b37a351780bf06d8204c2dc5dcd17
+.pandalive.co.kr	TRUE	/	FALSE	1999999999	userReferer	http%3A%2F%2Fwww.pandalive.co.kr%2Fbbs%2Ffaq%2Finfo%2F364611%2F
+
